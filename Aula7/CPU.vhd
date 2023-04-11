@@ -5,7 +5,7 @@ entity CPU is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
         larguraEnderecos : natural := 8;
-        simulacao : boolean := TRUE-- para gravar na placa, altere de TRUE para FALSE
+        simulacao : boolean := FALSE-- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
     CLOCK_50 : in std_logic;
@@ -17,7 +17,16 @@ entity CPU is
 	 ROM_InstructionIN: in std_logic_vector (12 downto 0);
 	 we: out std_logic;
 	 re: out std_logic;
-	 Teste: out std_logic_vector(7 downto 0)
+	 Teste: out std_logic_vector(7 downto 0);
+	 
+	 
+	 --CPU
+	 ENTRADAX_ULA: out std_logic_vector(7 downto 0);
+	 ENTRADAY_ULA: out std_logic_vector(7 downto 0);
+	 SAIDA_ULTA: out std_logic_vector(7 downto 0);
+	 SELE_ULA: out std_logic_vector(1 downto 0)
+
+
   );
 end entity;
 
@@ -63,17 +72,7 @@ architecture arquitetura of CPU is
   signal EnderecoRam: std_logic_vector (5 downto 0);
 
 begin
-
--- Instanciando os componentes:o
-
--- Para simular, fica mais simples tirar o edgeDetector
-gravar:  if simulacao generate
-CLK <= KEY(0);
-else generate
-detectorSub0: work.edgeDetector(bordaSubida)
-        port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK);
-end generate;
-
+CLK <= CLOCK_50;
 -- O port map completo do MUX.
 MUX1 :  entity work.muxGenerico2x1  generic map (larguraDados => 8)
         port map( entradaA_MUX => Data_IN,
@@ -144,4 +143,10 @@ we <= habEscritaMem;
 re <= habLeituraMem;
 Teste <= SaidaMux_ULAB;
 Data_Address <=ROM_InstructionIN(8 downto 0);
+
+ENTRADAX_ULA <= REG1_ULA_A;
+ENTRADAY_ULA <= SaidaMux_ULAB;
+SAIDA_ULTA <= Saida_ULA;
+SELE_ULA <= Operacao_ULA;
+	 
 end architecture;

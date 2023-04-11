@@ -1,15 +1,15 @@
 library IEEE;
 use ieee.std_logic_1164.all;
 
-entity buffer_3_state_8portas is
+entity buffer_3_state_1porta is
     port(
         entrada  : in std_logic;
         habilita : in std_logic;
-        saida    : out std_logic;
-end entity;
+        saida    : out std_logic_vector(7 downto 0));
+end;
 
-architecture comportamento of buffer_3_state_1portas is
+architecture comportamento of buffer_3_state_1porta is
+
 begin
-		 -- A saida esta ativa quando o habilita = 1.
-    saida <= "Z" when (habilita = '0') else entrada;
-end architecture;
+    saida <= ("00000001" ) when (habilita = '1') else "ZZZZZZZZ";
+end;

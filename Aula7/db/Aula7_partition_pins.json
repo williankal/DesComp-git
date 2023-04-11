@@ -44,6 +44,118 @@
 					"strict" : false
 				},
 				{
+					"name" : "HEX0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[6]",
+					"strict" : false
+				},
+				{
 					"name" : "Reg_retorno[0]",
 					"strict" : false
 				},
@@ -73,6 +185,166 @@
 				},
 				{
 					"name" : "Reg_retorno[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAX_ULA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ENTRADAY_ULA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SAIDA_ULTA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SELE_ULA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HABLITAHEX",
+					"strict" : false
+				},
+				{
+					"name" : "OUT_HEXTESTE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "OUT_HEXTESTE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "OUT_HEXTESTE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "OUT_HEXTESTE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "WRITETESTE",
+					"strict" : false
+				},
+				{
+					"name" : "READTESTE",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
 					"strict" : false
 				},
 				{

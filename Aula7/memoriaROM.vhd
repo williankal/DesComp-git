@@ -34,20 +34,34 @@ architecture assincrona of memoriaROM is
   constant NOP: std_logic_vector(12 downto 0) := "0000000000000";
   
   begin
-      -- Palavra de Controle = SelMUX, Habilita_A, Reset_A, Operacao_ULA
-      -- Inicializa os endereços:
-        tmp(0)  := LDI & '0' & x"01";    
-        tmp(1)  := STA & '0' & x"00";
-		  tmp(2)  := SOMA & '0' & x"00";
-        tmp(3)  := STA & '1' & x"01";
-        tmp(4)  := LDA & '0' & x"00";
-		  tmp(5)  := STA & '1' & "00000001";
-		  tmp(6)  := STA & '1' & "00000010";
-		  tmp(7)  := LDI & '0' & x"55"; 
-		  tmp(8)  := STA & '1' & "00000000";
-		  tmp(9)  := LDI & '0' & x"55";
-		  tmp(10)  := LDI & '0' & x"AA";
-		  tmp(11) := JMP & '0' & x"00";
+      
+--		--TESTE HEX
+--        tmp(0)  := LDA & '1' & x"40";    
+--        tmp(1)  := STA & '1' & x"20";
+--		  tmp(2)  := LDA & '1' & x"41";
+--        tmp(3)  := STA & '1' & x"21";
+--        tmp(4)  := LDA & '1' & x"42";
+--		  tmp(5)  := STA & '1' & x"22";
+--		  tmp(6)  := LDA & '1' & x"60";
+--		  tmp(7)  := STA & '1' & x"23"; 
+--		  tmp(8)  := LDA & '1' & x"61";
+--		  tmp(9)  := STA & '1' & x"23";
+--		  tmp(10)  := LDA & '1' & x"62";
+--		  tmp(11) := STA & '1' & x"15";
+--		  
+		 --TESTE LED 
+--		tmp(0):= LDI & '0' & x"01";
+--		tmp(1) := STA & '0' & x"00";
+--		tmp(2) := SOMA & '0' & x"00";
+--		tmp(3) := STA & '0' & x"01";
+--		tmp(4) := LDA & '0' & x"00";
+--		tmp(5) := STA & '1' & x"01";
+--		tmp(6) := STA & '1' & x"02";
+--		tmp(7) := LDI & '0' & x"55";
+--		tmp(8) := STA & '1' & x"00";
+--		tmp(9) := LDI & '0' & x"AA";
+		tmp(0) := 
+		  
 
         return tmp;
     end initMemory;
