@@ -73,7 +73,6 @@ architecture arquitetura of CPU is
 
 begin
 CLK <= CLOCK_50;
--- O port map completo do MUX.
 MUX1 :  entity work.muxGenerico2x1  generic map (larguraDados => 8)
         port map( entradaA_MUX => Data_IN,
                  entradaB_MUX =>  ROM_InstructionIN(7 downto 0) ,

@@ -1,18 +1,21 @@
 |Aula7
-CLOCK_50 => ~NO_FANOUT~
+CLOCK_50 => edgedetector:detectorSub0.clk
+CLOCK_50 => edgedetector:detectorSub1.clk
+CLOCK_50 => cpu:CPU.CLOCK_50
+CLOCK_50 => memoriaram:RAM.clk
+CLOCK_50 => registradorgenerico:LED_COMBO.CLK
+CLOCK_50 => registradorbooleano:LEDR8.CLK
+CLOCK_50 => registradorbooleano:LEDR9.CLK
+CLOCK_50 => registradorgenerico:REG_HEX0.CLK
+CLOCK_50 => registradorgenerico:REG_HEX1.CLK
+CLOCK_50 => registradorgenerico:REG_HEX2.CLK
+CLOCK_50 => registradorgenerico:REG_HEX3.CLK
+CLOCK_50 => registradorgenerico:REG_HEX4.CLK
+CLOCK_50 => registradorgenerico:REG_HEX5.CLK
 KEY[0] => cpu:CPU.KEY[0]
-KEY[0] => cpu:CPU.CLOCK_50
-KEY[0] => memoriaram:RAM.clk
-KEY[0] => registradorgenerico:LED_COMBO.CLK
-KEY[0] => registradorbooleano:LEDR8.CLK
-KEY[0] => registradorbooleano:LEDR9.CLK
-KEY[0] => registradorgenerico:REG_HEX0.CLK
-KEY[0] => registradorgenerico:REG_HEX1.CLK
-KEY[0] => registradorgenerico:REG_HEX2.CLK
-KEY[0] => registradorgenerico:REG_HEX3.CLK
-KEY[0] => registradorgenerico:REG_HEX4.CLK
-KEY[0] => registradorgenerico:REG_HEX5.CLK
+KEY[0] => edgedetector:detectorSub0.entrada
 KEY[1] => cpu:CPU.KEY[1]
+KEY[1] => edgedetector:detectorSub1.entrada
 KEY[2] => cpu:CPU.KEY[2]
 KEY[2] => buffer_3_state_1porta:BUFF_KEY2.entrada
 KEY[3] => cpu:CPU.KEY[3]
@@ -122,6 +125,20 @@ OUT_HEXTESTE[2] <= registradorgenerico:REG_HEX0.DOUT[2]
 OUT_HEXTESTE[3] <= registradorgenerico:REG_HEX0.DOUT[3]
 WRITETESTE <= cpu:CPU.we
 READTESTE <= cpu:CPU.re
+
+
+|Aula7|edgeDetector:detectorSub0
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Aula7|edgeDetector:detectorSub1
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|CPU:CPU
@@ -420,7 +437,7 @@ DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
 CLK => DOUT~reg0.CLK
-RST => ~NO_FANOUT~
+RST => DOUT~reg0.ACLR
 
 
 |Aula7|CPU:CPU|registradorGenerico:PC
@@ -755,7 +772,7 @@ DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
 CLK => DOUT~reg0.CLK
-RST => ~NO_FANOUT~
+RST => DOUT~reg0.ACLR
 
 
 |Aula7|registradorBooleano:LEDR9
@@ -763,7 +780,7 @@ DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA
 CLK => DOUT~reg0.CLK
-RST => ~NO_FANOUT~
+RST => DOUT~reg0.ACLR
 
 
 |Aula7|decoder3x8:DECODER1
@@ -1485,103 +1502,33 @@ saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_1porta:BUFF_KEY0
-entrada => ~NO_FANOUT~
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_1porta:BUFF_KEY1
-entrada => ~NO_FANOUT~
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_1porta:BUFF_KEY2
-entrada => ~NO_FANOUT~
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_1porta:BUFF_KEY3
-entrada => ~NO_FANOUT~
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_1porta:BUFF_KEY_RESET
-entrada => ~NO_FANOUT~
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_8_portas:BUFF_SW
@@ -1612,54 +1559,30 @@ saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_1porta:BUFF_SW8
-entrada => ~NO_FANOUT~
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|buffer_3_state_1porta:BUFF_SW9
-entrada => ~NO_FANOUT~
-habilita => saida[0].OE
-habilita => saida[1].OE
-habilita => saida[2].OE
-habilita => saida[3].OE
-habilita => saida[4].OE
-habilita => saida[5].OE
-habilita => saida[6].OE
-habilita => saida[7].OE
-saida[0] <= saida[0].DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= saida[1].DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= saida[2].DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= saida[3].DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= saida[4].DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= saida[5].DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= saida[6].DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= saida[7].DB_MAX_OUTPUT_PORT_TYPE
+entrada => saida.DATAIN
+habilita => saida.OE
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Aula7|debounceMem:DEBOUNCE_KEY0_TESTE
-saida <= saida~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => saida~reg0.CLK
-rst => saida~reg0.ACLR
+|Aula7|registradorBooleano:FF_KEY0
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
 
 
-|Aula7|debounceMem:DEBOUNCE_KEY1_TESTE
-saida <= saida~reg0.DB_MAX_OUTPUT_PORT_TYPE
-clk => saida~reg0.CLK
-rst => saida~reg0.ACLR
+|Aula7|registradorBooleano:FF_KEY1
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
 
 

@@ -23,15 +23,11 @@ begin
             -- respond to the appropriate synchronous signal.
             -- Check for synchronous reset, then synchronous load.
             -- If none of these takes precedence, update the register output
-			if (RST = '1') then
-            DOUT <= '0';    -- Código reconfigurável.
-        else
             -- to be the register input.
             if (rising_edge(CLK)) then
                 if (ENABLE = '1') then
                         DOUT <= DIN;
 								end if;
         end if;
-		end if;
     end process;
 end architecture;

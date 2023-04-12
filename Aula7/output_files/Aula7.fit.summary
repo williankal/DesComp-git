@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Apr 11 13:39:19 2023
+Fitter Status : Successful - Tue Apr 11 18:42:13 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : Aula7
 Top-level Entity Name : Aula7
 Family : Cyclone V
 Device : 5CEBA4F23C7
 Timing Models : Final
-Logic utilization (in ALMs) : 43 / 18,480 ( < 1 % )
-Total registers : 47
+Logic utilization (in ALMs) : 170 / 18,480 ( < 1 % )
+Total registers : 201
 Total pins : 110 / 224 ( 49 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 3,153,920 ( 0 % )
