@@ -156,8 +156,16 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
         
         #Verifica se a linha começa com alguns caracteres invalidos ('\n' ou ' ' ou '#')
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
-            line = line.replace("\n", "")
-            print("-- Sintaxe invalida" + ' na Linha: ' + ' --> (' + line + ')') #Print apenas para debug
+            if line.startswith('#'):
+                line = line.replace("\n", "")
+                comentario = "--" + line
+                f.write('\n')
+                f.write(comentario) #Print apenas para debug
+                f.write('\n')
+            else: 
+                line = line.replace("\n", "")
+                print("-- Sintaxe invalida" + ' na Linha: ' + ' --> (' + line + ')') #Print apenas para debug
+
         
         #Se a linha for válida para conversão, executa
         else:

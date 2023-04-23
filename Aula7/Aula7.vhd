@@ -164,8 +164,6 @@ DECODER1 :  entity work.decoder3x8
 
 DECODER2 : entity work.decoder3X8
           port map (entrada => Decoder_Entrada2, saida => Decoder_Saida2);
-			 
-
 		  
 REG_HEX0: entity work.registradorGenerico  generic map (larguraDados => 4)
 		port map(DIN =>CPU_EscritoRam(3 downto 0), DOUT => OUT_HEX0, ENABLE => Habilita_HEX0, CLK => CLK, RST=>'0');
@@ -186,7 +184,6 @@ REG_HEX5: entity work.registradorGenerico  generic map (larguraDados => 4)
 		port map(DIN =>CPU_EscritoRam(3 downto 0), DOUT => OUT_HEX5, ENABLE => Habilita_HEX5, CLK => CLK, RST=>'0');
 	
 
-	
 CONV_HEX0 :  entity work.conversorHex7Seg
         port map(dadoHex => OUT_HEX0,
                  apaga =>  '0',
@@ -230,8 +227,6 @@ CONV_HEX5 :  entity work.conversorHex7Seg
                  overFlow =>  '0',
                  saida7seg => HEX5);
 		
-
-
 BUFF_KEY0:   entity work.buffer_3_state_1porta
         port map(entrada => Debounce_BuffKEY0, habilita =>  Habilita_KEY0, saida => KEY0_SAIDA);	
 
@@ -247,8 +242,7 @@ BUFF_KEY3:   entity work.buffer_3_state_1porta
 BUFF_KEY_RESET:   entity work.buffer_3_state_1porta
         port map(entrada => FPGA_RESET_N, habilita =>  Habilita_KEY_RST, saida => KEYRST_SAIDA);	
 		  
-		  
-		  
+			
 BUFF_SW :  entity work.buffer_3_state_8_portas
         port map(entrada => SW(7 downto 0), habilita =>  Habilita_SW, saida => LidoRam_CPU);
 		  
@@ -292,7 +286,7 @@ Habilita_KEY0 <= Decoder_Saida1(5) and Decoder_Saida2(0) and CPU_rd and Data_Add
 Habilita_KEY1 <= Decoder_Saida1(5) and Decoder_Saida2(1) and CPU_rd and Data_Address(5);
 Habilita_KEY2 <= Decoder_Saida1(5) and Decoder_Saida2(2) and CPU_rd and Data_Address(5);
 Habilita_KEY3 <= Decoder_Saida1(5) and Decoder_Saida2(3) and CPU_rd and Data_Address(5);
-Habilita_KEY_RST <= Decoder_Saida1(5) and Decoder_Saida2(4) and CPU_rd and Data_Address(5);
+Habilita_KEY_RST <= '1' when (CPU_rd and Data_Address(5) and Decoder_Saida2(4) 	and Decoder_Saida1(5)) else '0';
 
 Habilita_SW <= Decoder_Saida1(5) and Decoder_Saida2(0) and CPU_rd and not(Data_Address(5));
 Habilita_SW8 <= Decoder_Saida1(5) and Decoder_Saida2(1) and CPU_rd and not(Data_Address(5));
