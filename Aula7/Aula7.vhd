@@ -8,10 +8,10 @@ entity Aula7 is
         simulacao : boolean := FALSE-- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
-    CLOCK_50 : in std_logic;
-    KEY: in std_logic_vector(3 downto 0);
-	 KEY_RST: in std_logic;
-    LEDR  : out std_logic_vector(9 downto 0);
+        CLOCK_50 : in std_logic;
+        KEY: in std_logic_vector(3 downto 0);
+	FPGA_RESET_N: in std_logic;
+        LEDR  : out std_logic_vector(9 downto 0);
 	 SW: in std_logic_vector(9 downto 0);
 	 HEX0 : out std_logic_vector(6 downto 0);
 	 HEX1 : out std_logic_vector(6 downto 0);
@@ -245,7 +245,7 @@ BUFF_KEY3:   entity work.buffer_3_state_1porta
         port map(entrada => KEY(3), habilita =>  Habilita_KEY3, saida => KEY3_SAIDA);	
 
 BUFF_KEY_RESET:   entity work.buffer_3_state_1porta
-        port map(entrada => KEY_RST, habilita =>  Habilita_KEY_RST, saida => KEYRST_SAIDA);	
+        port map(entrada => FPGA_RESET_N, habilita =>  Habilita_KEY_RST, saida => KEYRST_SAIDA);	
 		  
 		  
 		  

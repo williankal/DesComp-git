@@ -176,10 +176,12 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
                 instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
                 instrucaoLine = instrucaoLine + '00' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
-                            
+        
+                    
             line = 'tmp(' + str(cont) + ') := '  + operacao + " & '" + str(bit8) + "' & " +   'x"' + instrucaoLine[1:] + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
-                                                                                                       #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
+            if operacao == "NOP":
+                line = 'tmp(' + str(cont) + ') := ' + operacao + ';\t-- ' + comentarioLine + '\n'                                                                                               #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
                                         
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt

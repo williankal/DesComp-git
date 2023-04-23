@@ -1,4 +1,7 @@
+#SETUP INICIAL
 LDI $0 #Carrega acumulador com valor 0
+
+#ESCREVE 0 NOS DISPLAYS
 STA @288 #Armazena o valor 0 no HEX0
 STA @289 #Armazena o valor 0 no HEX1
 STA @290 #Armazena o valor 0 no HEX2
@@ -6,23 +9,285 @@ STA @291 #Armazena o valor 0 no HEX3
 STA @292 #Armazena o valor 0 no HEX4
 STA @293 #Armazena o valor 0 no HEX5
 
+#APAGANDO OS LEDS
 LDI $0
 STA @256 #Armazena o valor 0 no LEDR7~0
 STA @257 #Armazena o valor 0 no LEDR8
 STA @258 #Armazena o valor 0 no LEDR9
 
+#VARIAVEIS QUE ARMAZENAM O VALOR DO DISPLAY
 LDI $0 
 STA @0 #Armazena o valor do acumulador em MEM[0](unidades)
 STA @1 #Armazena o valor do acumulador em MEM[1](dezenas)
 STA @2 #Armazena o valor do acumulador em MEM[2](centenas)
+STA @3 #Armazena o valor do acumulador em MEM[3](milhares)
+STA @4 #Armazena o valor do acumulador em MEM[4](dez milhares)
+STA @5 #Armazena o valor do acumulador em MEM[5](cent milhares)
 
+#FLAG 
+STA @6 #Armazena o valor do acumulador em MEM[6] (flag)
+
+
+#VARIAVEIS DE COMPARAÇÃO 
 LDI $0
-STA @10 #Armazena o valor do acumulador em MEM[10]
+STA @10 #Armaena o valor do acumulador em MEM[10]
+
 LDI $1 #Carrega acumulador com valor 1
 STA @11 #Armazena o valor do acumulador em MEM[11]
+
 LDI $9 #Carrega acumulador com valor 9
 STA @12 #Armazena o valor do acumulador em MEM[12]
+
 LDI $10 #Carrega acumulador com valor 10
 STA @13 #Armazena o valor do acumulador em MEM[13]
 
+#ARMAZENANDO LIMITES DE CONTAGEM 
+STA @30  #Armazena o limie de contagem em MEM[30] (unidades)
+STA @31 #Armazena o limie de contagem em MEM[31] (dezenas)
+STA @32 #Armazena o limie de contagem em MEM[32] (centenas)
+STA @33 #Armazena o limie de contagem em MEM[33] (milhares)
+STA @34 #Armazena o limie de contagem em MEM[34] (dez milhares)
+STA @35 #Armazena o limie de contagem em MEM[35] (cent milhares)
 
+#LOOP PRINCIPAL => CHECA KEY 0/1/FPGA
+NOP @0
+
+#CHECA FLAG
+LDA @6 #Carrega acumulador com valor de MEM[6](FLAG)
+CEQ @11 #Compara se o valor do acumulador é igual a 1
+JEQ @42 #Se for igual, pula para o endereço:
+
+#CHECA KEY 0
+LDA @352 #Carrega acumulador com o valor de KEY0
+CEQ @11 #Compara se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
+JEQ @42  #Se for igual 0 pula para o endereço:
+JSR @52 #Se for igual 1 pula para o endereço:
+
+#CHECA KEY 1
+
+LDA @353 #Carrega acumulador com o valor de KEY1
+CEQ @10 #Compara se o valor do acumulador é igual a 1 (Se key1 foi pressionado)
+JEQ @50 
+JSR @100 
+NOP @0
+JSR @100
+
+#CHECA FPGA_RESET
+
+LDA @356 #Carrega acumulador com o valor de FPGA_RESET
+CEQ @10 #Compara se o valor do acumulador é igual a 0 
+JEQ @51 #Se for igual 0 pula para o endereço:
+JSR @100 #Pula para subrotina: DEFINICAO DE LIMITES
+JSR @33 #CHECA LIMITE
+
+#LOOP INCREMENTO 
+
+STA @511 #Limpa KEY 0
+
+#INCREMENTO UNIDADE
+LDA @0 #Carrega acumulador com o valor de MEM[0](unidades)
+SOMA @11
+STA @0
+CEQ @13
+JEQ @59#Se for igual 10 pula para o endereço
+RET @0 #VOLTA PRO LOOP PRINCIPAL
+
+
+#INCREMENTO DEZENA 
+LDA @10
+STA @0
+#contagem dezenas
+LDA @1 #Carrega acumulador com o valor de MEM[1](dezenas)
+SOMA @11 #Soma 1 ao valor da dezenas
+STA @1
+CEQ @13
+JEQ @100 #PULA PRA CENTENA
+RET @0 #return
+
+#INCREMENTO CENTENA
+LDA @10
+STA @0
+LDA @2
+SOMA @11
+STA @2
+CEQ @13
+JEQ @100 #PULA PRA MILHAR
+RET @0
+
+#INCREMENTO MILHAR
+LDA @10
+STA @0
+LDA @3
+SOMA @11
+STA @3
+CEQ @13
+JEQ @100 #PULA PARA DEZENA MILHAR
+RET @0
+
+#INCREMENTO DEZENA MILHAR
+LDA @10
+STA @0
+LDA @4
+SOMA @11
+STA @4
+CEQ @13
+JEQ @100 #PULA PARA CENTENA MILHAR
+RET @0
+
+#INCREMENTO CENTENA MILHAR
+
+LDA @10
+STA @0
+LDA @5
+SOMA @11
+STA @5
+CEQ @13
+JEQ @100 #PULA PARA LED OVERFL0W
+RET @0
+
+#LED OVERFLOW
+LDA @11
+STA @6
+STA @258
+RET @0
+
+#SUBROTINA RESET FPGA
+
+LDA @10
+STA @0
+STA @1
+STA @2
+STA @3
+STA @4
+STA @5
+
+STA @6
+STA @257
+STA @258
+RET @0
+
+
+#SUBROTINA ATUALIZA DISPLAY
+
+LDA @0
+STA @288
+LDA @1
+STA @289
+LDA @2
+STA @290
+LDA @3
+STA @291
+LDA @4
+STA @292
+LDA @5
+STA @293
+RET @0
+
+#CHECA LIMITE DE CONTAGEM -ZZZZZZ
+
+#CHECA UNIDADE
+LDA @30
+CEQ @0
+JEQ @141 #Pula para dezena
+RET @0
+
+#CHECA dezena
+LDA @31
+CEQ @1
+JEQ @143 #Pula para centena
+RET @0
+
+#CHECA centena
+LDA @32
+CEQ @2
+JEQ @145 #Pula para milhares
+RET @0
+
+#CHECA milhares
+LDA @33
+CEQ @3
+JEQ @147 #Pula para dezena milhares
+RET @0
+
+#CHECA dezena milhares
+LDA @34
+CEQ @4
+JEQ @149 #Pula para centena milhares
+RET @0
+
+#CHECA centena milhares
+LDA @35
+CEQ @5
+JEQ @151 #Pula para checa flag
+RET @0
+
+#CHECA FLAG
+LDA @11
+STA @6
+STA @158
+RET @0
+
+#DEFINICAO DE LIMTE unidades
+STA @510 #zera key1
+LDI @1
+STA @256
+LDA @353
+CEQ @10
+LDA @340
+JEQ @156 #PULA PARA LDI 
+STA @30
+
+#DEFINICAO DE LIMTE dezenas
+STA @510
+LDI @3
+STA @256
+LDA @353
+CEQ @10
+LDA @320
+JEQ @162 #PULA PARA LDI
+STA @31
+
+#DEFINICAO DE LIMTE centenas
+STA @510
+LDI @7
+STA @256
+LDA @353
+CEQ @10
+LDA @320
+JEQ @172 #PULA PARA LDI
+STA @32
+
+#DEFINICAO DE LIMTE milhares
+STA @510
+LDI @15
+STA @256
+LDA @353
+CEQ @10
+LDA @320
+JEQ @180 #PULA PARA LDI
+STA @33
+
+#DEFINICAO DE LIMTE dezena milhares
+STA @510
+LDI @31
+STA @256
+LDA @353
+CEQ @10
+LDA @320
+JEQ @188 #PULA PARA LDI
+STA @34
+
+#DEFINICAO DE LIMTE centena milhares
+STA @510
+LDI @63
+STA @256
+LDA @353    
+CEQ @10
+LDA @320
+JEQ @196 #PULA PARA LDI
+STA @35
+
+STA @510
+LDA @10
+STA @256
+RET @0
