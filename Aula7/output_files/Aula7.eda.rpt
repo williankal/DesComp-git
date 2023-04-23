@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Aula7
-Sun Apr 23 15:16:48 2023
+Sun Apr 23 16:25:46 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -8,9 +8,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 ---------------------
   1. Legal Notice
   2. EDA Netlist Writer Summary
-  3. Simulation Settings
-  4. Simulation Generated Files
-  5. EDA Netlist Writer Messages
+  3. EDA Netlist Writer Messages
 
 
 
@@ -34,45 +32,14 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------+
-; EDA Netlist Writer Summary                                        ;
-+---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Apr 23 15:16:48 2023 ;
-; Revision Name             ; Aula7                                 ;
-; Top-level Entity Name     ; Aula7                                 ;
-; Family                    ; Cyclone V                             ;
-; Simulation Files Creation ; Successful                            ;
-+---------------------------+---------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                           ;
-+---------------------------------------------------------------------------------------------------+---------------------------+
-; Option                                                                                            ; Setting                   ;
-+---------------------------------------------------------------------------------------------------+---------------------------+
-; Tool Name                                                                                         ; ModelSim-Altera (Verilog) ;
-; Generate functional simulation netlist                                                            ; On                        ;
-; Truncate long hierarchy paths                                                                     ; Off                       ;
-; Map illegal HDL characters                                                                        ; Off                       ;
-; Flatten buses into individual nodes                                                               ; Off                       ;
-; Maintain hierarchy                                                                                ; Off                       ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                       ;
-; Enable glitch filtering                                                                           ; Off                       ;
-; Do not write top level VHDL entity                                                                ; Off                       ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                       ;
-; Architecture name in VHDL output netlist                                                          ; structure                 ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                       ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                       ;
-+---------------------------------------------------------------------------------------------------+---------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Simulation Generated Files                                              ;
-+-------------------------------------------------------------------------+
-; Generated Files                                                         ;
-+-------------------------------------------------------------------------+
-; /home/will/SextoSemestre/DesComp-git/Aula7/simulation/modelsim/Aula7.vo ;
-+-------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; EDA Netlist Writer Summary                                    ;
++---------------------------+-----------------------------------+
+; EDA Netlist Writer Status ; Failed - Sun Apr 23 16:25:46 2023 ;
+; Revision Name             ; Aula7                             ;
+; Top-level Entity Name     ; Aula7                             ;
+; Family                    ; Cyclone V                         ;
++---------------------------+-----------------------------------+
 
 
 +-----------------------------+
@@ -81,13 +48,28 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Apr 23 15:16:47 2023
-Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Aula7 -c Aula7
-Info (204019): Generated file Aula7.vo in folder "/home/will/SextoSemestre/DesComp-git/Aula7/simulation/modelsim/" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 672 megabytes
-    Info: Processing ended: Sun Apr 23 15:16:48 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Sun Apr 23 16:25:46 2023
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Aula7 -c Aula7 --vector_source=/home/will/SextoSemestre/DesComp-git/Aula7/output_files/Waveform2.vwf --testbench_file=/home/will/SextoSemestre/DesComp-git/Aula7/simulation/qsim/output_files/Waveform2.vwf.vht
+Error (199013): HDL output file name "/home/will/SextoSemestre/DesComp-git/Aula7/simulation/qsim/output_files/Waveform2.vwf.vht" used with --testbench_file option contains a non-existent directory path
+Error (199014): Vector source file /home/will/SextoSemestre/DesComp-git/Aula7/output_files/Waveform2.vwf specified with --testbench_vector_input_file option does not exist
+Error: Quartus Prime EDA Netlist Writer was unsuccessful. 2 errors, 0 warnings
+    Error: Peak virtual memory: 668 megabytes
+    Error: Processing ended: Sun Apr 23 16:25:46 2023
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:00
 
 

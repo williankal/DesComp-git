@@ -37,6 +37,11 @@ architecture assincrona of memoriaROM is
    
 
 --#SETUP INICIAL
+		-- ========================================================================
+		-- Escrevendo 0 nos displays
+		-- ========================================================================
+
+--#SETUP INICIAL
 tmp(0) := LDI & '0' & x"00";	-- LDI $0 	#Carrega acumulador com valor 0
 
 --#ESCREVE 0 NOS DISPLAYS
@@ -51,7 +56,7 @@ tmp(6) := STA & '1' & x"25";	-- STA @293 	#Armazena o valor 0 no HEX5
 tmp(7) := LDI & '0' & x"00";	-- LDI $0
 tmp(8) := STA & '1' & x"00";	-- STA @256 	#Armazena o valor 0 no LEDR7~0
 tmp(9) := STA & '1' & x"01";	-- STA @257 	#Armazena o valor 0 no LEDR8
-tmp(10) := STA & '1' & x"02";	-- STA @258 	#Armazena o valor 0 no LEDR9
+tmp(10) := STA & '1' & x"02";	-- STzA @258 	#Armazena o valor 0 no LEDR9
 
 --#VARIAVEIS QUE ARMAZENAM O VALOR DO DISPLAY
 tmp(11) := LDI & '0' & x"00";	-- LDI $0 
@@ -330,7 +335,6 @@ tmp(205) := STA & '1' & x"FE";	-- STA @510 	#zera key1
 tmp(206) := LDA & '0' & x"0A";	-- LDA @10 	#carrega mem[10]
 tmp(207) := STA & '1' & x"00";	-- STA @256 	#desliga LEDR8
 tmp(208) := RET & '0' & x"00";	-- RET @0
-
 
 
         return tmp;
