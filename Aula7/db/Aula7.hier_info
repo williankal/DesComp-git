@@ -1,6 +1,7 @@
 |Aula7
 CLOCK_50 => edgedetector:detectorSub0.clk
 CLOCK_50 => edgedetector:detectorSub1.clk
+CLOCK_50 => edgedetector:detectorSubRST.clk
 CLOCK_50 => cpu:CPU.CLOCK_50
 CLOCK_50 => memoriaram:RAM.clk
 CLOCK_50 => registradorgenerico:LED_COMBO.CLK
@@ -20,7 +21,7 @@ KEY[2] => cpu:CPU.KEY[2]
 KEY[2] => buffer_3_state_1porta:BUFF_KEY2.entrada
 KEY[3] => cpu:CPU.KEY[3]
 KEY[3] => buffer_3_state_1porta:BUFF_KEY3.entrada
-FPGA_RESET_N => buffer_3_state_1porta:BUFF_KEY_RESET.entrada
+FPGA_RESET_N => edgedetector:detectorSubRST.entrada
 LEDR[0] <= registradorgenerico:LED_COMBO.DOUT[0]
 LEDR[1] <= registradorgenerico:LED_COMBO.DOUT[1]
 LEDR[2] <= registradorgenerico:LED_COMBO.DOUT[2]
@@ -135,6 +136,13 @@ saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|edgeDetector:detectorSub1
+clk => saidaQ.CLK
+entrada => saida.IN1
+entrada => saidaQ.DATAIN
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Aula7|edgeDetector:detectorSubRST
 clk => saidaQ.CLK
 entrada => saida.IN1
 entrada => saidaQ.DATAIN
@@ -809,13 +817,13 @@ entrada[2] => Equal5.IN0
 entrada[2] => Equal6.IN0
 entrada[2] => Equal7.IN0
 saida[0] <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= Equal5.DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|decoder3x8:DECODER2
@@ -844,13 +852,13 @@ entrada[2] => Equal5.IN0
 entrada[2] => Equal6.IN0
 entrada[2] => Equal7.IN0
 saida[0] <= Equal7.DB_MAX_OUTPUT_PORT_TYPE
-saida[1] <= Equal6.DB_MAX_OUTPUT_PORT_TYPE
-saida[2] <= Equal5.DB_MAX_OUTPUT_PORT_TYPE
-saida[3] <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
-saida[4] <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
-saida[5] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
-saida[6] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
-saida[7] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= saida.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Aula7|registradorGenerico:REG_HEX0
@@ -1579,6 +1587,14 @@ RST => DOUT~reg0.ACLR
 
 
 |Aula7|registradorBooleano:FF_KEY1
+DIN => DOUT~reg0.DATAIN
+DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ENABLE => DOUT~reg0.ENA
+CLK => DOUT~reg0.CLK
+RST => DOUT~reg0.ACLR
+
+
+|Aula7|registradorBooleano:FF_RST
 DIN => DOUT~reg0.DATAIN
 DOUT <= DOUT~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ENABLE => DOUT~reg0.ENA

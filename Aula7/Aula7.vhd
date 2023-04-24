@@ -83,7 +83,8 @@ signal Habilita_KEY_RST: std_logic;
   
   
  signal Debounce_BuffKEY0: std_logic;
- signal DebouNCE_BuffKEY1: std_logic;
+ signal Debounce_BuffKEY1: std_logic;
+ signal Debounce_BuffRST: std_logic;
  
 signal Habilita_SW: std_logic;
 signal Habilita_SW8: std_logic;
@@ -91,6 +92,7 @@ signal Habilita_SW9: std_logic;
 
  signal CLK1 : std_logic;
  signal CLK0 : std_logic;
+ signal CLK_RST: std_logic;
  signal limpaKEY0: std_logic;
  signal limpaKEY1: std_logic;
 
@@ -105,22 +107,20 @@ signal KEY2_SAIDA: std_logic;
 signal KEY3_SAIDA: std_logic;
 signal KEYRST_SAIDA: std_logic;
 
-
-
-
 begin
-
 
 --gravar:  if simulacao generate
 --CLK <= KEY(0);
 --else generate
+CLK <= CLOCK_50;
 detectorSub0: work.edgeDetector(bordaSubida)
         port map (clk => CLOCK_50, entrada => (not KEY(0)), saida => CLK0);
 
 detectorSub1: work.edgeDetector(bordaSubida)
         port map (clk => CLOCK_50, entrada => (not KEY(1)), saida => CLK1);
-CLK <= CLOCK_50;
-		  
+
+detectorSubRST: work.edgeDetector(bordaSubida)
+        port map (clk => CLOCK_50, entrada => (not FPGA_RESET_N), saida => CLK_RST);
 --end generate;
 
 
@@ -240,7 +240,7 @@ BUFF_KEY3:   entity work.buffer_3_state_1porta
         port map(entrada => KEY(3), habilita =>  Habilita_KEY3, saida => KEY3_SAIDA);	
 
 BUFF_KEY_RESET:   entity work.buffer_3_state_1porta
-        port map(entrada => FPGA_RESET_N, habilita =>  Habilita_KEY_RST, saida => KEYRST_SAIDA);	
+        port map(entrada => Debounce_BuffRST, habilita =>  Habilita_KEY_RST, saida => KEYRST_SAIDA);	
 		  
 			
 BUFF_SW :  entity work.buffer_3_state_8_portas
@@ -266,14 +266,16 @@ FF_KEY0: entity work.registradorBooleano  generic map (larguraDados => 1)
 FF_KEY1: entity work.registradorBooleano  generic map (larguraDados => 1)
 		 port map (DIN => '1', DOUT => Debounce_BuffKEY1, ENABLE => '1', CLK => CLK1, RST => limpaKEY1);
 
-limpaKEY0 <= Data_Address(0) and Data_Address(1) and Data_address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;
+FF_RST: entity work.registradorBooleano  generic map (larguraDados => 1)
+		 port map (DIN => '1', DOUT => Debounce_BuffRST, ENABLE => '1', CLK => CLK_RST, RST => limpaKEY1);
+		 
+limpaKEY0 <= Data_Address(0) and Data_Address(1) and Data_address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8);
 
-limpaKEY1 <= Data_Address(0) and Data_Address(1) and Data_address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;  
+limpaKEY1 <= not(Data_Address(0)) and Data_Address(1) and Data_address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8);  
 		  
 Habilita_LED <= '1' when (Decoder_Saida2(0) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
 Habilita_LED8 <= '1' when (Decoder_Saida2(1) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
 Habilita_LED9 <= '1' when (Decoder_Saida2(2) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
-
 
 Habilita_HEX0 <= Decoder_Saida1(4) and Decoder_Saida2(0) and CPU_wr and Data_Address(5);
 Habilita_HEX1 <= Decoder_Saida1(4) and Decoder_Saida2(1) and CPU_wr and Data_Address(5);
@@ -291,8 +293,6 @@ Habilita_KEY_RST <= '1' when (CPU_rd and Data_Address(5) and Decoder_Saida2(4) 	
 Habilita_SW <= Decoder_Saida1(5) and Decoder_Saida2(0) and CPU_rd and not(Data_Address(5));
 Habilita_SW8 <= Decoder_Saida1(5) and Decoder_Saida2(1) and CPU_rd and not(Data_Address(5));
 Habilita_SW9 <= Decoder_Saida1(5) and Decoder_Saida2(2) and CPU_rd and not(Data_Address(5));
-
-
 
 CPU_EnderecoRam <= Data_Address(5 downto 0);
 Decoder_Entrada1 <= Data_Address(8 downto 6);

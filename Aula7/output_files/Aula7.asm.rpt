@@ -1,5 +1,5 @@
 Assembler report for Aula7
-Sun Apr 23 16:22:30 2023
+Sun Apr 23 21:34:31 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Apr 23 16:22:30 2023 ;
+; Assembler Status      ; Successful - Sun Apr 23 21:34:31 2023 ;
 ; Revision Name         ; Aula7                                 ;
 ; Top-level Entity Name ; Aula7                                 ;
 ; Family                ; Cyclone V                             ;
@@ -67,8 +67,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+--------------------+
 ; Option         ; Setting            ;
 +----------------+--------------------+
-; JTAG usercode  ; 0x00604BDA         ;
-; Checksum       ; 0x00604BDA         ;
+; JTAG usercode  ; 0x00603815         ;
+; Checksum       ; 0x00603815         ;
 +----------------+--------------------+
 
 
@@ -78,13 +78,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Apr 23 16:22:28 2023
+    Info: Processing started: Sun Apr 23 21:34:28 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Aula7 -c Aula7
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 488 megabytes
-    Info: Processing ended: Sun Apr 23 16:22:30 2023
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sun Apr 23 21:34:31 2023
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

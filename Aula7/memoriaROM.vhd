@@ -336,7 +336,6 @@ tmp(206) := LDA & '0' & x"0A";	-- LDA @10 	#carrega mem[10]
 tmp(207) := STA & '1' & x"00";	-- STA @256 	#desliga LEDR8
 tmp(208) := RET & '0' & x"00";	-- RET @0
 
-
         return tmp;
     end initMemory;
 
