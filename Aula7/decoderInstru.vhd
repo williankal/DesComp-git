@@ -32,7 +32,7 @@ saida <= "000000000000" when opcode = NOP else
 			"010000000000" when opcode = JMP else
 			"000000000110" when opcode = CEQ else
 			"100100000000" when opcode = JSR else
-			"001000000100" when opcode = RET else
+			"001000000000" when opcode = RET else
          "000000000000";  -- NOP para os opcodes Indefinidos
 			
 end architecture;

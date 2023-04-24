@@ -1,0 +1,44 @@
+tmp(0) := LDI & "0" & x"00";  -- LDI $0 
+tmp(1) := STA & "0" & x"00";  -- STA @0 	# MEM[0] = Constante 0
+tmp(2) := STA & "0" & x"14";  -- STA @20 	# MEM[20] = Contador do display HEX0, valor inicial 0
+tmp(3) := STA & "0" & x"15";  -- STA @21 	# MEM[21] = Contador do display HEX1, valor inicial 0
+tmp(4) := LDI & "0" & x"01";  -- LDI $1 
+tmp(5) := STA & "0" & x"01";  -- STA @1 	# MEM[1] = Constante de incremento 1
+tmp(6) := LDI & "0" & x"0A";  -- LDI $10 
+tmp(7) := STA & "0" & x"0A";  -- STA @10 	# MEM[10] = Constante de maior valor que os displays podem receber
+tmp(8) := NOP ;  -- NOP 	# Início do laço principal
+tmp(9) := LDA & "1" & x"60";  -- LDA @352 	# Carrega acumulador com a leitura de KEY0
+tmp(10) := CEQ & "0" & x"00";  -- CEQ @0 	# Compara com o valor da constante 0
+tmp(11) := JEQ & "0" & x"0D";  -- JEQ @13 	# Se for igual, quer dizer que o botão não foi pressionado
+tmp(12) := JSR & "0" & x"12";  -- JSR @18 	# Se não for igual, quer dizer que foi pressionado, e pula para subrotina
+tmp(13) := LDA & "1" & x"61";  -- LDA @353
+tmp(14) := CEQ & "0" & x"00";  -- CEQ @0
+tmp(15) := JEQ & "0" & x"11";  -- JEQ @17
+tmp(16) := JSR & "0" & x"24";  -- JSR @36
+tmp(17) := JMP & "0" & x"08";  -- JMP @8 	# Fecha laço principal de leitura do botão
+tmp(18) := NOP;  -- NOP 	# Início da subrotina
+tmp(19) := STA & "1" & x"FF";  -- STA @511 	# Limpa leitura do botão
+tmp(20) := LDA & "0" & x"14";  -- LDA @20 	# Carrega o valor do contador HEX0
+tmp(21) := SOMA & "0" & x"01";  -- SOMA @1
+tmp(22) := CEQ & "0" & x"0A";  -- CEQ @10 	# Checa se já chegou no limite de contagem do display
+tmp(23) := JEQ & "0" & x"1B";  -- JEQ @27 	# Se chegou no limite, deve incrementar o contador do display HEX1
+tmp(24) := STA & "0" & x"14";  -- STA @20
+tmp(25) := STA & "1" & x"20";  -- STA @288
+tmp(26) := RET & "0" & x"00";  -- RET 	# Retorna da subrotina
+tmp(27) := NOP ;  -- NOP 	# Condição da contagem do display HEX0 que chegou no limite, zera o contador do display HEX0 e incrementa contador do display HEX1
+tmp(28) := LDA & "0" & x"00";  -- LDA @0
+tmp(29) := STA & "0" & x"14";  -- STA @20
+tmp(30) := STA & "1" & x"20";  -- STA @288
+tmp(31) := LDA & "0" & x"15";  -- LDA @21
+tmp(32) := SOMA & "0" & x"01";  -- SOMA @1
+tmp(33) := STA & "0" & x"15";  -- STA @21
+tmp(34) := STA & "1" & x"21";  -- STA @289
+tmp(35) := RET & "0" & x"00";  -- RET 	# Retorna da subrotina
+tmp(36) := NOP;  -- NOP 	# Subrotina reset
+tmp(37) := STA & "1" & x"FD";  -- STA @509 	# Limpa leitura do botão
+tmp(38) := LDA & "0" & x"00";  -- LDA @0
+tmp(39) := STA & "0" & x"14";  -- STA @20
+tmp(40) := STA & "1" & x"20";  -- STA @288
+tmp(41) := STA & "0" & x"15";  -- STA @21
+tmp(42) := STA & "1" & x"21";  -- STA @289
+tmp(43) := RET & "0" & x"00";  -- RET

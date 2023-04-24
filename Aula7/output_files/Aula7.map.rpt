@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula7
-Mon Apr 24 13:12:04 2023
+Mon Apr 24 20:51:18 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,60 +13,59 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |Aula7
- 12. Parameter Settings for User Entity Instance: CPU:CPU
- 13. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX1
- 14. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX2
- 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA
- 16. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGRetorno
- 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorBooleano:REGFlag
- 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
- 19. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
- 20. Parameter Settings for User Entity Instance: CPU:CPU|logicDesvio:logicaDesvio
- 21. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
- 22. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 23. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 24. Parameter Settings for User Entity Instance: registradorGenerico:LED_COMBO
- 25. Parameter Settings for User Entity Instance: registradorBooleano:LEDR8
- 26. Parameter Settings for User Entity Instance: registradorBooleano:LEDR9
- 27. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX0
- 28. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX1
- 29. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX2
- 30. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX3
- 31. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX4
- 32. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX5
- 33. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY0
- 34. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY1
- 35. Parameter Settings for User Entity Instance: registradorBooleano:FF_RST_FPGA
- 36. Port Connectivity Checks: "registradorBooleano:FF_RST_FPGA"
- 37. Port Connectivity Checks: "registradorBooleano:FF_KEY1"
- 38. Port Connectivity Checks: "registradorBooleano:FF_KEY0"
- 39. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX5"
- 40. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX4"
- 41. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX3"
- 42. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX2"
- 43. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX1"
- 44. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX0"
- 45. Port Connectivity Checks: "registradorGenerico:REG_HEX5"
- 46. Port Connectivity Checks: "registradorGenerico:REG_HEX4"
- 47. Port Connectivity Checks: "registradorGenerico:REG_HEX3"
- 48. Port Connectivity Checks: "registradorGenerico:REG_HEX2"
- 49. Port Connectivity Checks: "registradorGenerico:REG_HEX1"
- 50. Port Connectivity Checks: "registradorGenerico:REG_HEX0"
- 51. Port Connectivity Checks: "decoder3x8:DECODER2"
- 52. Port Connectivity Checks: "decoder3x8:DECODER1"
- 53. Port Connectivity Checks: "registradorBooleano:LEDR9"
- 54. Port Connectivity Checks: "registradorBooleano:LEDR8"
- 55. Port Connectivity Checks: "registradorGenerico:LED_COMBO"
- 56. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 57. Port Connectivity Checks: "CPU:CPU|registradorBooleano:REGFlag"
- 58. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGRetorno"
- 59. Post-Synthesis Netlist Statistics for Top Partition
- 60. Elapsed Time Per Partition
- 61. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |Aula7
+ 11. Parameter Settings for User Entity Instance: CPU:CPU
+ 12. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX1
+ 13. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX2
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGRetorno
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|registradorBooleano:REGFlag
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|logicDesvio:logicaDesvio
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
+ 21. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 22. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 23. Parameter Settings for User Entity Instance: registradorGenerico:LED_COMBO
+ 24. Parameter Settings for User Entity Instance: registradorBooleano:LEDR8
+ 25. Parameter Settings for User Entity Instance: registradorBooleano:LEDR9
+ 26. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX0
+ 27. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX1
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX2
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX3
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX4
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX5
+ 32. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY0
+ 33. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY1
+ 34. Parameter Settings for User Entity Instance: registradorBooleano:FF_RST_FPGA
+ 35. Port Connectivity Checks: "registradorBooleano:FF_RST_FPGA"
+ 36. Port Connectivity Checks: "registradorBooleano:FF_KEY1"
+ 37. Port Connectivity Checks: "registradorBooleano:FF_KEY0"
+ 38. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX5"
+ 39. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX4"
+ 40. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX3"
+ 41. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX2"
+ 42. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX1"
+ 43. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX0"
+ 44. Port Connectivity Checks: "registradorGenerico:REG_HEX5"
+ 45. Port Connectivity Checks: "registradorGenerico:REG_HEX4"
+ 46. Port Connectivity Checks: "registradorGenerico:REG_HEX3"
+ 47. Port Connectivity Checks: "registradorGenerico:REG_HEX2"
+ 48. Port Connectivity Checks: "registradorGenerico:REG_HEX1"
+ 49. Port Connectivity Checks: "registradorGenerico:REG_HEX0"
+ 50. Port Connectivity Checks: "decoder3x8:DECODER2"
+ 51. Port Connectivity Checks: "decoder3x8:DECODER1"
+ 52. Port Connectivity Checks: "registradorBooleano:LEDR9"
+ 53. Port Connectivity Checks: "registradorBooleano:LEDR8"
+ 54. Port Connectivity Checks: "registradorGenerico:LED_COMBO"
+ 55. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 56. Port Connectivity Checks: "CPU:CPU|registradorBooleano:REGFlag"
+ 57. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGRetorno"
+ 58. Post-Synthesis Netlist Statistics for Top Partition
+ 59. Elapsed Time Per Partition
+ 60. Analysis & Synthesis Messages
 
 
 
@@ -93,13 +92,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 24 13:12:04 2023       ;
+; Analysis & Synthesis Status     ; Successful - Mon Apr 24 20:51:18 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula7                                       ;
 ; Top-level Entity Name           ; Aula7                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 571                                         ;
+; Total registers                 ; 579                                         ;
 ; Total pins                      ; 110                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -251,25 +250,25 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 448            ;
+; Estimate of Logic utilization (ALMs needed) ; 481            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 451            ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 257            ;
-;     -- 5 input functions                    ; 40             ;
-;     -- 4 input functions                    ; 51             ;
-;     -- <=3 input functions                  ; 103            ;
+; Combinational ALUT usage for logic          ; 510            ;
+;     -- 7 input functions                    ; 1              ;
+;     -- 6 input functions                    ; 313            ;
+;     -- 5 input functions                    ; 38             ;
+;     -- 4 input functions                    ; 56             ;
+;     -- <=3 input functions                  ; 102            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 571            ;
+; Dedicated logic registers                   ; 579            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 110            ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 568            ;
-; Total fan-out                               ; 4074           ;
-; Average fan-out                             ; 3.28           ;
+; Maximum fan-out                             ; 576            ;
+; Total fan-out                               ; 4459           ;
+; Average fan-out                             ; 3.41           ;
 +---------------------------------------------+----------------+
 
 
@@ -278,10 +277,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
-; |Aula7                                 ; 451 (20)            ; 571 (0)                   ; 0                 ; 0          ; 110  ; 0            ; |Aula7                                        ; Aula7               ; work         ;
-;    |CPU:CPU|                           ; 62 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU                                ; CPU                 ; work         ;
+; |Aula7                                 ; 510 (23)            ; 579 (0)                   ; 0                 ; 0          ; 110  ; 0            ; |Aula7                                        ; Aula7               ; work         ;
+;    |CPU:CPU|                           ; 61 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU                                ; CPU                 ; work         ;
 ;       |ULASomaSub:ULA1|                ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|ULASomaSub:ULA1                ; ULASomaSub          ; work         ;
-;       |decoderInstru:DECODER|          ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|decoderInstru:DECODER          ; decoderInstru       ; work         ;
+;       |decoderInstru:DECODER|          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|decoderInstru:DECODER          ; decoderInstru       ; work         ;
 ;       |logicDesvio:logicaDesvio|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|logicDesvio:logicaDesvio       ; logicDesvio         ; work         ;
 ;       |muxGenerico2x1:MUX1|            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico2x1:MUX1            ; muxGenerico2x1      ; work         ;
 ;       |muxGenerico4x1:MUX2|            ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico4x1:MUX2            ; muxGenerico4x1      ; work         ;
@@ -294,12 +293,14 @@ https://fpgasoftware.intel.com/eula.
 ;    |conversorHex7Seg:CONV_HEX1|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX1             ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:CONV_HEX2|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX2             ; conversorHex7Seg    ; work         ;
 ;    |conversorHex7Seg:CONV_HEX3|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX3             ; conversorHex7Seg    ; work         ;
-;    |decoder3x8:DECODER1|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|decoder3x8:DECODER1                    ; decoder3x8          ; work         ;
+;    |conversorHex7Seg:CONV_HEX4|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX4             ; conversorHex7Seg    ; work         ;
+;    |conversorHex7Seg:CONV_HEX5|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX5             ; conversorHex7Seg    ; work         ;
+;    |decoder3x8:DECODER1|               ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|decoder3x8:DECODER1                    ; decoder3x8          ; work         ;
 ;    |edgeDetector:detectorSub0|         ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub0              ; edgeDetector        ; work         ;
 ;    |edgeDetector:detectorSub1|         ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub1              ; edgeDetector        ; work         ;
 ;    |edgeDetector:detectorSub2|         ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub2              ; edgeDetector        ; work         ;
-;    |memoriaRAM:RAM|                    ; 298 (298)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaRAM:RAM                         ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                   ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaROM:ROM1                        ; memoriaROM          ; work         ;
+;    |memoriaRAM:RAM|                    ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaRAM:RAM                         ; memoriaRAM          ; work         ;
+;    |memoriaROM:ROM1|                   ; 76 (76)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaROM:ROM1                        ; memoriaROM          ; work         ;
 ;    |registradorBooleano:FF_KEY0|       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_KEY0            ; registradorBooleano ; work         ;
 ;    |registradorBooleano:FF_KEY1|       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_KEY1            ; registradorBooleano ; work         ;
 ;    |registradorBooleano:FF_RST_FPGA|   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_RST_FPGA        ; registradorBooleano ; work         ;
@@ -310,19 +311,10 @@ https://fpgasoftware.intel.com/eula.
 ;    |registradorGenerico:REG_HEX1|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX1           ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REG_HEX2|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX2           ; registradorGenerico ; work         ;
 ;    |registradorGenerico:REG_HEX3|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX3           ; registradorGenerico ; work         ;
+;    |registradorGenerico:REG_HEX4|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX4           ; registradorGenerico ; work         ;
+;    |registradorGenerico:REG_HEX5|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX5           ; registradorGenerico ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+-----------------------------------------+---------------------------------------------+
-; Register name                           ; Reason for Removal                          ;
-+-----------------------------------------+---------------------------------------------+
-; registradorGenerico:REG_HEX4|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
-; registradorGenerico:REG_HEX5|DOUT[0..3] ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 8   ;                                             ;
-+-----------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -330,12 +322,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 571   ;
+; Total registers                              ; 579   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 8     ;
 ; Number of registers using Asynchronous Clear ; 3     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 553   ;
+; Number of registers using Clock Enable       ; 561   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -839,28 +831,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 571                         ;
+; arriav_ff             ; 579                         ;
 ;     CLR               ; 3                           ;
-;     ENA               ; 545                         ;
+;     ENA               ; 553                         ;
 ;     ENA SLD           ; 8                           ;
 ;     plain             ; 15                          ;
-; arriav_lcell_comb     ; 453                         ;
+; arriav_lcell_comb     ; 510                         ;
 ;     arith             ; 18                          ;
 ;         1 data inputs ; 9                           ;
 ;         3 data inputs ; 1                           ;
 ;         5 data inputs ; 8                           ;
-;     normal            ; 435                         ;
-;         0 data inputs ; 2                           ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 491                         ;
 ;         1 data inputs ; 3                           ;
-;         2 data inputs ; 74                          ;
-;         3 data inputs ; 16                          ;
-;         4 data inputs ; 51                          ;
-;         5 data inputs ; 32                          ;
-;         6 data inputs ; 257                         ;
+;         2 data inputs ; 77                          ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 56                          ;
+;         5 data inputs ; 30                          ;
+;         6 data inputs ; 313                         ;
 ; boundary_port         ; 110                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 9.70                        ;
-; Average LUT depth     ; 6.66                        ;
+; Max LUT depth         ; 10.70                       ;
+; Average LUT depth     ; 7.16                        ;
 +-----------------------+-----------------------------+
 
 
@@ -869,7 +862,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -879,7 +872,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Apr 24 13:11:58 2023
+    Info: Processing started: Mon Apr 24 20:51:12 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula7 -c Aula7
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file Aula7.vhd
@@ -974,13 +967,13 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1117 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1184 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 94 output pins
-    Info (21061): Implemented 1007 logic cells
+    Info (21061): Implemented 1074 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 514 megabytes
-    Info: Processing ended: Mon Apr 24 13:12:04 2023
+    Info: Peak virtual memory: 495 megabytes
+    Info: Processing ended: Mon Apr 24 20:51:18 2023
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:13
 
