@@ -66,7 +66,7 @@ Regras:
 
 
 
-assembly = 'teste.txt' #Arquivo de entrada de contem o assembly
+assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
 destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
 
 #definição dos mnemônicos e seus
@@ -158,7 +158,7 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
         if (line.startswith('\n') or line.startswith(' ') or line.startswith('#')):
             if line.startswith('#'):
                 line = line.replace("\n", "")
-                comentario = "--" + line
+                comentario = "--" + line[1:]
                 f.write('\n')
                 f.write(comentario) #Print apenas para debug
                 f.write('\n')
@@ -186,10 +186,10 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
                 instrucaoLine = instrucaoLine + '00' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
         
                     
-            line = 'tmp(' + str(cont) + ') := '  + operacao + " & '" + str(bit8) + "' & " +   'x"' + instrucaoLine[1:] + '";\t-- ' + comentarioLine + '\n'  #Formata para o arquivo BIN
+            line = 'tmp(' + str(cont) + ') := '  + operacao + " & '" + str(bit8) + "' & " +   'x"' + instrucaoLine[1:] + '";\t-- ' + comentarioLine[0:] + '\n'  #Formata para o arquivo BIN
                                                                                                        #Entrada => 1. JSR @14 #comentario1
             if operacao == "NOP":
-                line = 'tmp(' + str(cont) + ') := ' + operacao + ';\t-- ' + comentarioLine + '\n'                                                                                               #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
+                line = 'tmp(' + str(cont) + ') := ' + operacao + ';\t-- ' + comentarioLine[0:] + '\n'                                                                                               #Saída =>   1. tmp(0) := x"90E";	-- JSR @14 	#comentario1
                                         
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt

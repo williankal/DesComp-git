@@ -1,7 +1,7 @@
 library IEEE;
 use ieee.std_logic_1164.all;
 
-entity buffer_3_state_8_portas is
+	entity buffer_3_state_8_portas is
     port(
         entrada  : in std_logic_vector(7 downto 0);
         habilita : in std_logic;
