@@ -1,229 +1,207 @@
-#MAPA MEMORIA
-#MEM[10] = UNIDADES
-#MEM[11] = DEZENAS
-#MEM[12] = CENTENAS
-#MEM[13] = MILHARES
-#MEM[14] = DEZ MILHARES
-#MEM[15] = CENT MILHARES
-#MEM[16] = FLAG
-#VALORES DE COMPARAÇÕES:
-#MEM[0] = 0
-#MEM[1] = 1
-#MEM[2] = 9
-#MEM[3] = 10
-#LIMITES DE CONTAGEM:
-#MEM[30] = UNIDADES
-#MEM[31] = DEZENAS
-#MEM[32] = CENTENAS
-#MEM[33] = MILHARES
-#MEM[34] = DEZ MILHARES
-#MEM[35] = CENT MILHARES
-#KEYS:
-#MEM[352] = KEY0
-#MEM[353] = KEY1
-#MEM[356] = FPGA_RESET
-#LIMPEZA DE LEITURA
-#MEM[511] = KEY0
-#MEM[510] = KEY1
-#MEM[509] = FPGA_RESET
-#DISPLAYS:
-#MEM[288] = HEX0
-#MEM[289] = HEX1
-#MEM[290] = HEX2
-#MEM[291] = HEX3
-#MEM[292] = HEX4
-#MEM[293] = HEX5
-#LEDS:
-#MEM[256] = LEDR7~0
-#MEM[257] = LEDR8
-#MEM[258] = LEDR9
+SETUP:
+#LIMPA BOTOES
+    STA .CLEARKEY0 #Limpa KEY 0
+    STA .CLEARKEY1 #Limpa KEY 1
+    STA .CLEARKEY2 #Limpa KEY 2
+    STA .CLEARKEY3 #Limpa KEY 3
+    STA .CLEARFPGA #Limpa FPGA_RESET
 
-#SETUP INICIAL
-LDI $0 #Carrega acumulador com valor 0
+    LDI $0 #Carrega acumulador com valor 0
 
 #ESCREVE 0 NOS DISPLAYS
-STA @288 #Armazena o valor 0 no HEX0
-STA @289 #Armazena o valor 0 no HEX1
-STA @290 #Armazena o valor 0 no HEX2
-STA @291 #Armazena o valor 0 no HEX3
-STA @292 #Armazena o valor 0 no HEX4
-STA @293 #Armazena o valor 0 no HEX5
+    STA .HEX0 #Armazena o valor 0 no HEX0
+    STA .HEX1 #Armazena o valor 0 no HEX1
+    STA .HEX2 #Armazena o valor 0 no HEX2
+    STA .HEX3 #Armazena o valor 0 no HEX3
+    STA .HEX4 #Armazena o valor 0 no HEX4
+    STA .HEX5 #Armazena o valor 0 no HEX5
 
 #APAGANDO OS LEDS
-LDI $0
-STA @256 #Armazena o valor 0 no LEDR7~0
-STA @257 #Armazena o valor 0 no LEDR8
-STA @258 #Armazena o valor 0 no LEDR9
+    LDI $0
+    STA .LED07 #Armazena o valor 0 no LEDR7~0
+    STA .LED8 #Armazena o valor 0 no LEDR8
+    STA .LED9 #Armazena o valor 0 no LEDR9
 
 #VARIAVEIS QUE ARMAZENAM O VALOR DO DISPLAY
-LDI $0 
-STA @10 #Armazena o valor do acumulador em MEM[10](unidades)
-STA @11 #Armazena o valor do acumulador em MEM[11](dezenas)
-STA @12 #Armazena o valor do acumulador em MEM[12](centenas)
-STA @13 #Armazena o valor do acumulador em MEM[13](milhares)
-STA @14 #Armazena o valor do acumulador em MEM[14](dez milhares)
-STA @15 #Armazena o valor do acumulador em MEM[15](cent milhares)
+    LDI $0 
+    STA @10 #Armazena o valor do acumulador em MEM[10](unidades)
+    STA @11 #Armazena o valor do acumulador em MEM[11](dezenas)
+    STA @12 #Armazena o valor do acumulador em MEM[12](centenas)
+    STA @13 #Armazena o valor do acumulador em MEM[13](milhares)
+    STA @14 #Armazena o valor do acumulador em MEM[14](dez milhares)
+    STA @15 #Armazena o valor do acumulador em MEM[15](cent milhares)
 
 #FLAG 
-STA @16 #Armazena o valor do acumulador em MEM[16]=0 (flag)
+    STA @16 #Armazena o valor do acumulador em MEM[16]=0 (flag)
 
 #VARIAVEIS DE COMPARAÇÃO 
-LDI $0
-STA @0 #Armaena o valor do acumulador em MEM[0]
+    LDI $0
+    STA @0 #Armaena o valor do acumulador em MEM[0]
 
-LDI $1 #Carrega acumulador com valor 1
-STA @1 #Armazena o valor do acumulador em MEM[1]
+    LDI $1 #Carrega acumulador com valor 1
+    STA @1 #Armazena o valor do acumulador em MEM[1]
 
-LDI $9 #Carrega acumulador com valor 9
-STA @2 #Armazena o valor do acumulador em MEM[2]
+    LDI $9 #Carrega acumulador com valor 9
+    STA @2 #Armazena o valor do acumulador em MEM[2]
 
-LDI $10 #Carrega acumulador com valor 10
-STA @3 #Armazena o valor do acumulador em MEM[3]
+    LDI $10 #Carrega acumulador com valor 10
+    STA @3 #Armazena o valor do acumulador em MEM[3]
 
 #ARMAZENANDO LIMITES DE CONTAGEM 
-LDI $9 #Carrega acumulador com valor 9
-STA @30  #Armazena o limie de contagem em MEM[30] (unidades)
-STA @31 #Armazena o limie de contagem em MEM[31] (dezenas)
-STA @32 #Armazena o limie de contagem em MEM[32] (centenas)
-STA @33 #Armazena o limie de contagem em MEM[33] (milhares)
-STA @34 #Armazena o limie de contagem em MEM[34] (dez milhares)
-STA @35 #Armazena o limie de contagem em MEM[35] (cent milhares)
+    LDI $9 #Carrega acumulador com valor 9
+    STA @30  #Armazena o limie de contagem em MEM[30] (unidades)
+    STA @31 #Armazena o limie de contagem em MEM[31] (dezenas)
+    STA @32 #Armazena o limie de contagem em MEM[32] (centenas)
+    STA @33 #Armazena o limie de contagem em MEM[33] (milhares)
+    STA @34 #Armazena o limie de contagem em MEM[34] (dez milhares)
+    STA @35 #Armazena o limie de contagem em MEM[35] (cent milhares)
 
-#LOOP PRINCIPAL => CHECA KEY 0/1/FPGA
-#CHECA FLAG
-LDA @16 #Carrega acumulador com valor da flag MEM[6]
-CEQ @1 #Compara se a flag MEM[16] está ativa
-JEQ @41 #Se for igual, pula para o endereço (CHECA KEY1[pula key0])
-
+LOOP:
 #CHECA KEY 0
-LDA @352 #Carrega acumulador com o valor de KEY0
-CEQ @0 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
-JEQ @41 #Se for igual pula para checa fpga
-JSR @47 #LOOP INCREMENTO
+    LDA .KEY0 #Carrega acumulador com o valor de KEY0
+    ANDI $1 #Faz a operação AND com o valor 1
+    CEQ @1 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
+    JEQ .INCREMENTA #Se for igual pula para fpga_reset
+    BACK:
 
 #CHECA FPGA_RESET
-
-LDA @356 #Carrega acumulador com o valor de FPGA_RESET
-CEQ @1 #Compara se o valor do acumulador é igual a 0 
-JEQ @111 #Se foi pressionado para para subrotina RESET FPGA
-JSR @45 #Pula para subrotina: RESETAR PLACA(DEFINIR AINDA)
+    LDA .RST_FPGA #Carrega acumulador com o valor de FPGA_RESET
+    ANDI $1 #Faz a operação AND com o valor 1
+    CEQ @1 #Compara se o valor do acumulador é igual a 0 
+    JEQ .SETUP #Se  n foi pressionado pulta para atualiza display
 
 #ATUALIZA DISPLAY
-JSR @98 #Pula para subrotina: ATUALIZA DISPLAY
-JMP @34 #Volta para o loop principal
+    JSR .ATUALIZA_DISPLAY #Chama a subrotina atualiza display
+    JMP .LOOP #Volta para o loop principal
 
-#LOOP INCREMENTO 
+#loop INCREMENTO
+INCREMENTA:
+    STA .CLEARKEY0 #Limpa KEY 0
 
-STA @511 #Limpa KEY 0
+    INCREMENTO_UNIDADE:
+        LDA @10 #Carrega acumulador com o valor de MEM[10](unidades)
+        SOMA @1 #Soma 1 ao valor das unidades
+        CEQ @3 #Compara com valor 10
+        JEQ .INCREMENTO_DEZENA #Se for igual 10 pula para o endereço incrementar dezena(definir ainda)
 
-#INCREMENTO UNIDADE
-LDA @10 #Carrega acumulador com o valor de MEM[10](unidades)
-SOMA @1 #Soma 1 ao valor das unidades
-STA @10
-CEQ @3 #Compara com valor 10
-JEQ @54 #Se for igual 10 pula para o endereço incrementar dezena(definir ainda)
-RET @0 #VOLTA PRO LOOP PRINCIPAL
+        STA @10 #Salva o valor do acumulador em MEM[10](unidades)
 
+        JMP .BACK #VOLTA PRO loop PRINCIPAL
 
-#INCREMENTO DEZENA 
-LDA @10
-STA @0 #Salva o valor 0 em MEM[10]
+    INCREMENTO_DEZENA:
+        LDI $0 #Carrega acumulador com valor 0
+        STA @10 #Salva o valor 0 em MEM[10]
+        STA .HEX0 #Salva o valor do acumulador em HEX0
 
-LDA @11 #Carrega acumulador com o valor de MEM[1](dezenas)
-SOMA @1 #Soma 1 ao valor da dezenas
-STA @11
-CEQ @3 #Compara o valor com 10
-JEQ @62 #Se for igual a 10 pula para incremento centena(DEFINIR AINDA)
-RET @0 #return
+        LDA @11 #Carrega acumulador com o valor de MEM[1](dezenas)
+        SOMA @1 #Soma 1 ao valor da dezenas
+        CEQ @3 #Compara o valor com 10
+        JEQ .INCREMENTO_CENTENA #Se for igual a 10 pula para incremento centena(DEFINIR AINDA)
 
-#INCREMENTO CENTENA
-LDA @11 #Carrega acumulador com o valor de MEM[11](dezenas)
-STA @0 #MEM[11] =0
+        STA @11 #Salva o valor do acumulador em MEM[10](unidades)
 
-LDA @12 #Carrega acumulador com o valor de MEM[2](centenas)
-SOMA @1
-STA @12 #Salva mem[2] com o valor do acumulador
-CEQ @3 #Compara o valor com 10
-JEQ @70 #Se for igual a 10 pula para incremento milhar(DEFINIR AINDA)
-RET @0
+        JMP .BACK #return
 
-#INCREMENTO MILHAR
-LDA @12
-STA @0
+    INCREMENTO_CENTENA:
+        LDI $0 #Carrega acumulador com valor 0
+        STA @11 #Salva o valor 0 em MEM[11]
+        STA .HEX1 #Salva o valor do acumulador em HEX1
 
-LDA @13 #Carrega acumulador com o valor de MEM[3](milhares)
-SOMA @1 #Soma 1 ao valor da milhar
-STA @13 #Salva mem[3] com o valor do acumulador
-CEQ @3 #Compara o valor com 10
-JEQ @78 #Se for igual a 10 pula para incremento dezena milhar(DEFINIR AINDA)
-RET @0
+        LDA @12 #Carrega acumulador com o valor de MEM[2](centenas)
+        SOMA @1
+        CEQ @3 #Compara o valor com 10
+        JEQ .INCREMENTO_MILHAR #Se for igual a 10 pula para incremento milhar(DEFINIR AINDA)
 
-#INCREMENTO DEZENA MILHAR
-LDA @13
-STA @0
+        STA @12 #Salva o valor do acumulador em MEM[10](unidades)
 
-LDA @14 #Carrega acumulador com o valor de MEM[4](dez milhares)
-SOMA @1
-STA @14 #Salva mem[4] com o valor do acumulador  
-CEQ @3 #Compara o valor com 10
-JEQ @86 #Se for igual a 10 pula para incremento centena milhar(DEFINIR AINDA)
-RET @0
+        JMP .BACK
 
-#INCREMENTO CENTENA MILHAR
+    INCREMENTO_MILHAR:
+        LDI $0 #Carrega acumulador com valor 0
+        STA @12 #Salva o valor 0 em MEM[12]
+        STA .HEX2 #Salva o valor do acumulador em HEX0
 
-LDA @14 #Carrega acumulador com o valor de MEM[14](dze milhares)
-STA @0 #Salva mem[14] com o valor 0
+        LDA @13 #Carrega acumulador com o valor de MEM[3](milhares)
+        SOMA @1 #Soma 1 ao valor da milhar
+        CEQ @13 #Compara o valor com 10
+        JEQ .INCREMENTO_DEZENA_MILHAR #Se for igual a 10 pula para incremento dezena milhar(DEFINIR AINDA)
 
-LDA @15 #Carrega acumulador com o valor de MEM[5](cent milhares)
-SOMA @1 
-STA @15 #Salva mem[5] com o valor do acumulador
-CEQ @3 #Compara o valor com 10
-JEQ @94 #PULA PARA LED OVERFL0W (DEFINIR AINDA)
-RET @0
+        STA @13 #Salva o valor do acumulador em MEM[10](unidades)
 
-#LED OVERFLOW
-LDA @1 #Carrega acumulador com 1
-STA @16 #Salva o valor do acumulador na mem[6]
-STA @258 #Acende o LED de overflow
-RET @0
+        JMP .BACK
+
+    INCREMENTO_DEZENA_MILHAR:
+        LDI $0 #Carrega acumulador com valor 0
+        STA @13 #Salva o valor 0 em MEM[12]
+        STA .HEX3 #Salva o valor do acumulador em HEX0
+
+        LDA @14 #Carrega acumulador com o valor de MEM[4](dez milhares)
+        SOMA @1
+        CEQ @3 #Compara o valor com 10
+        JEQ .INCREMENTO_CENTENA_MILHAR #Se for igual a 10 pula para incremento centena milhar(DEFINIR AINDA)
+
+        STA @14 #Salva o valor do acumulador em MEM[10](unidades)
+
+        JMP .BACK
+
+    INCREMENTO_CENTENA_MILHAR:
+        LDI $0 #Carrega acumulador com valor 0
+        STA @14 #Salva o valor 0 em MEM[12]
+        STA .HEX4 #Salva o valor do acumulador em HEX0
+
+        LDA @15 #Carrega acumulador com o valor de MEM[5](cent milhares)
+        SOMA @1 
+        CEQ @3 #Compara o valor com 10
+        JEQ .LED_OVERFLOW #PULA PARA LED OVERFL0W (DEFINIR AINDA)
+
+        STA @15 #Salva o valor do acumulador em MEM[10](unidades)
+
+        JMP .BACK
+
+    LED_OVERFLOW:
+        LDA @1 #Carrega acumulador com 1
+        STA @16 #Salva o valor do acumulador na mem[6]
+        STA .LED9 #Acende o LED de overflow
+        RET
 
 #SUBROTINA ATUALIZA DISPLAY
 #HEX0
-LDA @10
-STA @288
+ATUALIZA_DISPLAY:
+    LDA @10
+    STA .HEX0
 
 #HEX1
-LDA @11
-STA @289
+    LDA @11
+    STA .HEX1
 
 #HEX2
-LDA @12
-STA @290
+    LDA @12
+    STA .HEX2
 
 #HEX3
-LDA @13
-STA @291
+    LDA @13
+    STA .HEX3
 
 #HEX4
-LDA @14
-STA @292
+    LDA @14
+    STA .HEX4
 
 #HEX5
-LDA @15
-STA @293
-RET @0
+    LDA @15
+    STA .HEX5
+    RET
 
 #SUBROTINA RESET FPGA
 STA @509 #Limpa FPGA_RESET
-LDA @0
-STA @10 #Salva mem[10] com o valor do acumulador
-STA @11 #Salva mem[11] com o valor do acumulador
-STA @12 #Salva mem[12] com o valor do acumulador
-STA @13 #Salva mem[13] com o valor do acumulador
-STA @14 #Salva mem[14] com o valor do acumulador
-STA @15 #Salva mem[15] com o valor do acumulador
+LDA @10
+STA @0 #Salva mem[0] com o valor do acumulador
+STA @1 #Salva mem[1] com o valor do acumulador
+STA @2 #Salva mem[2] com o valor do acumulador
+STA @3 #Salva mem[3] com o valor do acumulador
+STA @4 #Salva mem[4] com o valor do acumulador
+STA @5 #Salva mem[5] com o valor do acumulador
 
-STA @16 #Salva mem[16] com o valor do acumulador
+STA @6 #Salva mem[6] com o valor do acumulador
 STA @257 #Apaga o LED[8] de overflow
-STA @258 #Apaga o LED[9] de limite de contagem
-RET @0
+STA @258 #Apaga o LED[9] de limite de contagem
+RET

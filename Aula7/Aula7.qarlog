@@ -1,0 +1,36 @@
+Quartus Prime Archive log --	/home/will/SextoSemestre/DesComp-git/Aula7/Aula7.qarlog
+
+Archive:	/home/will/SextoSemestre/DesComp-git/Aula7/Aula7.qar
+Date:		Mon Apr 24 23:55:10 2023
+Quartus Prime		20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+	=========== Files Selected: ===========
+/home/will/SextoSemestre/DesComp-git/Aula7/Aula7.qpf
+/home/will/SextoSemestre/DesComp-git/Aula7/Aula7.qsf
+/home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/ULASomaSubvhd.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/Waveform.vwf
+/home/will/SextoSemestre/DesComp-git/Aula7/Waveform2.vwf
+/home/will/SextoSemestre/DesComp-git/Aula7/buffer_3_state_1porta.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/buffer_3_state_8portas.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/conversorHex7Seg.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/debounceMem.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/decoder3x8.vhdl
+/home/will/SextoSemestre/DesComp-git/Aula7/decoderInstru.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/edgeDetector.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/logicDesvio.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/memoriaRAM.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/memoriaROM.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico4x1.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/output_files/Waveform.vwf
+/home/will/SextoSemestre/DesComp-git/Aula7/output_files/Waveform1.vwf
+/home/will/SextoSemestre/DesComp-git/Aula7/registradorBooleano.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/registradorGenerico.vhd
+/home/will/SextoSemestre/DesComp-git/Aula7/somaConstante.vhd
+/home/will/intelFPGA_lite/20.1/quartus/linux64/assignment_defaults.qdf
+	======= Total: 25 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

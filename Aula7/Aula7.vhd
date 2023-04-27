@@ -304,7 +304,6 @@ Habilita_SW <= Decoder_Saida1(5) and Decoder_Saida2(0) and CPU_rd and not(Data_A
 Habilita_SW8 <= Decoder_Saida1(5) and Decoder_Saida2(1) and CPU_rd and not(Data_Address(5));
 Habilita_SW9 <= Decoder_Saida1(5) and Decoder_Saida2(2) and CPU_rd and not(Data_Address(5));
 
-
         
 CPU_EnderecoRam <= Data_Address(5 downto 0);
 Decoder_Entrada1 <= Data_Address(8 downto 6);
