@@ -295,12 +295,11 @@ limpaKEY1 <= not(Data_Address(0)) and Data_Address(1) and Data_address(2) and Da
 
 limpaRST <= Data_Address(0) and not(Data_Address(1)) and Data_address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;
 		  
-limpaCLOCK <= Data_Address(0)	 and not(Data_Address(1)) and not(Data_address(2)) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;
+limpaCLOCK <= not(Data_Address(0)) and not(Data_Address(1)) and not(Data_address(2)) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;
 		  
 Habilita_LED <= '1' when (Decoder_Saida2(0) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
 Habilita_LED8 <= '1' when (Decoder_Saida2(1) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
 Habilita_LED9 <= '1' when (Decoder_Saida2(2) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
-Habilita_Clock <= not(Data_Address(0)) and not(Data_Address(1)) and not(Data_address(2)) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_rd;
 
 
 Habilita_HEX0 <= Decoder_Saida1(4) and Decoder_Saida2(0) and CPU_wr and Data_Address(5);
@@ -315,6 +314,8 @@ Habilita_KEY1 <= Decoder_Saida1(5) and Decoder_Saida2(1) and CPU_rd and Data_Add
 Habilita_KEY2 <= Decoder_Saida1(5) and Decoder_Saida2(2) and CPU_rd and Data_Address(5);
 Habilita_KEY3 <= Decoder_Saida1(5) and Decoder_Saida2(3) and CPU_rd and Data_Address(5);
 Habilita_KEY_RST <= Decoder_Saida1(5) and Decoder_Saida2(4) and CPU_rd and Data_Address(5);
+Habilita_Clock <= Decoder_Saida1(5) and Decoder_Saida2(5) and CPU_rd and Data_Address(5);
+
 
 Habilita_SW <= Decoder_Saida1(5) and Decoder_Saida2(0) and CPU_rd and not(Data_Address(5));
 Habilita_SW8 <= Decoder_Saida1(5) and Decoder_Saida2(1) and CPU_rd and not(Data_Address(5));

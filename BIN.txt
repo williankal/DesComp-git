@@ -100,7 +100,7 @@ tmp(42) := JEQ & R0 & '0' & x"31";	-- JEQ %R0 .INCREMENTA 	#Se for igual pula pa
 --B:
 
 --CHECA FPGA_RESET
-tmp(43) := LDA & R0 & '1' & x"FA";	-- LDA %R0 .RST_FPGA 	#Carrega acumulador com o valor de FPGA_RESET
+tmp(43) := LDA & R0 & '1' & x"64";	-- LDA %R0 .RST_FPGA 	#Carrega acumulador com o valor de FPGA_RESET
 tmp(44) := ANDI & R0 & '0' & x"01";	-- ANDI %R0 $1 	#Faz a operação AND com o valor 1
 tmp(45) := CEQ & R0 & '0' & x"01";	-- CEQ %R0 @1 	#Compara se o valor do acumulador é igual a 0 
 tmp(46) := JEQ & R0 & '0' & x"00";	-- JEQ %R0 .SETUP 	#Se  n foi pressionado pulta para atualiza display

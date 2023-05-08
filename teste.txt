@@ -1,36 +1,15 @@
-STA %R0 .CLEARKEY0 #Limpa KEY 0
-STA %R0 .CLEARKEY1 #Limpa KEY 1
-STA %R0 .CLEARKEY2 #Limpa KEY 2
-STA %R0 .CLEARKEY3 #Limpa KEY 3
-STA %R0 .CLEARFPGA #Limpa FPGA_RESET
-STA %R0 .CLEARCLOCK
-
-LDI %R0 $0 #Carrega registrador com valor 0
-
-#ESCREVE 0 NOS DISPLAYS
-STA %R0 .HEX0 #Armazena o valor 0 no HEX0
-STA %R0 .HEX1 #Armazena o valor 0 no HEX1
-STA %R0 .HEX2 #Armazena o valor 0 no HEX2
-STA %R0 .HEX3 #Armazena o valor 0 no HEX3
-STA %R0 .HEX4 #Armazena o valor 0 no HEX4
-STA %R0 .HEX5 #Armazena o valor 0 no HEX5
-
-#APAGANDO OS LEDS
 LDI %R0 $0
-STA %R0 .LED07 #Armazena o valor 0 no LEDR7~0
-STA %R0 .LED8 #Armazena o valor 0 no LEDR8
-STA %R0 .LED9 #Armazena o valor 0 no LEDR9
-
-SETUP:
-LDA %R0 .HABCLOCK #Carrega acumulador com o valor de KEY0
-ANDI %R0 $1 #Faz a operação AND com o valor 1
-CEQ %R0 @1 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
-JEQ %R0 .INCREMENTA #Se for igual pula para fpga_reset
-STA %R2 . CLEARCLOCK
-JMP %R0 .SETUP #Se não for igual volta para o inicio do loop
-
-
-INCREMENTA:
-LDA %R1 @10 #Carrega acumulador com o valor de MEM[10](unidades)
-SOMA %R1 @1 #Soma 1 ao valor das unidades
-RET 
+ADDI %R0 $1
+LDA %R0 .HEX0
+ADDI %R0 $2
+LDA %R0 .HEX1
+ADDI %R0 $3
+LDA %R0 .HEX2
+ADDI %R0 $5
+LDA %R0 .HEX3
+ADDI %R1 $1
+LDI %R2 $5
+STA %R2 @5
+SOMA %R2 @5
+LDA %R2 .HEX4
+LDA %R1 .HEX5

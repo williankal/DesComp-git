@@ -66,8 +66,8 @@ Regras:
 
 
 
-assembly = 'assembly.txt' #Arquivo de entrada de contem o assembly
-destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+assembly = 'teste.txt' #Arquivo de entrada de contem o assembly
+destinoBIN = 'testeBIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
 
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)
@@ -76,6 +76,7 @@ clear = {
         "LED8":"257",
         "LED9":"258",
         "KEY0":"352",
+        "KEY1":"353",
         "HEX0":"288",
         "HEX1":"289",
         "HEX2":"290",
@@ -87,9 +88,9 @@ clear = {
         "CLEARKEY2":"509",
         "CLEARKEY3":"508",
         "CLEARFPGA":"507",
-        "RST_FPGA":"506",
-        "CLEARCLOCK" : "505",
-        "HABCLOCK" : "504",
+        "RST_FPGA":"356",
+        "CLEARCLOCK" : "504",
+        "HABCLOCK" : "357",
 }
 mne =	{ 
        "NOP":   "0",
@@ -104,6 +105,7 @@ mne =	{
        "JSR":   "9",
        "RET":   "A",
        "ANDI": "B",
+       "ADDI" : "C",
 }
 
 register = {
