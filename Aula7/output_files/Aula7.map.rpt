@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula7
-Mon Apr 24 23:45:23 2023
+Mon May  8 11:16:47 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,59 +13,67 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |Aula7
- 11. Parameter Settings for User Entity Instance: CPU:CPU
- 12. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX1
- 13. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX2
- 14. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA
- 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGRetorno
- 16. Parameter Settings for User Entity Instance: CPU:CPU|registradorBooleano:REGFlag
- 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
- 18. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
- 19. Parameter Settings for User Entity Instance: CPU:CPU|logicDesvio:logicaDesvio
- 20. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
- 21. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 22. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 23. Parameter Settings for User Entity Instance: registradorGenerico:LED_COMBO
- 24. Parameter Settings for User Entity Instance: registradorBooleano:LEDR8
- 25. Parameter Settings for User Entity Instance: registradorBooleano:LEDR9
- 26. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX0
- 27. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX1
- 28. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX2
- 29. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX3
- 30. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX4
- 31. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX5
- 32. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY0
- 33. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY1
- 34. Parameter Settings for User Entity Instance: registradorBooleano:FF_RST_FPGA
- 35. Port Connectivity Checks: "registradorBooleano:FF_RST_FPGA"
- 36. Port Connectivity Checks: "registradorBooleano:FF_KEY1"
- 37. Port Connectivity Checks: "registradorBooleano:FF_KEY0"
- 38. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX5"
- 39. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX4"
- 40. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX3"
- 41. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX2"
- 42. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX1"
- 43. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX0"
- 44. Port Connectivity Checks: "registradorGenerico:REG_HEX5"
- 45. Port Connectivity Checks: "registradorGenerico:REG_HEX4"
- 46. Port Connectivity Checks: "registradorGenerico:REG_HEX3"
- 47. Port Connectivity Checks: "registradorGenerico:REG_HEX2"
- 48. Port Connectivity Checks: "registradorGenerico:REG_HEX1"
- 49. Port Connectivity Checks: "registradorGenerico:REG_HEX0"
- 50. Port Connectivity Checks: "decoder3x8:DECODER2"
- 51. Port Connectivity Checks: "decoder3x8:DECODER1"
- 52. Port Connectivity Checks: "registradorBooleano:LEDR9"
- 53. Port Connectivity Checks: "registradorBooleano:LEDR8"
- 54. Port Connectivity Checks: "registradorGenerico:LED_COMBO"
- 55. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 56. Port Connectivity Checks: "CPU:CPU|registradorBooleano:REGFlag"
- 57. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGRetorno"
- 58. Post-Synthesis Netlist Statistics for Top Partition
- 59. Elapsed Time Per Partition
- 60. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |Aula7
+ 13. Parameter Settings for User Entity Instance: CPU:CPU
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX1
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX2
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGRetorno
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorBooleano:REGFlag
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
+ 21. Parameter Settings for User Entity Instance: CPU:CPU|logicDesvio:logicaDesvio
+ 22. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
+ 23. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 24. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 25. Parameter Settings for User Entity Instance: registradorGenerico:LED_COMBO
+ 26. Parameter Settings for User Entity Instance: registradorBooleano:LEDR8
+ 27. Parameter Settings for User Entity Instance: registradorBooleano:LEDR9
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX0
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX1
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX2
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX3
+ 32. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX4
+ 33. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX5
+ 34. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY0
+ 35. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY1
+ 36. Parameter Settings for User Entity Instance: registradorBooleano:FF_RST_FPGA
+ 37. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo
+ 38. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida
+ 39. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK
+ 40. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo
+ 41. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo"
+ 42. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK"
+ 43. Port Connectivity Checks: "registradorBooleano:FF_RST_FPGA"
+ 44. Port Connectivity Checks: "registradorBooleano:FF_KEY1"
+ 45. Port Connectivity Checks: "registradorBooleano:FF_KEY0"
+ 46. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX5"
+ 47. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX4"
+ 48. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX3"
+ 49. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX2"
+ 50. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX1"
+ 51. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX0"
+ 52. Port Connectivity Checks: "registradorGenerico:REG_HEX5"
+ 53. Port Connectivity Checks: "registradorGenerico:REG_HEX4"
+ 54. Port Connectivity Checks: "registradorGenerico:REG_HEX3"
+ 55. Port Connectivity Checks: "registradorGenerico:REG_HEX2"
+ 56. Port Connectivity Checks: "registradorGenerico:REG_HEX1"
+ 57. Port Connectivity Checks: "registradorGenerico:REG_HEX0"
+ 58. Port Connectivity Checks: "decoder3x8:DECODER2"
+ 59. Port Connectivity Checks: "decoder3x8:DECODER1"
+ 60. Port Connectivity Checks: "registradorBooleano:LEDR9"
+ 61. Port Connectivity Checks: "registradorBooleano:LEDR8"
+ 62. Port Connectivity Checks: "registradorGenerico:LED_COMBO"
+ 63. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 64. Port Connectivity Checks: "CPU:CPU|registradorBooleano:REGFlag"
+ 65. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGRetorno"
+ 66. Post-Synthesis Netlist Statistics for Top Partition
+ 67. Elapsed Time Per Partition
+ 68. Analysis & Synthesis Messages
 
 
 
@@ -92,13 +100,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Apr 24 23:45:23 2023       ;
+; Analysis & Synthesis Status     ; Successful - Mon May  8 11:16:47 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula7                                       ;
 ; Top-level Entity Name           ; Aula7                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 579                                         ;
+; Total registers                 ; 49                                          ;
 ; Total pins                      ; 110                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -214,35 +222,37 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                          ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
-; Aula7.vhd                        ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd                  ;         ;
-; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/decoderInstru.vhd          ;         ;
-; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd         ;         ;
-; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/memoriaROM.vhd             ;         ;
-; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/memoriaRAM.vhd             ;         ;
-; logicDesvio.vhd                  ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/logicDesvio.vhd            ;         ;
-; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/edgeDetector.vhd           ;         ;
-; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico4x1.vhd         ;         ;
-; registradorBooleano.vhd          ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/registradorBooleano.vhd    ;         ;
-; ULASomaSubvhd.vhd                ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/ULASomaSubvhd.vhd          ;         ;
-; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/somaConstante.vhd          ;         ;
-; CPU.vhd                          ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd                    ;         ;
-; decoder3x8.vhdl                  ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/decoder3x8.vhdl            ;         ;
-; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/buffer_3_state_8portas.vhd ;         ;
-; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/conversorHex7Seg.vhd       ;         ;
-; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/registradorGenerico.vhd    ;         ;
-; buffer_3_state_1porta.vhd        ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/buffer_3_state_1porta.vhd  ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; Aula7.vhd                        ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd                       ;         ;
+; decoderInstru.vhd                ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/decoderInstru.vhd               ;         ;
+; muxGenerico2x1.vhd               ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd              ;         ;
+; memoriaROM.vhd                   ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/memoriaROM.vhd                  ;         ;
+; memoriaRAM.vhd                   ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/memoriaRAM.vhd                  ;         ;
+; logicDesvio.vhd                  ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/logicDesvio.vhd                 ;         ;
+; edgeDetector.vhd                 ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/edgeDetector.vhd                ;         ;
+; muxGenerico4x1.vhd               ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico4x1.vhd              ;         ;
+; registradorBooleano.vhd          ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/registradorBooleano.vhd         ;         ;
+; ULASomaSubvhd.vhd                ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/ULASomaSubvhd.vhd               ;         ;
+; somaConstante.vhd                ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/somaConstante.vhd               ;         ;
+; CPU.vhd                          ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd                         ;         ;
+; decoder3x8.vhdl                  ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/decoder3x8.vhdl                 ;         ;
+; buffer_3_state_8portas.vhd       ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/buffer_3_state_8portas.vhd      ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/conversorHex7Seg.vhd            ;         ;
+; registradorGenerico.vhd          ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/registradorGenerico.vhd         ;         ;
+; buffer_3_state_1porta.vhd        ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/buffer_3_state_1porta.vhd       ;         ;
+; bancoRegistradoresArqRegMem.vhd  ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/bancoRegistradoresArqRegMem.vhd ;         ;
+; divisorGenerico_e_Interface.vhd  ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico_e_Interface.vhd ;         ;
+; divisorGenerico.vhd              ; yes             ; User VHDL File  ; /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico.vhd             ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -250,71 +260,140 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 476            ;
+; Estimate of Logic utilization (ALMs needed) ; 64             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 500            ;
-;     -- 7 input functions                    ; 9              ;
-;     -- 6 input functions                    ; 282            ;
-;     -- 5 input functions                    ; 31             ;
-;     -- 4 input functions                    ; 71             ;
-;     -- <=3 input functions                  ; 107            ;
+; Combinational ALUT usage for logic          ; 109            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 5              ;
+;     -- 5 input functions                    ; 20             ;
+;     -- 4 input functions                    ; 62             ;
+;     -- <=3 input functions                  ; 22             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 579            ;
+; Dedicated logic registers                   ; 49             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 110            ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 576            ;
-; Total fan-out                               ; 4368           ;
-; Average fan-out                             ; 3.36           ;
+; Maximum fan-out                             ; 49             ;
+; Total fan-out                               ; 782            ;
+; Average fan-out                             ; 2.07           ;
 +---------------------------------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name         ; Library Name ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
-; |Aula7                                 ; 500 (25)            ; 579 (0)                   ; 0                 ; 0          ; 110  ; 0            ; |Aula7                                        ; Aula7               ; work         ;
-;    |CPU:CPU|                           ; 66 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU                                ; CPU                 ; work         ;
-;       |ULASomaSub:ULA1|                ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|ULASomaSub:ULA1                ; ULASomaSub          ; work         ;
-;       |decoderInstru:DECODER|          ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|decoderInstru:DECODER          ; decoderInstru       ; work         ;
-;       |logicDesvio:logicaDesvio|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|logicDesvio:logicaDesvio       ; logicDesvio         ; work         ;
-;       |muxGenerico2x1:MUX1|            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico2x1:MUX1            ; muxGenerico2x1      ; work         ;
-;       |muxGenerico4x1:MUX2|            ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico4x1:MUX2            ; muxGenerico4x1      ; work         ;
-;       |registradorBooleano:REGFlag|    ; 5 (5)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorBooleano:REGFlag    ; registradorBooleano ; work         ;
-;       |registradorGenerico:PC|         ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorGenerico:PC         ; registradorGenerico ; work         ;
-;       |registradorGenerico:REGA|       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorGenerico:REGA       ; registradorGenerico ; work         ;
-;       |registradorGenerico:REGRetorno| ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorGenerico:REGRetorno ; registradorGenerico ; work         ;
-;       |somaConstante:incrementaPC|     ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|somaConstante:incrementaPC     ; somaConstante       ; work         ;
-;    |conversorHex7Seg:CONV_HEX0|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX0             ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:CONV_HEX1|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX1             ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:CONV_HEX2|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX2             ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:CONV_HEX3|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX3             ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:CONV_HEX4|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX4             ; conversorHex7Seg    ; work         ;
-;    |conversorHex7Seg:CONV_HEX5|        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX5             ; conversorHex7Seg    ; work         ;
-;    |decoder3x8:DECODER1|               ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|decoder3x8:DECODER1                    ; decoder3x8          ; work         ;
-;    |edgeDetector:detectorSub0|         ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub0              ; edgeDetector        ; work         ;
-;    |edgeDetector:detectorSub1|         ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub1              ; edgeDetector        ; work         ;
-;    |edgeDetector:detectorSub2|         ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub2              ; edgeDetector        ; work         ;
-;    |memoriaRAM:RAM|                    ; 297 (297)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaRAM:RAM                         ; memoriaRAM          ; work         ;
-;    |memoriaROM:ROM1|                   ; 59 (59)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaROM:ROM1                        ; memoriaROM          ; work         ;
-;    |registradorBooleano:FF_KEY0|       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_KEY0            ; registradorBooleano ; work         ;
-;    |registradorBooleano:FF_KEY1|       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_KEY1            ; registradorBooleano ; work         ;
-;    |registradorBooleano:FF_RST_FPGA|   ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_RST_FPGA        ; registradorBooleano ; work         ;
-;    |registradorBooleano:LEDR8|         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:LEDR8              ; registradorBooleano ; work         ;
-;    |registradorBooleano:LEDR9|         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:LEDR9              ; registradorBooleano ; work         ;
-;    |registradorGenerico:LED_COMBO|     ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:LED_COMBO          ; registradorGenerico ; work         ;
-;    |registradorGenerico:REG_HEX0|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX0           ; registradorGenerico ; work         ;
-;    |registradorGenerico:REG_HEX1|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX1           ; registradorGenerico ; work         ;
-;    |registradorGenerico:REG_HEX2|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX2           ; registradorGenerico ; work         ;
-;    |registradorGenerico:REG_HEX3|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX3           ; registradorGenerico ; work         ;
-;    |registradorGenerico:REG_HEX4|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX4           ; registradorGenerico ; work         ;
-;    |registradorGenerico:REG_HEX5|      ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX5           ; registradorGenerico ; work         ;
-+----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+---------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Entity Name                 ; Library Name ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+-----------------------------+--------------+
+; |Aula7                                        ; 109 (1)             ; 49 (0)                    ; 0                 ; 0          ; 110  ; 0            ; |Aula7                                               ; Aula7                       ; work         ;
+;    |CPU:CPU|                                  ; 48 (0)              ; 25 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU                                       ; CPU                         ; work         ;
+;       |ULASomaSub:ULA1|                       ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|ULASomaSub:ULA1                       ; ULASomaSub                  ; work         ;
+;       |bancoRegistradoresArqRegMem:BANCO_REG| ; 10 (10)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG ; bancoRegistradoresArqRegMem ; work         ;
+;       |decoderInstru:DECODER|                 ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|decoderInstru:DECODER                 ; decoderInstru               ; work         ;
+;       |muxGenerico2x1:MUX1|                   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico2x1:MUX1                   ; muxGenerico2x1              ; work         ;
+;       |muxGenerico4x1:MUX2|                   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico4x1:MUX2                   ; muxGenerico4x1              ; work         ;
+;       |registradorGenerico:PC|                ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorGenerico:PC                ; registradorGenerico         ; work         ;
+;       |somaConstante:incrementaPC|            ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|somaConstante:incrementaPC            ; somaConstante               ; work         ;
+;    |conversorHex7Seg:CONV_HEX0|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX0                    ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX1|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX1                    ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX2|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX2                    ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX3|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX3                    ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX4|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX4                    ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX5|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX5                    ; conversorHex7Seg            ; work         ;
+;    |decoder3x8:DECODER2|                      ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|decoder3x8:DECODER2                           ; decoder3x8                  ; work         ;
+;    |memoriaRAM:RAM|                           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaRAM:RAM                                ; memoriaRAM                  ; work         ;
+;    |memoriaROM:ROM1|                          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaROM:ROM1                               ; memoriaROM                  ; work         ;
+;    |registradorGenerico:REG_HEX0|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX0                  ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX1|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX1                  ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX2|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX2                  ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX3|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX3                  ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX4|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX4                  ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX5|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX5                  ; registradorGenerico         ; work         ;
++-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                           ;
++------------------------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                                  ; Reason for Removal                          ;
++------------------------------------------------------------------------------------------------+---------------------------------------------+
+; registradorBooleano:FF_RST_FPGA|DOUT                                                           ; Lost fanout                                 ;
+; edgeDetector:detectorSub2|saidaQ                                                               ; Lost fanout                                 ;
+; registradorBooleano:FF_KEY1|DOUT                                                               ; Lost fanout                                 ;
+; edgeDetector:detectorSub1|saidaQ                                                               ; Lost fanout                                 ;
+; registradorBooleano:FF_KEY0|DOUT                                                               ; Lost fanout                                 ;
+; edgeDetector:detectorSub0|saidaQ                                                               ; Lost fanout                                 ;
+; registradorGenerico:LED_COMBO|DOUT[0..7]                                                       ; Stuck at GND due to stuck port clock_enable ;
+; registradorBooleano:LEDR8|DOUT                                                                 ; Stuck at GND due to stuck port clock_enable ;
+; registradorBooleano:LEDR9|DOUT                                                                 ; Stuck at GND due to stuck port clock_enable ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo|DOUT      ; Stuck at VCC due to stuck port data_in      ;
+; CPU:CPU|registradorGenerico:REGRetorno|DOUT[0]                                                 ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|registradorBooleano:REGFlag|DOUT                                                       ; Stuck at GND due to stuck port clock_enable ;
+; CPU:CPU|registradorGenerico:REGRetorno|DOUT[1..8]                                              ; Stuck at GND due to stuck port clock_enable ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick                  ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|tick            ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[0..24]       ; Lost fanout                                 ;
+; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[0..15] ; Lost fanout                                 ;
+; Total Number of Removed Registers = 70                                                         ;                                             ;
++------------------------------------------------------------------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                          ;
++-------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------+
+; Register name                                                                             ; Reason for Removal        ; Registers Removed due to This Register                                                       ;
++-------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------+
+; divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo|DOUT ; Stuck at VCC              ; CPU:CPU|registradorBooleano:REGFlag|DOUT,                                                    ;
+;                                                                                           ; due to stuck port data_in ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick,               ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|tick,         ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[7],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[6],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[5],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[4],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[3],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[2],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[1],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[0],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[8],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[9],        ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[10],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[11],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[12],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[13],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[14],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[15],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[16],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[17],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[18],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[19],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[20],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[21],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[22],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[23],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[24],       ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[0],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[1],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[2],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[3],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[4],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[5],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[6],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[7],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[8],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[9],  ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[10], ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[11], ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[12], ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[13], ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[14], ;
+;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[15]  ;
+; registradorBooleano:FF_RST_FPGA|DOUT                                                      ; Lost Fanouts              ; edgeDetector:detectorSub2|saidaQ                                                             ;
+; registradorBooleano:FF_KEY1|DOUT                                                          ; Lost Fanouts              ; edgeDetector:detectorSub1|saidaQ                                                             ;
+; registradorBooleano:FF_KEY0|DOUT                                                          ; Lost Fanouts              ; edgeDetector:detectorSub0|saidaQ                                                             ;
++-------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -322,27 +401,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 579   ;
+; Total registers                              ; 49    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 8     ;
-; Number of registers using Asynchronous Clear ; 3     ;
+; Number of registers using Synchronous Load   ; 16    ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 561   ;
+; Number of registers using Clock Enable       ; 40    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Aula7|CPU:CPU|registradorGenerico:PC|DOUT[4]   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|decoderInstru:DECODER|saida[4]   ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|muxGenerico2x1:MUX1|saida_MUX[7] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|ULASomaSub:ULA1|saida[7]         ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|decoderInstru:DECODER|saida[1]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|ULASomaSub:ULA1|saida[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -359,13 +434,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: CPU:CPU ;
-+------------------+-------+---------------------------+
-; Parameter Name   ; Value ; Type                      ;
-+------------------+-------+---------------------------+
-; larguradados     ; 8     ; Signed Integer            ;
-; larguraenderecos ; 8     ; Signed Integer            ;
-; simulacao        ; false ; Enumerated                ;
-+------------------+-------+---------------------------+
++---------------------+-------+------------------------+
+; Parameter Name      ; Value ; Type                   ;
++---------------------+-------+------------------------+
+; larguradados        ; 8     ; Signed Integer         ;
+; larguraenderecosram ; 9     ; Signed Integer         ;
+; simulacao           ; false ; Enumerated             ;
++---------------------+-------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -389,13 +464,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGA ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; larguradados   ; 8     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG ;
++---------------------+-------+--------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                         ;
++---------------------+-------+--------------------------------------------------------------+
+; larguradados        ; 8     ; Signed Integer                                               ;
+; larguraendbancoregs ; 2     ; Signed Integer                                               ;
++---------------------+-------+--------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -476,7 +552,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------+
 ; Parameter Name ; Value ; Type                                ;
 +----------------+-------+-------------------------------------+
-; datawidth      ; 13    ; Signed Integer                      ;
+; datawidth      ; 15    ; Signed Integer                      ;
 ; addrwidth      ; 9     ; Signed Integer                      ;
 +----------------+-------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
@@ -600,6 +676,67 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; larguradados   ; 1     ; Signed Integer                                      ;
 +----------------+-------+-----------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo ;
++----------------+----------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                      ;
++----------------+----------+-------------------------------------------------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                                                            ;
++----------------+----------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; divisor        ; 40000 ; Signed Integer                                                                                     ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                        ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                                                              ;
++----------------+-------+---------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo ;
++----------------+-------+----------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                     ;
++----------------+-------+----------------------------------------------------------------------------------------------------------+
+; larguradados   ; 4     ; Signed Integer                                                                                           ;
++----------------+-------+----------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo" ;
++--------+-------+----------+--------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                              ;
++--------+-------+----------+--------------------------------------------------------------------------------------+
+; din    ; Input ; Info     ; Stuck at VCC                                                                         ;
+; enable ; Input ; Info     ; Stuck at VCC                                                                         ;
++--------+-------+----------+--------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK"                          ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; entradaa_mux[7..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; entradab_mux[7..1] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; saida_mux[7..1]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------+
@@ -831,29 +968,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 579                         ;
-;     CLR               ; 3                           ;
-;     ENA               ; 553                         ;
-;     ENA SLD           ; 8                           ;
-;     plain             ; 15                          ;
-; arriav_lcell_comb     ; 500                         ;
+; arriav_ff             ; 49                          ;
+;     ENA               ; 24                          ;
+;     ENA SLD           ; 16                          ;
+;     plain             ; 9                           ;
+; arriav_lcell_comb     ; 109                         ;
 ;     arith             ; 18                          ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 8                           ;
-;     extend            ; 9                           ;
-;         7 data inputs ; 9                           ;
-;     normal            ; 473                         ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 77                          ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 63                          ;
-;         5 data inputs ; 31                          ;
-;         6 data inputs ; 282                         ;
+;         1 data inputs ; 10                          ;
+;         5 data inputs ; 8                           ;
+;     normal            ; 91                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 3                           ;
+;         4 data inputs ; 62                          ;
+;         5 data inputs ; 12                          ;
+;         6 data inputs ; 5                           ;
 ; boundary_port         ; 110                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.70                       ;
-; Average LUT depth     ; 7.01                        ;
+; Max LUT depth         ; 4.80                        ;
+; Average LUT depth     ; 2.51                        ;
 +-----------------------+-----------------------------+
 
 
@@ -862,7 +995,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -872,11 +1005,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Apr 24 23:45:16 2023
+    Info: Processing started: Mon May  8 11:16:41 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula7 -c Aula7
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file Aula7.vhd
-    Info (12022): Found design unit 1: Aula7-arquitetura File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 42
+    Info (12022): Found design unit 1: Aula7-arquitetura File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 41
     Info (12023): Found entity 1: Aula7 File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoderInstru.vhd
     Info (12022): Found design unit 1: decoderInstru-comportamento File: /home/will/SextoSemestre/DesComp-git/Aula7/decoderInstru.vhd Line: 10
@@ -910,7 +1043,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file somaCon
     Info (12022): Found design unit 1: somaConstante-comportamento File: /home/will/SextoSemestre/DesComp-git/Aula7/somaConstante.vhd Line: 18
     Info (12023): Found entity 1: somaConstante File: /home/will/SextoSemestre/DesComp-git/Aula7/somaConstante.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file CPU.vhd
-    Info (12022): Found design unit 1: CPU-arquitetura File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 34
+    Info (12022): Found design unit 1: CPU-arquitetura File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 35
     Info (12023): Found entity 1: CPU File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 4
 Info (12021): Found 2 design units, including 1 entities, in source file decoder3x8.vhdl
     Info (12022): Found design unit 1: decoder3x8-comportamento File: /home/will/SextoSemestre/DesComp-git/Aula7/decoder3x8.vhdl Line: 10
@@ -930,31 +1063,47 @@ Info (12021): Found 2 design units, including 1 entities, in source file buffer_
 Info (12021): Found 2 design units, including 1 entities, in source file debounceMem.vhd
     Info (12022): Found design unit 1: debounceMem-comportamento File: /home/will/SextoSemestre/DesComp-git/Aula7/debounceMem.vhd Line: 12
     Info (12023): Found entity 1: debounceMem File: /home/will/SextoSemestre/DesComp-git/Aula7/debounceMem.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bancoRegistradoresArqRegMem.vhd
+    Info (12022): Found design unit 1: bancoRegistradoresArqRegMem-comportamento File: /home/will/SextoSemestre/DesComp-git/Aula7/bancoRegistradoresArqRegMem.vhd Line: 23
+    Info (12023): Found entity 1: bancoRegistradoresArqRegMem File: /home/will/SextoSemestre/DesComp-git/Aula7/bancoRegistradoresArqRegMem.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file divisorGenerico_e_Interface.vhd
+    Info (12022): Found design unit 1: divisorGenerico_e_Interface-interface File: /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico_e_Interface.vhd Line: 14
+    Info (12023): Found entity 1: divisorGenerico_e_Interface File: /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico_e_Interface.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file divisorGenerico.vhd
+    Info (12022): Found design unit 1: divisorGenerico-divInteiro File: /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico.vhd Line: 15
+    Info (12023): Found entity 1: divisorGenerico File: /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico.vhd Line: 5
 Info (12127): Elaborating entity "Aula7" for the top level hierarchy
-Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 126
-Warning (10541): VHDL Signal Declaration warning at CPU.vhd(45): used implicit default value for signal "Reset_A" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 45
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(55): object "Valor_Imediato" assigned a value but never read File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 55
-Warning (10541): VHDL Signal Declaration warning at CPU.vhd(64): used implicit default value for signal "empty" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 64
-Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(72): object "EnderecoRam" assigned a value but never read File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 72
-Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX1" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 76
-Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX2" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 82
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGA" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 92
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGRetorno" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 95
-Info (12128): Elaborating entity "registradorBooleano" for hierarchy "CPU:CPU|registradorBooleano:REGFlag" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 98
-Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 107
-Info (12128): Elaborating entity "logicDesvio" for hierarchy "CPU:CPU|logicDesvio:logicaDesvio" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 110
-Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 114
-Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DECODER" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 119
-Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 144
-Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 147
-Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DECODER1" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 159
-Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_HEX0" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 166
-Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:CONV_HEX0" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 185
-Info (12128): Elaborating entity "buffer_3_state_1porta" for hierarchy "buffer_3_state_1porta:BUFF_KEY2" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 228
-Info (12128): Elaborating entity "buffer_3_state_8_portas" for hierarchy "buffer_3_state_8_portas:BUFF_SW" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 235
-Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 260
-Info (276014): Found 1 instances of uninferred RAM logic
+Info (12128): Elaborating entity "CPU" for hierarchy "CPU:CPU" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 129
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(56): object "Valor_Imediato" assigned a value but never read File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 56
+Warning (10541): VHDL Signal Declaration warning at CPU.vhd(65): used implicit default value for signal "empty" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 65
+Warning (10036): Verilog HDL or VHDL warning at CPU.vhd(73): object "EnderecoRam" assigned a value but never read File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 73
+Info (12128): Elaborating entity "muxGenerico2x1" for hierarchy "CPU:CPU|muxGenerico2x1:MUX1" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 78
+Info (12128): Elaborating entity "muxGenerico4x1" for hierarchy "CPU:CPU|muxGenerico4x1:MUX2" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 84
+Info (12128): Elaborating entity "bancoRegistradoresArqRegMem" for hierarchy "CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 94
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "CPU:CPU|registradorGenerico:REGRetorno" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 101
+Info (12128): Elaborating entity "registradorBooleano" for hierarchy "CPU:CPU|registradorBooleano:REGFlag" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 104
+Info (12128): Elaborating entity "somaConstante" for hierarchy "CPU:CPU|somaConstante:incrementaPC" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 111
+Info (12128): Elaborating entity "logicDesvio" for hierarchy "CPU:CPU|logicDesvio:logicaDesvio" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 114
+Info (12128): Elaborating entity "ULASomaSub" for hierarchy "CPU:CPU|ULASomaSub:ULA1" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 118
+Info (12128): Elaborating entity "decoderInstru" for hierarchy "CPU:CPU|decoderInstru:DECODER" File: /home/will/SextoSemestre/DesComp-git/Aula7/CPU.vhd Line: 123
+Info (12128): Elaborating entity "memoriaRAM" for hierarchy "memoriaRAM:RAM" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 147
+Info (12128): Elaborating entity "memoriaROM" for hierarchy "memoriaROM:ROM1" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 150
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:LED_COMBO" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 153
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "decoder3x8:DECODER1" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 162
+Info (12128): Elaborating entity "registradorGenerico" for hierarchy "registradorGenerico:REG_HEX0" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 169
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "conversorHex7Seg:CONV_HEX0" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 188
+Info (12128): Elaborating entity "buffer_3_state_1porta" for hierarchy "buffer_3_state_1porta:BUFF_KEY2" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 231
+Info (12128): Elaborating entity "buffer_3_state_8_portas" for hierarchy "buffer_3_state_8_portas:BUFF_SW" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 238
+Info (12129): Elaborating entity "edgeDetector" using architecture "A:bordasubida" for hierarchy "edgeDetector:detectorSub0" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 263
+Info (12128): Elaborating entity "divisorGenerico_e_Interface" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 282
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo" File: /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico_e_Interface.vhd Line: 21
+Info (12128): Elaborating entity "divisorGenerico" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida" File: /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico_e_Interface.vhd Line: 25
+Info (12128): Elaborating entity "registradorBooleano" for hierarchy "divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo" File: /home/will/SextoSemestre/DesComp-git/Aula7/divisorGenerico_e_Interface.vhd Line: 38
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK|saida_MUX[0] File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
+Info (276014): Found 2 instances of uninferred RAM logic
     Info (276007): RAM logic "memoriaRAM:RAM|ram" is uninferred due to asynchronous read logic File: /home/will/SextoSemestre/DesComp-git/Aula7/memoriaRAM.vhd Line: 27
+    Info (276004): RAM logic "CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG|registrador" is uninferred due to inappropriate RAM size File: /home/will/SextoSemestre/DesComp-git/Aula7/bancoRegistradoresArqRegMem.vhd Line: 29
 Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "LidoRam_CPU[7]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
     Warning (13048): Converted tri-state node "LidoRam_CPU[6]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
@@ -964,17 +1113,56 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "LidoRam_CPU[2]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
     Warning (13048): Converted tri-state node "LidoRam_CPU[1]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
     Warning (13048): Converted tri-state node "LidoRam_CPU[0]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
+    Warning (13410): Pin "Reg_retorno[3]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
+    Warning (13410): Pin "Reg_retorno[4]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
+    Warning (13410): Pin "Reg_retorno[5]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
+    Warning (13410): Pin "Reg_retorno[6]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
+    Warning (13410): Pin "Reg_retorno[7]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
+    Warning (13410): Pin "ENTRADAY_ULA[3]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
+    Warning (13410): Pin "ENTRADAY_ULA[4]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
+    Warning (13410): Pin "ENTRADAY_ULA[5]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
+    Warning (13410): Pin "ENTRADAY_ULA[6]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
+    Warning (13410): Pin "ENTRADAY_ULA[7]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
+    Warning (13410): Pin "HABILITASW" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 30
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 49 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1174 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 15 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
+    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 12
+    Warning (15610): No output dependent on input pin "SW[0]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[1]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[2]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[3]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
+Info (21057): Implemented 259 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 94 output pins
-    Info (21061): Implemented 1064 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 519 megabytes
-    Info: Processing ended: Mon Apr 24 23:45:23 2023
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:15
+    Info (21061): Implemented 149 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
+    Info: Peak virtual memory: 499 megabytes
+    Info: Processing ended: Mon May  8 11:16:47 2023
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:13
 
 

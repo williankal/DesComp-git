@@ -4,7 +4,8 @@ use ieee.std_logic_1164.all;
 entity CPU is
   -- Total de bits das entradas e saidas
   generic ( larguraDados : natural := 8;
-        larguraEnderecos : natural := 8;
+        larguraEnderecosRAM : natural := 9;
+        
         simulacao : boolean := FALSE-- para gravar na placa, altere de TRUE para FALSE
   );
   port   (
@@ -14,7 +15,7 @@ entity CPU is
 	 Data_OUT: out std_logic_vector(7 downto 0);
 	 Data_IN: in std_logic_vector(7 downto 0);
 	 ROM_Address: out std_logic_vector( 8 downto 0);
-	 ROM_InstructionIN: in std_logic_vector (12 downto 0);
+	 ROM_InstructionIN: in std_logic_vector (14 downto 0);
 	 we: out std_logic;
 	 re: out std_logic;
 	 Teste: out std_logic_vector(7 downto 0);
@@ -73,12 +74,13 @@ architecture arquitetura of CPU is
 
 begin
 CLK <= CLOCK_50;
+
 MUX1 :  entity work.muxGenerico2x1  generic map (larguraDados => 8)
         port map( entradaA_MUX => Data_IN,
                  entradaB_MUX =>  ROM_InstructionIN(7 downto 0) ,
                  seletor_MUX => SelMUX,
                  saida_MUX => SaidaMux_ULAB);
-
+                 
 MUX2 :  entity work.muxGenerico4x1  generic map (larguraDados => 9)
         port map( entradaA_MUX => Incrementa_Mux_Retorno,
                  entradaB_MUX =>  Destino,
@@ -87,10 +89,14 @@ MUX2 :  entity work.muxGenerico4x1  generic map (larguraDados => 9)
                  seletor_MUX => Sel_Desvio,
                  saida_MUX => MuxRetorno_PC);
 					  
+--port map Banco memoria
 
--- O port map completo do Acumulador.
-REGA : entity work.registradorGenerico   generic map (larguraDados => 8)
-          port map (DIN => Saida_ULA, DOUT => REG1_ULA_A, ENABLE => Habilita_A, CLK => CLK, RST => Reset_A);
+BANCO_REG: entity work.bancoRegistradoresArqRegMem   generic map (larguraDados => 8, larguraEndBancoRegs => 2)
+          port map ( clk => CLK,
+              endereco => ROM_InstructionIN(10 downto 9)   ,
+              dadoEscrita => saida_ULA,
+              habilitaEscrita => Habilita_A,
+              saida  => REG1_ULA_A);
 
 REGRetorno: entity work.registradorGenerico   generic map (larguraDados => 9)
           port map (DIN => Incrementa_Mux_Retorno, DOUT => retorno_EntradaC, ENABLE => Habilita_Escrita_Retorno, CLK => CLK, RST => '0');
@@ -101,8 +107,6 @@ REGFlag: entity work.registradorBooleano   generic 	map (larguraDados => 1)
 -- O port map completo do Program Counter.
 PC : entity work.registradorGenerico   generic map (larguraDados => 9)
           port map (DIN => MuxRetorno_PC, DOUT => Endereco, ENABLE => '1', CLK => CLK, RST => '0');
-
-			 
 
 incrementaPC :  entity work.somaConstante  generic map (larguraDados => 9, constante => 1)
         port map( entrada => Endereco, saida => Incrementa_Mux_Retorno);
@@ -134,7 +138,7 @@ habEscritaMem <= Sinais_Controle(0);
 
 Valor_Imediato <= ROM_InstructionIN(7 downto 0);
 Destino <=  ROM_InstructionIN(8 downto 0);
-Decoder_Control <= ROM_InstructionIN(12 downto 9);
+Decoder_Control <= ROM_InstructionIN(14 downto 11);
 EnderecoRam <= ROM_InstructionIN(5 downto 0);
 Data_OUT <= REG1_ULA_A;
 ROM_Address <= Endereco;

@@ -1,8 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
-
-entity Aula7 is
   -- Total de bits das entradas e saidas
+entity Aula7 is
   generic ( larguraDados : natural := 8;
         larguraEnderecos : natural := 8;
         simulacao : boolean := FALSE-- para gravar na placa, altere de TRUE para FALSE
@@ -54,7 +53,7 @@ signal LidoRam_CPU: std_logic_vector(7 downto 0);
 signal CPU_wr: std_logic;
 signal CPU_rd: std_logic;
 signal CPU_EnderecoROM: std_logic_vector(8 downto 0);
-signal DadoROM_CPU: std_logic_vector(12 downto 0);
+signal DadoROM_CPU: std_logic_vector(14 downto 0);
 signal Habilita_Ram: std_logic;
 signal Data_Address: std_logic_vector(8 downto 0);
 signal clk: std_logic;
@@ -85,6 +84,10 @@ signal Habilita_KEY_RST: std_logic;
  signal Debounce_BuffKEY0: std_logic;
  signal DebouNCE_BuffKEY1: std_logic;
  signal Debounce_BuffRSTFPGA: std_logic;
+ 
+ signal Habilita_clock: std_logic;
+ signal limpaCLOCK: std_logic;
+ signal leituraCLOCK: std_logic_vector (7 downto 0);
  
 signal Habilita_SW: std_logic;
 signal Habilita_SW8: std_logic;
@@ -144,7 +147,7 @@ CPU:  entity work.CPU
 RAM : entity work.memoriaRAM   generic map (dataWidth => 8, addrWidth => 6)
           port map (addr => CPU_EnderecoRam, we => CPU_wr, re => CPU_rd, habilita  => Habilita_Ram, dado_in => CPU_EscritoRam, dado_out =>  LidoRam_CPU, clk => CLK);
 
-ROM1 : entity work.memoriaROM   generic map (dataWidth => 13, addrWidth => 9)
+ROM1 : entity work.memoriaROM   generic map (dataWidth => 15, addrWidth => 9)
           port map (Endereco =>CPU_EnderecoROM, Dado => DadoROM_CPU);
 			 
 LED_COMBO : entity work.registradorGenerico   generic map (larguraDados => 8)
@@ -275,6 +278,16 @@ FF_KEY1: entity work.registradorBooleano  generic map (larguraDados => 1)
 		 
 FF_RST_FPGA: entity work.registradorBooleano  generic map (larguraDados => 1)
 		 port map (DIN => '1', DOUT => Debounce_BuffRSTFPGA, ENABLE => '1', CLK => CLK2, RST => limpaRST);
+		 
+interfaceBaseTempo : entity work.divisorGenerico_e_Interface
+			port map (
+			  clk => CLOCK_50,
+			  habilitaLeitura => Habilita_Clock,
+			  limpaLeitura => limpaCLOCK,
+			  escolheBase => SW(9),
+			  leituraUmSegundo => leituraCLOCK
+			);
+			
 
 limpaKEY0 <= Data_Address(0) and Data_Address(1) and Data_address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;
 
@@ -282,9 +295,12 @@ limpaKEY1 <= not(Data_Address(0)) and Data_Address(1) and Data_address(2) and Da
 
 limpaRST <= Data_Address(0) and not(Data_Address(1)) and Data_address(2) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;
 		  
+limpaCLOCK <= Data_Address(0)	 and not(Data_Address(1)) and not(Data_address(2)) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_wr;
+		  
 Habilita_LED <= '1' when (Decoder_Saida2(0) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
 Habilita_LED8 <= '1' when (Decoder_Saida2(1) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
 Habilita_LED9 <= '1' when (Decoder_Saida2(2) and Decoder_Saida1(4) and CPU_wr and not(Data_Address(5))) else '0';
+Habilita_Clock <= not(Data_Address(0)) and not(Data_Address(1)) and not(Data_address(2)) and Data_Address(3) and Data_Address(4) and Data_Address(5) and Data_Address(6) and Data_Address(7) and Data_Address(8) and CPU_rd;
 
 
 Habilita_HEX0 <= Decoder_Saida1(4) and Decoder_Saida2(0) and CPU_wr and Data_Address(5);
@@ -318,6 +334,8 @@ Reg_retorno <= fio_teste;
 
 WRITETESTE <= CPU_wr;
 READTESTE <= CPU_rd;
+
+LidoRam_CPU <= leituraCLOCK;
 
 LidoRam_CPU(0) <= KEY0_SAIDA;
 LidoRam_CPU(0) <= KEY1_SAIDA;
