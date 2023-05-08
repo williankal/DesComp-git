@@ -135,12 +135,10 @@ def  convertePonto(line):
     if int(valor) >= 256:
         bit8 = 1
         valor = int(valor) - 256
-        print('valor',hex(valor))
     else: 
         bit8 = 0
     line[1] = hex(int(valor))[2:].upper().zfill(2)
     line = ''.join(line)
-    
     return line, bit8
  
 #Converte o valor após o caractere cifrão'$'
@@ -197,16 +195,17 @@ def trataMnemonico(line):
 with open(assembly, "r") as f: #Abre o arquivo ASM
     lines = f.readlines() #Verifica a quantidade de linhas 
     labels = {}
-    linha = 1
+    linha = 0
     for l in lines:
         if ":" in l:
             label = l.replace(":","")
             label = label.replace(" ","")
             label = label.replace("\n","")
-            print(label)
             labels[label]=str(linha)
-        linha +=1
-    
+        check_mne = l.split(" ")
+        if check_mne[0] in mne:
+            linha+=1
+        
 with open(destinoBIN, "w") as f:  #Abre o destino BIN
     cont = 0 #Cria uma variável para contagem  
     linha = 1  
@@ -235,7 +234,9 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
             instrucaoLine = defineInstrucao(line).replace("\n","") #Define a instrução. Ex: JSR @14
             instrucaoLine, operacao = trataMnemonico(instrucaoLine) #Trata o mnemonico. Ex(JSR @14): x"9" @14
             register  =  instrucaoLine[2:4]
-            instrucaoLine = instrucaoLine[0] + instrucaoLine[4:]
+            if register in register:
+                instrucaoLine = instrucaoLine[0] + instrucaoLine[4:]
+            
             if '@' in instrucaoLine: #Se encontrar o caractere arroba '@' 
                 instrucaoLine, bit8 = converteArroba(instrucaoLine) #converte o número após o caractere Ex(JSR @14): x"9" x"0E"
                     
@@ -247,6 +248,7 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
                 labels[instrucaoLine.replace(":","")] = cont+1
             elif '.' in instrucaoLine:
                 instrucaoLine, bit8 = convertePonto(instrucaoLine)
+                
             else: #Senão, se a instrução nao possuir nenhum imediator, ou seja, nao conter '@' ou '$'
                 instrucaoLine = instrucaoLine.replace("\n", "") #Remove a quebra de linha
                 instrucaoLine = instrucaoLine + '00' #Acrescenta o valor x"00". Ex(RET): x"A" x"00"
@@ -263,5 +265,5 @@ with open(destinoBIN, "w") as f:  #Abre o destino BIN
                 line = '--'+ instrucaoLine+"\n"
             cont+=1 #Incrementa a variável de contagem, utilizada para incrementar as posições de memória no VHDL
             f.write(line) #Escreve no arquivo BIN.txt
-            print(line)
+            # print(line)
             #print(line,end = '') #Print apenas para debug

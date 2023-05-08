@@ -1,6 +1,44 @@
+
+-- Segundos = REG[0] REG[1]
+
+-- Uso geral = REG[2] REG[3]
+
+-- Armazenanmento de valor na RAM =  MEM[10] unidades
+
+--                                    MEM[11] dezenas
+
+--                                    MEM[12] centenas
+
+--                                    MEM[13] milhares
+
+--                                    MEM[14] dez milhares
+
+--                                    MEM[15] cent milhares
+
+--                                    MEM[16] flag
+
+-- Armazenamento de limite na RAM = MEM[30] unidades
+
+--                                  MEM[31] dezenas
+
+--                                  MEM[32] centenas
+
+--                                  MEM[33] milhares
+
+--                                  MEM[34] dez milhares
+
+--                                  MEM[35] cent milhares
+
+-- MEM[0] = 0
+
+-- MEM[1] = 1
+
+-- MEM[2] = 9
+
+-- MEM[3] = 10
 --SP:
 
---LIMPA BOTOES
+--LIMPA BOTOESBACK
 tmp(0) := STA & R0 & '1' & x"FF";	-- STA %R0 .CLEARKEY0 	#Limpa KEY 0
 tmp(1) := STA & R0 & '1' & x"FE";	-- STA %R0 .CLEARKEY1 	#Limpa KEY 1
 tmp(2) := STA & R0 & '1' & x"FD";	-- STA %R0 .CLEARKEY2 	#Limpa KEY 2
@@ -40,7 +78,7 @@ tmp(25) := STA & R0 & '0' & x"00";	-- STA %R0 @0 	#Armaena o valor do acumulador
 tmp(26) := LDI & R0 & '0' & x"01";	-- LDI %R0 $1 	#Carrega acumulador com valor 1
 tmp(27) := STA & R0 & '0' & x"01";	-- STA %R0 @1 	#Armazena o valor do acumulador em MEM[1]
 tmp(28) := LDI & R0 & '0' & x"09";	-- LDI %R0 $9 	#Carrega acumulador com valor 9
-tmp(29) := STA & R0 & '0' & x"02";	-- STA %R0 %3 @2 	#Armazena o valor do acumulador em MEM[2]
+tmp(29) := STA & R0 & '0' & x"02";	-- STA %R0 @2 	#Armazena o valor do acumulador em MEM[2]
 tmp(30) := LDI & R0 & '0' & x"0A";	-- LDI %R0 $10 	#Carrega acumulador com valor 10
 tmp(31) := STA & R0 & '0' & x"03";	-- STA %R0 @3 	#Armazena o valor do acumulador em MEM[3]
 
@@ -58,18 +96,18 @@ tmp(38) := STA & R0 & '0' & x"23";	-- STA %R0 @35 	#Armazena o limie de contagem
 tmp(39) := LDA & R0 & '1' & x"60";	-- LDA %R0 .KEY0 	#Carrega acumulador com o valor de KEY0
 tmp(40) := ANDI & R0 & '0' & x"01";	-- ANDI %R0 $1 	#Faz a operação AND com o valor 1
 tmp(41) := CEQ & R0 & '0' & x"01";	-- CEQ %R0 @1 	#OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
-tmp(42) := JEQ & R0 & '0' & x"4E";	-- JEQ %R0 .INCREMENTA 	#Se for igual pula para fpga_reset
+tmp(42) := JEQ & R0 & '0' & x"31";	-- JEQ %R0 .INCREMENTA 	#Se for igual pula para fpga_reset
 --B:
 
 --CHECA FPGA_RESET
 tmp(43) := LDA & R0 & '1' & x"FA";	-- LDA %R0 .RST_FPGA 	#Carrega acumulador com o valor de FPGA_RESET
 tmp(44) := ANDI & R0 & '0' & x"01";	-- ANDI %R0 $1 	#Faz a operação AND com o valor 1
 tmp(45) := CEQ & R0 & '0' & x"01";	-- CEQ %R0 @1 	#Compara se o valor do acumulador é igual a 0 
-tmp(46) := JEQ & R0 & '0' & x"01";	-- JEQ %R0 .SETUP 	#Se  n foi pressionado pulta para atualiza display
+tmp(46) := JEQ & R0 & '0' & x"00";	-- JEQ %R0 .SETUP 	#Se  n foi pressionado pulta para atualiza display
 
 --ATUALIZA DISPLAY
-tmp(47) := JSR & R0 & '0' & x"A9";	-- JSR %R0 .ATUALIZA_DISPLAY 	#Chama a subrotina atualiza display
-tmp(48) := JMP & R0 & '0' & x"3B";	-- JMP %R0 .LOOP 	#Volta para o loop principal
+tmp(47) := JSR & R0 & '0' & x"69";	-- JSR %R0 .ATUALIZA_DISPLAY 	#Chama a subrotina atualiza display
+tmp(48) := JMP & R0 & '0' & x"27";	-- JMP %R0 .LOOP 	#Volta para o loop principal
 
 --loop INCREMENTO
 --IEMENTA:
@@ -78,9 +116,9 @@ tmp(49) := STA & R0 & '1' & x"FF";	-- STA %R0 .CLEARKEY0 	#Limpa KEY 0
 tmp(50) := LDA & R0 & '0' & x"0A";	-- LDA %R0 @10 	#Carrega acumulador com o valor de MEM[10](unidades)
 tmp(51) := SOMA & R0 & '0' & x"01";	-- SOMA %R0 @1 	#Soma 1 ao valor das unidades
 tmp(52) := CEQ & R0 & '0' & x"03";	-- CEQ %R0 @3 	#Compara com valor 10
-tmp(53) := JEQ & R0 & '0' & x"5B";	-- JEQ %R0 .INCREMENTO_DEZENA 	#Se for igual 10 pula para o endereço incrementar dezena(definir ainda)
+tmp(53) := JEQ & R0 & '0' & x"38";	-- JEQ %R0 .INCREMENTO_DEZENA 	#Se for igual 10 pula para o endereço incrementar dezena(definir ainda)
 tmp(54) := STA & R0 & '0' & x"0A";	-- STA %R0 @10 	#Salva o valor do acumulador em MEM[10](unidades)
-tmp(55) := JMP & R0 & '0' & x"41";	-- JMP %R0 .BACK 	#VOLTA PRO loop PRINCIPAL
+tmp(55) := JMP & R0 & '0' & x"2B";	-- JMP %R0 .BACK 	#VOLTA PRO loop PRINCIPAL
 --IEMENTO_DEZENA:
 tmp(56) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega acumulador com valor 0
 tmp(57) := STA & R0 & '0' & x"0A";	-- STA %R0 @10 	#Salva o valor 0 em MEM[10]
@@ -88,9 +126,9 @@ tmp(58) := STA & R0 & '1' & x"20";	-- STA %R0 .HEX0 	#Salva o valor do acumulado
 tmp(59) := LDA & R0 & '0' & x"0B";	-- LDA %R0 @11 	#Carrega acumulador com o valor de MEM[1](dezenas)
 tmp(60) := SOMA & R0 & '0' & x"01";	-- SOMA %R0 @1 	#Soma 1 ao valor da dezenas
 tmp(61) := CEQ & R0 & '0' & x"03";	-- CEQ %R0 @3 	#Compara o valor com 10
-tmp(62) := JEQ & R0 & '0' & x"69";	-- JEQ %R0 .INCREMENTO_CENTENA 	#Se for igual a 10 pula para incremento centena(DEFINIR AINDA)
+tmp(62) := JEQ & R0 & '0' & x"41";	-- JEQ %R0 .INCREMENTO_CENTENA 	#Se for igual a 10 pula para incremento centena(DEFINIR AINDA)
 tmp(63) := STA & R0 & '0' & x"0B";	-- STA %R0 @11 	#Salva o valor do acumulador em MEM[10](unidades)
-tmp(64) := JMP & R0 & '0' & x"41";	-- JMP %R0 .BACK 	#return
+tmp(64) := JMP & R0 & '0' & x"2B";	-- JMP %R0 .BACK 	#return
 --IEMENTO_CENTENA:
 tmp(65) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega acumulador com valor 0
 tmp(66) := STA & R0 & '0' & x"0B";	-- STA %R0 @11 	#Salva o valor 0 em MEM[11]
@@ -98,9 +136,9 @@ tmp(67) := STA & R0 & '1' & x"21";	-- STA %R0 .HEX1 	#Salva o valor do acumulado
 tmp(68) := LDA & R0 & '0' & x"0C";	-- LDA %R0 @12 	#Carrega acumulador com o valor de MEM[2](centenas)
 tmp(69) := SOMA & R0 & '0' & x"01";	-- SOMA %R0 @1
 tmp(70) := CEQ & R0 & '0' & x"03";	-- CEQ %R0 @3 	#Compara o valor com 10
-tmp(71) := JEQ & R0 & '0' & x"77";	-- JEQ %R0 .INCREMENTO_MILHAR 	#Se for igual a 10 pula para incremento milhar(DEFINIR AINDA)
+tmp(71) := JEQ & R0 & '0' & x"4A";	-- JEQ %R0 .INCREMENTO_MILHAR 	#Se for igual a 10 pula para incremento milhar(DEFINIR AINDA)
 tmp(72) := STA & R0 & '0' & x"0C";	-- STA %R0 @12 	#Salva o valor do acumulador em MEM[10](unidades)
-tmp(73) := JMP & R0 & '0' & x"41";	-- JMP %R0 .BACK
+tmp(73) := JMP & R0 & '0' & x"2B";	-- JMP %R0 .BACK
 --IEMENTO_MILHAR:
 tmp(74) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega acumulador com valor 0
 tmp(75) := STA & R0 & '0' & x"0C";	-- STA %R0 @12 	#Salva o valor 0 em MEM[12]
@@ -108,9 +146,9 @@ tmp(76) := STA & R0 & '1' & x"22";	-- STA %R0 .HEX2 	#Salva o valor do acumulado
 tmp(77) := LDA & R0 & '0' & x"0D";	-- LDA %R0 @13 	#Carrega acumulador com o valor de MEM[3](milhares)
 tmp(78) := SOMA & R0 & '0' & x"01";	-- SOMA %R0 @1 	#Soma 1 ao valor da milhar
 tmp(79) := CEQ & R0 & '0' & x"0D";	-- CEQ %R0 @13 	#Compara o valor com 10
-tmp(80) := JEQ & R0 & '0' & x"85";	-- JEQ %R0 .INCREMENTO_DEZENA_MILHAR 	#Se for igual a 10 pula para incremento dezena milhar(DEFINIR AINDA)
+tmp(80) := JEQ & R0 & '0' & x"53";	-- JEQ %R0 .INCREMENTO_DEZENA_MILHAR 	#Se for igual a 10 pula para incremento dezena milhar
 tmp(81) := STA & R0 & '0' & x"0D";	-- STA %R0 @13 	#Salva o valor do acumulador em MEM[10](unidades)
-tmp(82) := JMP & R0 & '0' & x"41";	-- JMP %R0 .BACK
+tmp(82) := JMP & R0 & '0' & x"2B";	-- JMP %R0 .BACK
 --IEMENTO_DEZENA_MILHAR:
 tmp(83) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega acumulador com valor 0
 tmp(84) := STA & R0 & '0' & x"0D";	-- STA %R0 @13 	#Salva o valor 0 em MEM[12]
@@ -118,9 +156,9 @@ tmp(85) := STA & R0 & '1' & x"23";	-- STA %R0 .HEX3 	#Salva o valor do acumulado
 tmp(86) := LDA & R0 & '0' & x"0E";	-- LDA %R0 @14 	#Carrega acumulador com o valor de MEM[4](dez milhares)
 tmp(87) := SOMA & R0 & '0' & x"01";	-- SOMA %R0 @1
 tmp(88) := CEQ & R0 & '0' & x"03";	-- CEQ %R0 @3 	#Compara o valor com 10
-tmp(89) := JEQ & R0 & '0' & x"93";	-- JEQ %R0 .INCREMENTO_CENTENA_MILHAR 	#Se for igual a 10 pula para incremento centena milhar(DEFINIR AINDA)
+tmp(89) := JEQ & R0 & '0' & x"5C";	-- JEQ %R0 .INCREMENTO_CENTENA_MILHAR 	#Se for igual a 10 pula para incremento centena milhar
 tmp(90) := STA & R0 & '0' & x"0E";	-- STA %R0 @14 	#Salva o valor do acumulador em MEM[10](unidades)
-tmp(91) := JMP & R0 & '0' & x"41";	-- JMP %R0 .BACK
+tmp(91) := JMP & R0 & '0' & x"2B";	-- JMP %R0 .BACK
 --IEMENTO_CENTENA_MILHAR:
 tmp(92) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega acumulador com valor 0
 tmp(93) := STA & R0 & '0' & x"0E";	-- STA %R0 @14 	#Salva o valor 0 em MEM[12]
@@ -128,9 +166,9 @@ tmp(94) := STA & R0 & '1' & x"24";	-- STA %R0 .HEX4 	#Salva o valor do acumulado
 tmp(95) := LDA & R0 & '0' & x"0F";	-- LDA %R0 @15 	#Carrega acumulador com o valor de MEM[5](cent milhares)
 tmp(96) := SOMA & R0 & '0' & x"01";	-- SOMA %R0 @1 
 tmp(97) := CEQ & R0 & '0' & x"03";	-- CEQ %R0 @3 	#Compara o valor com 10
-tmp(98) := JEQ & R0 & '0' & x"A1";	-- JEQ %R0 .LED_OVERFLOW 	#PULA PARA LED OVERFL0W (DEFINIR AINDA)
+tmp(98) := JEQ & R0 & '0' & x"65";	-- JEQ %R0 .LED_OVERFLOW 	#PULA PARA LED OVERFL0W (DEFINIR AINDA)
 tmp(99) := STA & R0 & '0' & x"0F";	-- STA %R0 @15 	#Salva o valor do acumulador em MEM[10](unidades)
-tmp(100) := JMP & R0 & '0' & x"41";	-- JMP %R0 .BACK
+tmp(100) := JMP & R0 & '0' & x"2B";	-- JMP %R0 .BACK
 --LOVERFLOW:
 tmp(101) := LDA & R0 & '0' & x"01";	-- LDA %R0 @1 	#Carrega acumulador com 1
 tmp(102) := STA & R0 & '0' & x"10";	-- STA %R0 @16 	#Salva o valor do acumulador na mem[6]

@@ -1,0 +1,32 @@
+tmp(0) := STA & R0 & '1' & x"FF";	-- STA %R0 .CLEARKEY0 	#Limpa KEY 0
+tmp(1) := STA & R0 & '1' & x"FE";	-- STA %R0 .CLEARKEY1 	#Limpa KEY 1
+tmp(2) := STA & R0 & '1' & x"FD";	-- STA %R0 .CLEARKEY2 	#Limpa KEY 2
+tmp(3) := STA & R0 & '1' & x"FC";	-- STA %R0 .CLEARKEY3 	#Limpa KEY 3
+tmp(4) := STA & R0 & '1' & x"FB";	-- STA %R0 .CLEARFPGA 	#Limpa FPGA_RESET
+tmp(5) := STA & R0 & '1' & x"F9";	-- STA %R0 .CLEARCLOCK
+tmp(6) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega registrador com valor 0
+
+--ESCREVE 0 NOS DISPLAYS
+tmp(7) := STA & R0 & '1' & x"20";	-- STA %R0 .HEX0 	#Armazena o valor 0 no HEX0
+tmp(8) := STA & R0 & '1' & x"21";	-- STA %R0 .HEX1 	#Armazena o valor 0 no HEX1
+tmp(9) := STA & R0 & '1' & x"22";	-- STA %R0 .HEX2 	#Armazena o valor 0 no HEX2
+tmp(10) := STA & R0 & '1' & x"23";	-- STA %R0 .HEX3 	#Armazena o valor 0 no HEX3
+tmp(11) := STA & R0 & '1' & x"24";	-- STA %R0 .HEX4 	#Armazena o valor 0 no HEX4
+tmp(12) := STA & R0 & '1' & x"25";	-- STA %R0 .HEX5 	#Armazena o valor 0 no HEX5
+
+--APAGANDO OS LEDS
+tmp(13) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0
+tmp(14) := STA & R0 & '1' & x"00";	-- STA %R0 .LED07 	#Armazena o valor 0 no LEDR7~0
+tmp(15) := STA & R0 & '1' & x"01";	-- STA %R0 .LED8 	#Armazena o valor 0 no LEDR8
+tmp(16) := STA & R0 & '1' & x"02";	-- STA %R0 .LED9 	#Armazena o valor 0 no LEDR9
+--SP:
+tmp(17) := LDA & R0 & '1' & x"F8";	-- LDA %R0 .HABCLOCK 	#Carrega acumulador com o valor de KEY0
+tmp(18) := ANDI & R0 & '0' & x"01";	-- ANDI %R0 $1 	#Faz a operação AND com o valor 1
+tmp(19) := CEQ & R0 & '0' & x"01";	-- CEQ %R0 @1 	#OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
+tmp(20) := JEQ & R0 & '0' & x"21";	-- JEQ %R0 .INCREMENTA 	#Se for igual pula para fpga_reset
+tmp(21) := STA & R2 & '1' & x"F9";	-- STA %R2 . CLEARCLOCK
+tmp(22) := JMP & R0 & '0' & x"18";	-- JMP %R0 .SETUP 	#Se não for igual volta para o inicio do loop
+--IEMENTA:
+tmp(23) := LDA & R1 & '0' & x"0A";	-- LDA %R1 @10 	#Carrega acumulador com o valor de MEM[10](unidades)
+tmp(24) := SOMA & R1 & '0' & x"01";	-- SOMA %R1 @1 	#Soma 1 ao valor das unidades
+tmp(25) := RET &  & '0' & x"00";	-- RET 

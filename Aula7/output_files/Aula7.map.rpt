@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Aula7
-Mon May  8 11:16:47 2023
+Mon May  8 14:15:36 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,67 +13,65 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |Aula7
- 13. Parameter Settings for User Entity Instance: CPU:CPU
- 14. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX1
- 15. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX2
- 16. Parameter Settings for User Entity Instance: CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG
- 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGRetorno
- 18. Parameter Settings for User Entity Instance: CPU:CPU|registradorBooleano:REGFlag
- 19. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
- 20. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
- 21. Parameter Settings for User Entity Instance: CPU:CPU|logicDesvio:logicaDesvio
- 22. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
- 23. Parameter Settings for User Entity Instance: memoriaRAM:RAM
- 24. Parameter Settings for User Entity Instance: memoriaROM:ROM1
- 25. Parameter Settings for User Entity Instance: registradorGenerico:LED_COMBO
- 26. Parameter Settings for User Entity Instance: registradorBooleano:LEDR8
- 27. Parameter Settings for User Entity Instance: registradorBooleano:LEDR9
- 28. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX0
- 29. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX1
- 30. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX2
- 31. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX3
- 32. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX4
- 33. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX5
- 34. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY0
- 35. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY1
- 36. Parameter Settings for User Entity Instance: registradorBooleano:FF_RST_FPGA
- 37. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo
- 38. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida
- 39. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK
- 40. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo
- 41. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo"
- 42. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK"
- 43. Port Connectivity Checks: "registradorBooleano:FF_RST_FPGA"
- 44. Port Connectivity Checks: "registradorBooleano:FF_KEY1"
- 45. Port Connectivity Checks: "registradorBooleano:FF_KEY0"
- 46. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX5"
- 47. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX4"
- 48. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX3"
- 49. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX2"
- 50. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX1"
- 51. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX0"
- 52. Port Connectivity Checks: "registradorGenerico:REG_HEX5"
- 53. Port Connectivity Checks: "registradorGenerico:REG_HEX4"
- 54. Port Connectivity Checks: "registradorGenerico:REG_HEX3"
- 55. Port Connectivity Checks: "registradorGenerico:REG_HEX2"
- 56. Port Connectivity Checks: "registradorGenerico:REG_HEX1"
- 57. Port Connectivity Checks: "registradorGenerico:REG_HEX0"
- 58. Port Connectivity Checks: "decoder3x8:DECODER2"
- 59. Port Connectivity Checks: "decoder3x8:DECODER1"
- 60. Port Connectivity Checks: "registradorBooleano:LEDR9"
- 61. Port Connectivity Checks: "registradorBooleano:LEDR8"
- 62. Port Connectivity Checks: "registradorGenerico:LED_COMBO"
- 63. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
- 64. Port Connectivity Checks: "CPU:CPU|registradorBooleano:REGFlag"
- 65. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGRetorno"
- 66. Post-Synthesis Netlist Statistics for Top Partition
- 67. Elapsed Time Per Partition
- 68. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |Aula7
+ 11. Parameter Settings for User Entity Instance: CPU:CPU
+ 12. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico2x1:MUX1
+ 13. Parameter Settings for User Entity Instance: CPU:CPU|muxGenerico4x1:MUX2
+ 14. Parameter Settings for User Entity Instance: CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG
+ 15. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:REGRetorno
+ 16. Parameter Settings for User Entity Instance: CPU:CPU|registradorBooleano:REGFlag
+ 17. Parameter Settings for User Entity Instance: CPU:CPU|registradorGenerico:PC
+ 18. Parameter Settings for User Entity Instance: CPU:CPU|somaConstante:incrementaPC
+ 19. Parameter Settings for User Entity Instance: CPU:CPU|logicDesvio:logicaDesvio
+ 20. Parameter Settings for User Entity Instance: CPU:CPU|ULASomaSub:ULA1
+ 21. Parameter Settings for User Entity Instance: memoriaRAM:RAM
+ 22. Parameter Settings for User Entity Instance: memoriaROM:ROM1
+ 23. Parameter Settings for User Entity Instance: registradorGenerico:LED_COMBO
+ 24. Parameter Settings for User Entity Instance: registradorBooleano:LEDR8
+ 25. Parameter Settings for User Entity Instance: registradorBooleano:LEDR9
+ 26. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX0
+ 27. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX1
+ 28. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX2
+ 29. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX3
+ 30. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX4
+ 31. Parameter Settings for User Entity Instance: registradorGenerico:REG_HEX5
+ 32. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY0
+ 33. Parameter Settings for User Entity Instance: registradorBooleano:FF_KEY1
+ 34. Parameter Settings for User Entity Instance: registradorBooleano:FF_RST_FPGA
+ 35. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo
+ 36. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida
+ 37. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK
+ 38. Parameter Settings for User Entity Instance: divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo
+ 39. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo"
+ 40. Port Connectivity Checks: "divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK"
+ 41. Port Connectivity Checks: "registradorBooleano:FF_RST_FPGA"
+ 42. Port Connectivity Checks: "registradorBooleano:FF_KEY1"
+ 43. Port Connectivity Checks: "registradorBooleano:FF_KEY0"
+ 44. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX5"
+ 45. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX4"
+ 46. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX3"
+ 47. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX2"
+ 48. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX1"
+ 49. Port Connectivity Checks: "conversorHex7Seg:CONV_HEX0"
+ 50. Port Connectivity Checks: "registradorGenerico:REG_HEX5"
+ 51. Port Connectivity Checks: "registradorGenerico:REG_HEX4"
+ 52. Port Connectivity Checks: "registradorGenerico:REG_HEX3"
+ 53. Port Connectivity Checks: "registradorGenerico:REG_HEX2"
+ 54. Port Connectivity Checks: "registradorGenerico:REG_HEX1"
+ 55. Port Connectivity Checks: "registradorGenerico:REG_HEX0"
+ 56. Port Connectivity Checks: "decoder3x8:DECODER2"
+ 57. Port Connectivity Checks: "decoder3x8:DECODER1"
+ 58. Port Connectivity Checks: "registradorBooleano:LEDR9"
+ 59. Port Connectivity Checks: "registradorBooleano:LEDR8"
+ 60. Port Connectivity Checks: "registradorGenerico:LED_COMBO"
+ 61. Port Connectivity Checks: "CPU:CPU|registradorGenerico:PC"
+ 62. Port Connectivity Checks: "CPU:CPU|registradorBooleano:REGFlag"
+ 63. Port Connectivity Checks: "CPU:CPU|registradorGenerico:REGRetorno"
+ 64. Post-Synthesis Netlist Statistics for Top Partition
+ 65. Elapsed Time Per Partition
+ 66. Analysis & Synthesis Messages
 
 
 
@@ -100,13 +98,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May  8 11:16:47 2023       ;
+; Analysis & Synthesis Status     ; Successful - Mon May  8 14:15:36 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula7                                       ;
 ; Top-level Entity Name           ; Aula7                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 49                                          ;
+; Total registers                 ; 623                                         ;
 ; Total pins                      ; 110                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -222,8 +220,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -260,140 +259,76 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 64             ;
+; Estimate of Logic utilization (ALMs needed) ; 502            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 109            ;
-;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 5              ;
-;     -- 5 input functions                    ; 20             ;
-;     -- 4 input functions                    ; 62             ;
-;     -- <=3 input functions                  ; 22             ;
+; Combinational ALUT usage for logic          ; 571            ;
+;     -- 7 input functions                    ; 1              ;
+;     -- 6 input functions                    ; 293            ;
+;     -- 5 input functions                    ; 40             ;
+;     -- 4 input functions                    ; 79             ;
+;     -- <=3 input functions                  ; 158            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 49             ;
+; Dedicated logic registers                   ; 623            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 110            ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 49             ;
-; Total fan-out                               ; 782            ;
-; Average fan-out                             ; 2.07           ;
+; Maximum fan-out                             ; 619            ;
+; Total fan-out                               ; 4693           ;
+; Average fan-out                             ; 3.32           ;
 +---------------------------------------------+----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+-----------------------------+--------------+
-; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                  ; Entity Name                 ; Library Name ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+-----------------------------+--------------+
-; |Aula7                                        ; 109 (1)             ; 49 (0)                    ; 0                 ; 0          ; 110  ; 0            ; |Aula7                                               ; Aula7                       ; work         ;
-;    |CPU:CPU|                                  ; 48 (0)              ; 25 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU                                       ; CPU                         ; work         ;
-;       |ULASomaSub:ULA1|                       ; 17 (17)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|ULASomaSub:ULA1                       ; ULASomaSub                  ; work         ;
-;       |bancoRegistradoresArqRegMem:BANCO_REG| ; 10 (10)             ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG ; bancoRegistradoresArqRegMem ; work         ;
-;       |decoderInstru:DECODER|                 ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|decoderInstru:DECODER                 ; decoderInstru               ; work         ;
-;       |muxGenerico2x1:MUX1|                   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico2x1:MUX1                   ; muxGenerico2x1              ; work         ;
-;       |muxGenerico4x1:MUX2|                   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico4x1:MUX2                   ; muxGenerico4x1              ; work         ;
-;       |registradorGenerico:PC|                ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorGenerico:PC                ; registradorGenerico         ; work         ;
-;       |somaConstante:incrementaPC|            ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|somaConstante:incrementaPC            ; somaConstante               ; work         ;
-;    |conversorHex7Seg:CONV_HEX0|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX0                    ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:CONV_HEX1|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX1                    ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:CONV_HEX2|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX2                    ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:CONV_HEX3|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX3                    ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:CONV_HEX4|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX4                    ; conversorHex7Seg            ; work         ;
-;    |conversorHex7Seg:CONV_HEX5|               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX5                    ; conversorHex7Seg            ; work         ;
-;    |decoder3x8:DECODER2|                      ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|decoder3x8:DECODER2                           ; decoder3x8                  ; work         ;
-;    |memoriaRAM:RAM|                           ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaRAM:RAM                                ; memoriaRAM                  ; work         ;
-;    |memoriaROM:ROM1|                          ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaROM:ROM1                               ; memoriaROM                  ; work         ;
-;    |registradorGenerico:REG_HEX0|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX0                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REG_HEX1|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX1                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REG_HEX2|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX2                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REG_HEX3|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX3                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REG_HEX4|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX4                  ; registradorGenerico         ; work         ;
-;    |registradorGenerico:REG_HEX5|             ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX5                  ; registradorGenerico         ; work         ;
-+-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------+-----------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
++-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; Compilation Hierarchy Node                          ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                         ; Entity Name                 ; Library Name ;
++-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------+-----------------------------+--------------+
+; |Aula7                                              ; 571 (30)            ; 623 (0)                   ; 0                 ; 0          ; 110  ; 0            ; |Aula7                                                                                      ; Aula7                       ; work         ;
+;    |CPU:CPU|                                        ; 78 (0)              ; 27 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU                                                                              ; CPU                         ; work         ;
+;       |ULASomaSub:ULA1|                             ; 26 (26)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|ULASomaSub:ULA1                                                              ; ULASomaSub                  ; work         ;
+;       |bancoRegistradoresArqRegMem:BANCO_REG|       ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|bancoRegistradoresArqRegMem:BANCO_REG                                        ; bancoRegistradoresArqRegMem ; work         ;
+;       |decoderInstru:DECODER|                       ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|decoderInstru:DECODER                                                        ; decoderInstru               ; work         ;
+;       |logicDesvio:logicaDesvio|                    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|logicDesvio:logicaDesvio                                                     ; logicDesvio                 ; work         ;
+;       |muxGenerico2x1:MUX1|                         ; 18 (18)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico2x1:MUX1                                                          ; muxGenerico2x1              ; work         ;
+;       |muxGenerico4x1:MUX2|                         ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|muxGenerico4x1:MUX2                                                          ; muxGenerico4x1              ; work         ;
+;       |registradorBooleano:REGFlag|                 ; 6 (6)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorBooleano:REGFlag                                                  ; registradorBooleano         ; work         ;
+;       |registradorGenerico:PC|                      ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorGenerico:PC                                                       ; registradorGenerico         ; work         ;
+;       |registradorGenerico:REGRetorno|              ; 0 (0)               ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|registradorGenerico:REGRetorno                                               ; registradorGenerico         ; work         ;
+;       |somaConstante:incrementaPC|                  ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|CPU:CPU|somaConstante:incrementaPC                                                   ; somaConstante               ; work         ;
+;    |conversorHex7Seg:CONV_HEX0|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX0                                                           ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX1|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX1                                                           ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX2|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX2                                                           ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX3|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX3                                                           ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX4|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX4                                                           ; conversorHex7Seg            ; work         ;
+;    |conversorHex7Seg:CONV_HEX5|                     ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|conversorHex7Seg:CONV_HEX5                                                           ; conversorHex7Seg            ; work         ;
+;    |decoder3x8:DECODER1|                            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|decoder3x8:DECODER1                                                                  ; decoder3x8                  ; work         ;
+;    |divisorGenerico_e_Interface:interfaceBaseTempo| ; 53 (0)              ; 44 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |Aula7|divisorGenerico_e_Interface:interfaceBaseTempo                                       ; divisorGenerico_e_Interface ; work         ;
+;       |divisorGenerico:baseTempoRapida|             ; 21 (21)             ; 17 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula7|divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida       ; divisorGenerico             ; work         ;
+;       |divisorGenerico:baseTempo|                   ; 31 (31)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |Aula7|divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo             ; divisorGenerico             ; work         ;
+;       |muxGenerico2x1:MUX_CLOCK|                    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|divisorGenerico_e_Interface:interfaceBaseTempo|muxGenerico2x1:MUX_CLOCK              ; muxGenerico2x1              ; work         ;
+;       |registradorBooleano:registraUmSegundo|       ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo ; registradorBooleano         ; work         ;
+;    |edgeDetector:detectorSub0|                      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub0                                                            ; edgeDetector                ; work         ;
+;    |edgeDetector:detectorSub1|                      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub1                                                            ; edgeDetector                ; work         ;
+;    |edgeDetector:detectorSub2|                      ; 2 (2)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|edgeDetector:detectorSub2                                                            ; edgeDetector                ; work         ;
+;    |memoriaRAM:RAM|                                 ; 298 (298)           ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaRAM:RAM                                                                       ; memoriaRAM                  ; work         ;
+;    |memoriaROM:ROM1|                                ; 60 (60)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|memoriaROM:ROM1                                                                      ; memoriaROM                  ; work         ;
+;    |registradorBooleano:FF_KEY0|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_KEY0                                                          ; registradorBooleano         ; work         ;
+;    |registradorBooleano:FF_KEY1|                    ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_KEY1                                                          ; registradorBooleano         ; work         ;
+;    |registradorBooleano:FF_RST_FPGA|                ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:FF_RST_FPGA                                                      ; registradorBooleano         ; work         ;
+;    |registradorBooleano:LEDR8|                      ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:LEDR8                                                            ; registradorBooleano         ; work         ;
+;    |registradorBooleano:LEDR9|                      ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorBooleano:LEDR9                                                            ; registradorBooleano         ; work         ;
+;    |registradorGenerico:LED_COMBO|                  ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:LED_COMBO                                                        ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX0|                   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX0                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX1|                   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX1                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX2|                   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX2                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX3|                   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX3                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX4|                   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX4                                                         ; registradorGenerico         ; work         ;
+;    |registradorGenerico:REG_HEX5|                   ; 0 (0)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |Aula7|registradorGenerico:REG_HEX5                                                         ; registradorGenerico         ; work         ;
++-----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------+-----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                           ;
-+------------------------------------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                                                  ; Reason for Removal                          ;
-+------------------------------------------------------------------------------------------------+---------------------------------------------+
-; registradorBooleano:FF_RST_FPGA|DOUT                                                           ; Lost fanout                                 ;
-; edgeDetector:detectorSub2|saidaQ                                                               ; Lost fanout                                 ;
-; registradorBooleano:FF_KEY1|DOUT                                                               ; Lost fanout                                 ;
-; edgeDetector:detectorSub1|saidaQ                                                               ; Lost fanout                                 ;
-; registradorBooleano:FF_KEY0|DOUT                                                               ; Lost fanout                                 ;
-; edgeDetector:detectorSub0|saidaQ                                                               ; Lost fanout                                 ;
-; registradorGenerico:LED_COMBO|DOUT[0..7]                                                       ; Stuck at GND due to stuck port clock_enable ;
-; registradorBooleano:LEDR8|DOUT                                                                 ; Stuck at GND due to stuck port clock_enable ;
-; registradorBooleano:LEDR9|DOUT                                                                 ; Stuck at GND due to stuck port clock_enable ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo|DOUT      ; Stuck at VCC due to stuck port data_in      ;
-; CPU:CPU|registradorGenerico:REGRetorno|DOUT[0]                                                 ; Stuck at GND due to stuck port clock_enable ;
-; CPU:CPU|registradorBooleano:REGFlag|DOUT                                                       ; Stuck at GND due to stuck port clock_enable ;
-; CPU:CPU|registradorGenerico:REGRetorno|DOUT[1..8]                                              ; Stuck at GND due to stuck port clock_enable ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick                  ; Lost fanout                                 ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|tick            ; Lost fanout                                 ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[0..24]       ; Lost fanout                                 ;
-; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[0..15] ; Lost fanout                                 ;
-; Total Number of Removed Registers = 70                                                         ;                                             ;
-+------------------------------------------------------------------------------------------------+---------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                          ;
-+-------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------+
-; Register name                                                                             ; Reason for Removal        ; Registers Removed due to This Register                                                       ;
-+-------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------+
-; divisorGenerico_e_Interface:interfaceBaseTempo|registradorBooleano:registraUmSegundo|DOUT ; Stuck at VCC              ; CPU:CPU|registradorBooleano:REGFlag|DOUT,                                                    ;
-;                                                                                           ; due to stuck port data_in ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|tick,               ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|tick,         ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[7],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[6],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[5],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[4],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[3],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[2],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[1],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[0],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[8],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[9],        ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[10],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[11],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[12],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[13],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[14],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[15],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[16],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[17],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[18],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[19],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[20],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[21],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[22],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[23],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempo|contador[24],       ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[0],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[1],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[2],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[3],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[4],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[5],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[6],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[7],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[8],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[9],  ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[10], ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[11], ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[12], ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[13], ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[14], ;
-;                                                                                           ;                           ; divisorGenerico_e_Interface:interfaceBaseTempo|divisorGenerico:baseTempoRapida|contador[15]  ;
-; registradorBooleano:FF_RST_FPGA|DOUT                                                      ; Lost Fanouts              ; edgeDetector:detectorSub2|saidaQ                                                             ;
-; registradorBooleano:FF_KEY1|DOUT                                                          ; Lost Fanouts              ; edgeDetector:detectorSub1|saidaQ                                                             ;
-; registradorBooleano:FF_KEY0|DOUT                                                          ; Lost Fanouts              ; edgeDetector:detectorSub0|saidaQ                                                             ;
-+-------------------------------------------------------------------------------------------+---------------------------+----------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -401,23 +336,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 49    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 16    ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 623   ;
+; Number of registers using Synchronous Clear  ; 41    ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 4     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Clock Enable       ; 561   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|ULASomaSub:ULA1|saida[0] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |Aula7|CPU:CPU|registradorGenerico:PC|DOUT[8] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|decoderInstru:DECODER|saida[6] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|ULASomaSub:ULA1|saida[7]       ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |Aula7|CPU:CPU|decoderInstru:DECODER|saida[5] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
 +-----------------------------------------------------------------------+
@@ -968,25 +906,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 49                          ;
-;     ENA               ; 24                          ;
-;     ENA SLD           ; 16                          ;
-;     plain             ; 9                           ;
-; arriav_lcell_comb     ; 109                         ;
-;     arith             ; 18                          ;
-;         1 data inputs ; 10                          ;
-;         5 data inputs ; 8                           ;
-;     normal            ; 91                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 62                          ;
-;         5 data inputs ; 12                          ;
-;         6 data inputs ; 5                           ;
+; arriav_ff             ; 623                         ;
+;     CLR               ; 4                           ;
+;     ENA               ; 553                         ;
+;     ENA SLD           ; 8                           ;
+;     SCLR              ; 41                          ;
+;     plain             ; 17                          ;
+; arriav_lcell_comb     ; 571                         ;
+;     arith             ; 59                          ;
+;         1 data inputs ; 50                          ;
+;         2 data inputs ; 1                           ;
+;         4 data inputs ; 8                           ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 511                         ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 78                          ;
+;         3 data inputs ; 26                          ;
+;         4 data inputs ; 71                          ;
+;         5 data inputs ; 40                          ;
+;         6 data inputs ; 293                         ;
 ; boundary_port         ; 110                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.80                        ;
-; Average LUT depth     ; 2.51                        ;
+; Max LUT depth         ; 10.70                       ;
+; Average LUT depth     ; 6.55                        ;
 +-----------------------+-----------------------------+
 
 
@@ -995,7 +938,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1005,7 +948,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon May  8 11:16:41 2023
+    Info: Processing started: Mon May  8 14:15:30 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Aula7 -c Aula7
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file Aula7.vhd
@@ -1113,55 +1056,16 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13048): Converted tri-state node "LidoRam_CPU[2]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
     Warning (13048): Converted tri-state node "LidoRam_CPU[1]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
     Warning (13048): Converted tri-state node "LidoRam_CPU[0]" into a selector File: /home/will/SextoSemestre/DesComp-git/Aula7/muxGenerico2x1.vhd Line: 11
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 13
-    Warning (13410): Pin "Reg_retorno[3]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
-    Warning (13410): Pin "Reg_retorno[4]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
-    Warning (13410): Pin "Reg_retorno[5]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
-    Warning (13410): Pin "Reg_retorno[6]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
-    Warning (13410): Pin "Reg_retorno[7]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 22
-    Warning (13410): Pin "ENTRADAY_ULA[3]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
-    Warning (13410): Pin "ENTRADAY_ULA[4]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
-    Warning (13410): Pin "ENTRADAY_ULA[5]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
-    Warning (13410): Pin "ENTRADAY_ULA[6]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
-    Warning (13410): Pin "ENTRADAY_ULA[7]" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 26
-    Warning (13410): Pin "HABILITASW" is stuck at GND File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 30
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 49 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
-    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
-    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 11
-    Warning (15610): No output dependent on input pin "FPGA_RESET_N" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 12
-    Warning (15610): No output dependent on input pin "SW[0]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[1]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[2]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[3]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[4]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[5]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[6]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[7]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[8]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-    Warning (15610): No output dependent on input pin "SW[9]" File: /home/will/SextoSemestre/DesComp-git/Aula7/Aula7.vhd Line: 14
-Info (21057): Implemented 259 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1246 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 94 output pins
-    Info (21061): Implemented 149 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 52 warnings
-    Info: Peak virtual memory: 499 megabytes
-    Info: Processing ended: Mon May  8 11:16:47 2023
+    Info (21061): Implemented 1136 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 509 megabytes
+    Info: Processing ended: Mon May  8 14:15:36 2023
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:13
 
