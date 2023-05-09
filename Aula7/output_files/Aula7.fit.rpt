@@ -1,5 +1,5 @@
 Fitter report for Aula7
-Tue May  9 00:27:20 2023
+Tue May  9 10:09:41 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -62,7 +62,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Tue May  9 00:27:20 2023       ;
+; Fitter Status                   ; Successful - Tue May  9 10:09:41 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; Aula7                                       ;
 ; Top-level Entity Name           ; Aula7                                       ;
@@ -153,14 +153,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.09        ;
+; Average used               ; 1.10        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   3.2%      ;
-;     Processor 3            ;   3.1%      ;
-;     Processor 4            ;   2.9%      ;
+;     Processor 2            ;   3.3%      ;
+;     Processor 3            ;   3.3%      ;
+;     Processor 4            ;   3.1%      ;
 +----------------------------+-------------+
 
 
@@ -1836,7 +1836,7 @@ Info (170195): Router estimated average interconnect usage is 1% of the availabl
     Info (170196): Router estimated peak interconnect usage is 16% of the available device resources in the region that extends from location X22_Y0 to location X32_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:10
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:11
 Info (11888): Total time spent on timing analysis during the Fitter is 1.37 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -1844,8 +1844,8 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1575 megabytes
-    Info: Processing ended: Tue May  9 00:27:20 2023
+    Info: Peak virtual memory: 1595 megabytes
+    Info: Processing ended: Tue May  9 10:09:42 2023
     Info: Elapsed time: 00:00:30
     Info: Total CPU time (on all processors): 00:00:54
 

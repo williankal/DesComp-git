@@ -1,5 +1,5 @@
 Timing Analyzer report for Aula7
-Tue May  9 00:27:28 2023
+Tue May  9 10:09:50 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -107,9 +107,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  17.3%      ;
-;     Processor 3            ;  17.0%      ;
-;     Processor 4            ;  16.9%      ;
+;     Processor 2            ;  17.1%      ;
+;     Processor 3            ;  16.8%      ;
+;     Processor 4            ;  16.7%      ;
 +----------------------------+-------------+
 
 
@@ -1293,7 +1293,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue May  9 00:27:24 2023
+    Info: Processing started: Tue May  9 10:09:46 2023
 Info: Command: quartus_sta Aula7 -c Aula7
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1461,7 +1461,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 758 megabytes
-    Info: Processing ended: Tue May  9 00:27:28 2023
+    Info: Processing ended: Tue May  9 10:09:50 2023
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:06
 

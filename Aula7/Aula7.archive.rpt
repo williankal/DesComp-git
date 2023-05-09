@@ -1,5 +1,5 @@
 Archive Project report for Aula7
-Mon Apr 24 23:55:10 2023
+Tue May  9 12:34:31 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -36,7 +36,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------+
 ; Archive Project Summary                                        ;
 +------------------------+---------------------------------------+
-; Archive Project Status ; Successful - Mon Apr 24 23:55:10 2023 ;
+; Archive Project Status ; Successful - Tue May  9 12:34:31 2023 ;
 ; Revision Name          ; Aula7                                 ;
 ; Top-level Entity Name  ; Aula7                                 ;
 ; Family                 ; Cyclone V                             ;
@@ -60,9 +60,9 @@ Info: ----------------------------------------------------------
 Info: Generated report 'Aula7.archive.rpt'
 Info (23030): Evaluation of Tcl script /home/will/intelFPGA_lite/20.1/quartus/common/tcl/apps/qpm/qar.tcl was successful
 Info: Quartus Prime Shell was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 584 megabytes
-    Info: Processing ended: Mon Apr 24 23:55:10 2023
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 579 megabytes
+    Info: Processing ended: Tue May  9 12:34:31 2023
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 
@@ -75,6 +75,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; Aula7.qpf                                                              ;
 ; Aula7.qsf                                                              ;
 ; Aula7.vhd                                                              ;
+; bancoRegistradoresArqRegMem.vhd                                        ;
 ; buffer_3_state_1porta.vhd                                              ;
 ; buffer_3_state_8portas.vhd                                             ;
 ; conversorHex7Seg.vhd                                                   ;
@@ -82,6 +83,8 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; debounceMem.vhd                                                        ;
 ; decoder3x8.vhdl                                                        ;
 ; decoderInstru.vhd                                                      ;
+; divisorGenerico.vhd                                                    ;
+; divisorGenerico_e_Interface.vhd                                        ;
 ; edgeDetector.vhd                                                       ;
 ; logicDesvio.vhd                                                        ;
 ; memoriaRAM.vhd                                                         ;
@@ -90,6 +93,7 @@ Info: Quartus Prime Shell was successful. 0 errors, 1 warning
 ; muxGenerico4x1.vhd                                                     ;
 ; output_files/Waveform.vwf                                              ;
 ; output_files/Waveform1.vwf                                             ;
+; output_files/Waveform2.vwf                                             ;
 ; registradorBooleano.vhd                                                ;
 ; registradorGenerico.vhd                                                ;
 ; somaConstante.vhd                                                      ;

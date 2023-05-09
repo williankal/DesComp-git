@@ -42,6 +42,7 @@ architecture assincrona of memoriaROM is
 	
   begin
 
+
 -- Segundos = REG[0] REG[1]
 
 -- Uso geral = REG[2] 

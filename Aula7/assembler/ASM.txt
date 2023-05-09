@@ -1,0 +1,313 @@
+# Segundos = REG[0] REG[1]
+# Uso geral = REG[2] 
+# Clock_check = REG[3]
+# Armazenanmento de valor na RAM =  MEM[10] unidades
+#                                    MEM[11] dezenas
+#                                    MEM[12] centenas
+#                                    MEM[13] milhares
+#                                    MEM[14] dez milhares
+#                                    MEM[15] cent milhares
+#                                    MEM[16] flag
+# Armazenamento de limite na RAM = MEM[30] unidades
+#                                  MEM[31] dezenas
+#                                  MEM[32] centenas
+#                                  MEM[33] milhares
+#                                  MEM[34] dez milhares
+#                                  MEM[35] cent milhares
+#
+
+
+
+SETUP:
+#LIMPA BOTOESBACK
+STA %R2 .CLEARKEY0 #Limpa KEY 0
+STA %R2 .CLEARKEY1 #Limpa KEY 1
+STA %R2 .CLEARKEY2 #Limpa KEY 2
+STA %R2 .CLEARKEY3 #Limpa KEY 3
+STA %R2 .CLEARFPGA #Limpa FPGA_RESET
+
+LDI %R2 $0 #Carrega acumulador com valor 0
+
+#ESCREVE 0 NOS DISPLAYS
+STA %R2 .HEX0 #Armazena o valor 0 no HEX0
+STA %R2 .HEX1 #Armazena o valor 0 no HEX1
+STA %R2 .HEX2 #Armazena o valor 0 no HEX2
+STA %R2 .HEX3 #Armazena o valor 0 no HEX3
+STA %R2 .HEX4 #Armazena o valor 0 no HEX4
+STA %R2 .HEX5 #Armazena o valor 0 no HEX5
+
+#APAGANDO OS LEDS
+LDI %R2 $0
+STA %R2 .LED07 #Armazena o valor 0 no LEDR7~0
+STA %R2 .LED8 #Armazena o valor 0 no LEDR8
+STA %R2 .LED9 #Armazena o valor 0 no LEDR9
+
+#VARIAVEIS QUE ARMAZENAM O VALOR DO DISPLAY
+STA %R2 @10 #Armazena o valor do acumulador em MEM[10](unidades)
+STA %R2 @11 #Armazena o valor do acumulador em MEM[11](dezenas)
+STA %R2 @12 #Armazena o valor do acumulador em MEM[12](centenas)
+STA %R2 @13 #Armazena o valor do acumulador em MEM[13](milhares)
+STA %R2 @14 #Armazena o valor do acumulador em MEM[14](dez milhares)
+STA %R2 @15 #Armazena o valor do acumulador em MEM[15](cent milhares)
+
+#FLAG 
+STA %R2 @16 #Armazena o valor do acumulador em MEM[16]=0 (flag)
+
+#VARIAVEIS DE COMPARAÇÃO 
+LDI %R0 $0
+LDI %R2 $0
+STA %R2 @0 #Armaena o valor do acumulador em MEM[0]
+
+LDI %R2 $1
+STA %R2 @1 #Armazena o valor do acumulador em MEM[1]
+
+LDI %R2 $9 #Carrega acumulador com valor 9
+STA %R2 @2 #Armazena o valor do acumulador em MEM[2]
+
+LDI %R2 $10 #Carrega acumulador com valor 10
+STA %R2 @3 #Armazena o valor do acumulador em MEM[3]
+
+LDI %R2 $4 #Carrega acumulador com valor 10
+STA %R2 @4 #Armazena o valor do acumulador em MEM[3]
+
+
+
+#ARMAZENANDO LIMITES DE CONTAGEM
+LDI %R2 $10 #Carrega acumulador com valor 9
+STA %R2 @30  #Armazena o limie de contagem em MEM[30] (segundos)
+STA %R2 @32 #Armazena o limie de contagem em MEM[32] (minutos)
+LDI %R2 $6 
+STA %R2 @31 #Armazena o limie de contagem em MEM[31] (segundos dezenas)
+STA %R2 @33 #Armazena o limie de contagem em MEM[33] (minutos dezenas)
+LDI %R2 $10
+STA %R2 @34 #Armazena o limie de contagem em MEM[34] (horas)
+LDI %R2 $2
+STA %R2 @35 #Armazena o limie de contagem em MEM[35] (horas dezenas)
+
+LOOP:
+#CHECA CLOCK
+LDA %R3 .HABCLOCK #Carrega acumulador com o valor de KEY0
+ANDI %R3 $1 #Faz a operação AND com o valor 1
+CEQ %R3 @1 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
+JEQ %R3 .INCREMENTA #Se for igual pula para fpga_reset
+BACK:
+
+#CHECA KEY0
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @1 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)    
+JEQ %R2 .AJUSTE_HORARIO
+
+#CHECA FPGA_RESET
+LDA %R2 .RST_FPGA #Carrega acumulador com o valor de FPGA_RESET
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @1 #Compara se o valor do acumulador é igual a 1
+JEQ %R2 .SETUP #Se  n foi pressionado pulta para atualiza display
+
+#CHECA SW8
+LDA %R2 .SW8 #Carrega acumulador com o valor de SW8
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @1 #Compara se o valor do acumulador é igual a 1
+JEQ %R2 .ALARME #Se foi pressionado vai para alarme
+
+#ATUALIZA DISPLAY
+LDI %R2 $0 #Carrega acumulador com valor 1
+JSR %R2 .ATUALIZA_DISPLAY #Chama a subrotina atualiza display
+JMP %R2 .LOOP #Volta para o loop principal
+
+
+
+#loop INCREMENTO
+INCREMENTA:
+STA %R3 .CLEARCLOCK #Limpa KEY 0
+
+#INCREMENTA SEGUNDOS
+ADDI %R0 $1 #Incrementa o valor de REG[0] em 1
+CEQ %R0 @30
+JEQ %R0 .INCREMENTA_DEZENAS #Se REG[0] for igual a REG[30] pula para incrementa dezenas segundos
+JMP %R0 .ATUALIZA_DISPLAY #Volta para o loop principal
+
+INCREMENTA_DEZENAS:
+LDI %R0 $0 #Carrega acumulador com valor 0
+
+LDA %R1 @11 #Carrega o valor do acumulador em MEM[30] (segundos)
+ADDI %R1 $1 #Soma o valor de REG[1] com o valor de REG[0]
+STA %R1 @11 #Armazena o valor do acumulador em MEM[30] (segundos)
+CEQ %R1 @31
+JEQ %R1 .INCREMENTA_MINUTOS #Se REG[1] for igual a REG[31] pula para incrementa minutos
+JMP %R1 .ATUALIZA_DISPLAY
+
+INCREMENTA_MINUTOS:
+LDI %R1 $0 #Carrega acumulador com valor 0
+STA %R1 @11 #Armazena o valor do acumulador em MEM[30] (segundos)
+
+LDA %R1 @12
+ADDI %R1 $1 #Soma o valor de REG[1] com o valor de REG[0]
+STA %R1 @12 #Armazena o valor do acumulador em MEM[30] (segundos)
+CEQ %R1 @32
+JEQ %R1 .INCREMENTA_DEZENAS_MINUTOS #Se REG[1] for igual a REG[32] pula para incrementa dezenas minutos
+JMP %R1 .ATUALIZA_DISPLAY
+
+INCREMENTA_DEZENAS_MINUTOS:
+LDI %R1 $0 #Carrega acumulador com valor 0
+STA %R1 @12 #Armazena o valor do acumulador em MEM[30] (segundos)
+
+LDA %R1 @13
+ADDI %R1 $1 #Soma o valor de REG[1] com o valor de REG[0]
+STA %R1 @13 #Armazena o valor do acumulador em MEM[30] (segundos)
+CEQ %R1 @33
+JEQ %R1 .INCREMENTA_HORA #Se REG[1] for igual a REG[33] pula para incrementa horas
+JMP %R1 .ATUALIZA_DISPLAY
+
+
+
+INCREMENTA_HORA:
+LDI %R1 $0 #Carrega acumulador com valor 0
+STA %R1 @13 #Armazena o valor do acumulador em MEM[30] (segundos)
+
+LDA %R1 @14
+ADDI %R1 $1 #Soma o valor de REG[1] com o valor de REG[0]
+STA %R1 @14 #Armazena o valor do acumulador em MEM[30] (segundos)
+CEQ %R1 @4
+JEQ %R1 .CHECK_2 #Se REG[1] for igual a REG[4] pula para incrementa horas
+
+SEM_CHECK:
+LDA %R1 @14 #Armazena o valor do acumulador em MEM[30] (segundos)
+CEQ %R1 @34
+JEQ %R1 .INCREMENTA_DEZENAS_HORAS #Se REG[1] for igual a REG[34] pula para incrementa dezenas horas
+JMP %R1 .ATUALIZA_DISPLAY
+
+INCREMENTA_DEZENAS_HORAS:
+LDI %R1 $0 #Carrega acumulador com valor 0
+STA %R1 @14 #Armazena o valor do acumulador em MEM[30] (segundos)
+
+LDA %R1 @15
+ADDI %R1 $1 #Soma o valor de REG[1] com o valor de REG[0]
+STA %R1 @15 #Armazena o valor do acumulador em MEM[30] (segundos)
+JMP %R1 .LOOP
+
+CHECK_2:
+LDA %R1 @15
+CEQ %R1 @35
+JEQ %R1 .ZERADISPLAY #Se REG[1] for igual a REG[35] pula para incrementa horas
+JMP %R1 .SEM_CHECK
+
+ZERADISPLAY:
+LDI %R2 $0 #Carrega acumulador com valor 0
+LDI %R1 $0 #Carrega acumulador com valor 0
+STA %R2 @10 #Armazena o valor do acumulador em MEM[10] (segundos)
+STA %R2 @12 #Armazena o valor do acumulador em MEM[11] (dezenas segundos)
+STA %R2 @13 #Armazena o valor do acumulador em MEM[12] (minutos)
+STA %R2 @14 #Armazena o valor do acumulador em MEM[13] (dezenas minutos)
+STA %R2 @11 #Armazena o valor do acumulador em MEM[14] (horas)
+STA %R2 @15 #Armazena o valor do acumulador em MEM[15] (dezenas horas)
+JMP %R2 .ATUALIZA_DISPLAY
+
+
+
+ATUALIZA_DISPLAY:
+STA %R0 .HEX0 #Armazena o valor do REGISTRADOR em HEX0
+
+LDA %R2 @11
+STA %R2 .HEX1 #Armazena o valor do REGISTRADOR em HEX1
+
+LDA %R2 @12
+STA %R2 .HEX2 #Armazena o valor do REGISTRADOR em HEX2
+
+LDA %R2 @13
+STA %R2 .HEX3 #Armazena o valor do REGISTRADOR em HEX3
+
+LDA %R2 @14
+STA %R2 .HEX4 #Armazena o valor do REGISTRADOR em HEX4
+
+LDA %R2 @15
+STA %R2 .HEX5 #Armazena o valor do REGISTRADOR em HEX5
+
+JMP %R2 .LOOP
+
+AJUSTE_HORARIO:
+STA %R2 .CLEARKEY0
+LDI %R1 $1 
+ATIVA_LED_SEGUNDO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_SEGUNDO
+STA %R3 @20
+LDA %R0 @20
+STA %R0 .HEX0
+
+STA %R2 .CLEARKEY0
+LDI %R1 $3
+ATIVA_LED_DEZENA_SEGUNDO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_DEZENA_SEGUNDO
+STA %R3 @11
+STA %R3 .HEX1
+
+STA %R2 .CLEARKEY0
+LDI %R1 $7
+ATIVA_LED_MINUTO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_MINUTO
+STA %R3 @12
+STA %R3 .HEX2
+
+STA %R2 .CLEARKEY0
+LDI %R1 $15
+ATIVA_LED_DEZENA_MINUTO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_DEZENA_MINUTO
+STA %R3 @13
+STA %R3 .HEX3
+
+STA %R2 .CLEARKEY0
+LDI %R1 $31
+ATIVA_LED_HORA:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_HORA
+STA %R3 @14
+STA %R3 .HEX4
+
+STA %R2 .CLEARKEY0
+LDI %R1 $63
+ATIVA_LED_DEZENA_HORA:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_DEZENA_HORA
+STA %R3 @15
+STA %R3 .HEX5
+
+LDA %R0 @20
+STA %R2 .CLEARKEY0
+LDI %R1 $0
+STA $R1 .LED07
+
+JMP %R2 .LOOP

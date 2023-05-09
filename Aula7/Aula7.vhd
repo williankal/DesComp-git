@@ -316,7 +316,6 @@ Habilita_KEY3 <= Decoder_Saida1(5) and Decoder_Saida2(3) and CPU_rd and Data_Add
 Habilita_KEY_RST <= Decoder_Saida1(5) and Decoder_Saida2(4) and CPU_rd and Data_Address(5);
 Habilita_Clock <= Decoder_Saida1(5) and Decoder_Saida2(5) and CPU_rd and Data_Address(5);
 
-
 Habilita_SW <= Decoder_Saida1(5) and Decoder_Saida2(0) and CPU_rd and not(Data_Address(5));
 Habilita_SW8 <= Decoder_Saida1(5) and Decoder_Saida2(1) and CPU_rd and not(Data_Address(5));
 Habilita_SW9 <= Decoder_Saida1(5) and Decoder_Saida2(2) and CPU_rd and not(Data_Address(5));
@@ -345,6 +344,6 @@ LidoRam_CPU(0) <= KEY3_SAIDA;
 LidoRam_CPU(0) <= KEYRST_SAIDA;
 LidoRam_CPU(0) <= SW8_SAIDA;
 LidoRam_CPU(0) <= SW9_SAIDA;
-
+	
 
 end architecture;
