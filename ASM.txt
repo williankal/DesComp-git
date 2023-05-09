@@ -15,10 +15,8 @@
 #                                  MEM[34] dez milhares
 #                                  MEM[35] cent milhares
 #
-## MEM[0] = 0
-## MEM[1] = 1
-## MEM[2] = 9
-## MEM[3] = 10
+
+
 
 SETUP:
 #LIMPA BOTOESBACK
@@ -93,6 +91,12 @@ ANDI %R3 $1 #Faz a operação AND com o valor 1
 CEQ %R3 @1 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
 JEQ %R3 .INCREMENTA #Se for igual pula para fpga_reset
 BACK:
+
+#CHECA KEY0
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @1 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)    
+JEQ %R2 .AJUSTE_HORARIO
 
 #CHECA FPGA_RESET
 LDA %R2 .RST_FPGA #Carrega acumulador com o valor de FPGA_RESET
@@ -214,3 +218,96 @@ LDA %R2 @15
 STA %R2 .HEX5 #Armazena o valor do REGISTRADOR em HEX5
 
 JMP %R2 .LOOP
+
+AJUSTE_HORARIO:
+STA %R2 .CLEARKEY0
+LDI %R1 $1 
+ATIVA_LED_SEGUNDO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_SEGUNDO
+STA %R3 @20
+LDA %R0 @20
+STA %R0 .HEX0
+
+STA %R2 .CLEARKEY0
+LDI %R1 $3
+ATIVA_LED_DEZENA_SEGUNDO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_DEZENA_SEGUNDO
+STA %R3 @11
+STA %R3 .HEX1
+
+STA %R2 .CLEARKEY0
+LDI %R1 $7
+ATIVA_LED_MINUTO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_MINUTO
+STA %R3 @12
+STA %R3 .HEX2
+
+STA %R2 .CLEARKEY0
+LDI %R1 $15
+ATIVA_LED_DEZENA_MINUTO:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_DEZENA_MINUTO
+STA %R3 @13
+STA %R3 .HEX3
+
+STA %R2 .CLEARKEY0
+LDI %R1 $31
+ATIVA_LED_HORA:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_HORA
+STA %R3 @14
+STA %R3 .HEX4
+
+STA %R2 .CLEARKEY0
+LDI %R1 $63
+ATIVA_LED_DEZENA_HORA:
+STA %R1 .LED07
+
+LDA %R2 .KEY0
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @0
+LDA %R3 .SW0-7
+JEQ  %R2 .ATIVA_LED_DEZENA_HORA
+STA %R3 @15
+STA %R3 .HEX5
+
+LDA %R0 @20
+STA %R2 .CLEARKEY0
+LDI %R1 $0
+STA $R1 .LED07
+
+JMP %R2 .LOOP
+
+
+
+
+
+

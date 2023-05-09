@@ -91,6 +91,7 @@ clear = {
         "RST_FPGA":"356",
         "CLEARCLOCK" : "504",
         "HABCLOCK" : "357",
+        "SW0-7" : "320",
 }
 mne =	{ 
        "NOP":   "0",
