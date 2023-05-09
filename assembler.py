@@ -66,8 +66,8 @@ Regras:
 
 
 
-assembly = 'teste.txt' #Arquivo de entrada de contem o assembly
-destinoBIN = 'testeBIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
+assembly = 'ASM.txt' #Arquivo de entrada de contem o assembly
+destinoBIN = 'BIN.txt' #Arquivo de saída que contem o binário formatado para VHDL
 
 #definição dos mnemônicos e seus
 #respectivo OPCODEs (em Hexadecimal)

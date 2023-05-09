@@ -1,15 +1,143 @@
+# Segundos = REG[0] REG[1]
+# Uso geral = REG[2] 
+# Clock_check = REG[3]
+# Armazenanmento de valor na RAM =  MEM[10] unidades
+#                                    MEM[11] dezenas
+#                                    MEM[12] centenas
+#                                    MEM[13] milhares
+#                                    MEM[14] dez milhares
+#                                    MEM[15] cent milhares
+#                                    MEM[16] flag
+# Armazenamento de limite na RAM = MEM[30] unidades
+#                                  MEM[31] dezenas
+#                                  MEM[32] centenas
+#                                  MEM[33] milhares
+#                                  MEM[34] dez milhares
+#                                  MEM[35] cent milhares
+#
+## MEM[0] = 0
+## MEM[1] = 1
+## MEM[2] = 9
+## MEM[3] = 10
+
+SETUP:
+#LIMPA BOTOESBACK
+STA %R2 .CLEARKEY0 #Limpa KEY 0
+STA %R2 .CLEARKEY1 #Limpa KEY 1
+STA %R2 .CLEARKEY2 #Limpa KEY 2
+STA %R2 .CLEARKEY3 #Limpa KEY 3
+STA %R2 .CLEARFPGA #Limpa FPGA_RESET
+
+LDI %R2 $0 #Carrega acumulador com valor 0
+
+#ESCREVE 0 NOS DISPLAYS
+STA %R2 .HEX0 #Armazena o valor 0 no HEX0
+STA %R2 .HEX1 #Armazena o valor 0 no HEX1
+STA %R2 .HEX2 #Armazena o valor 0 no HEX2
+STA %R2 .HEX3 #Armazena o valor 0 no HEX3
+STA %R2 .HEX4 #Armazena o valor 0 no HEX4
+STA %R2 .HEX5 #Armazena o valor 0 no HEX5
+
+#APAGANDO OS LEDS
+LDI %R2 $0
+STA %R2 .LED07 #Armazena o valor 0 no LEDR7~0
+STA %R2 .LED8 #Armazena o valor 0 no LEDR8
+STA %R2 .LED9 #Armazena o valor 0 no LEDR9
+
+#VARIAVEIS QUE ARMAZENAM O VALOR DO DISPLAY
+LDI %R2 $0 
+STA %R2 @11 #Armazena o valor do acumulador em MEM[11](dezenas)
+STA %R2 @12 #Armazena o valor do acumulador em MEM[12](centenas)
+STA %R2 @13 #Armazena o valor do acumulador em MEM[13](milhares)
+STA %R2 @14 #Armazena o valor do acumulador em MEM[14](dez milhares)
+STA %R2 @15 #Armazena o valor do acumulador em MEM[15](cent milhares)
+
+#FLAG 
+STA %R2 @16 #Armazena o valor do acumulador em MEM[16]=0 (flag)
+
+#VARIAVEIS DE COMPARAÇÃO 
 LDI %R0 $0
-ADDI %R0 $1
-LDA %R0 .HEX0
-ADDI %R0 $2
-LDA %R0 .HEX1
-ADDI %R0 $3
-LDA %R0 .HEX2
-ADDI %R0 $5
-LDA %R0 .HEX3
-ADDI %R1 $1
-LDI %R2 $5
-STA %R2 @5
-SOMA %R2 @5
-LDA %R2 .HEX4
-LDA %R1 .HEX5
+LDI %R2 $0
+STA %R2 @0 #Armaena o valor do acumulador em MEM[0]
+
+LDI %R2 $9 #Carrega acumulador com valor 9
+STA %R2 @1 #Armazena o valor do acumulador em MEM[2]
+
+LDI %R2 $10 #Carrega acumulador com valor 10
+STA %R2 @2 #Armazena o valor do acumulador em MEM[3]
+
+#ARMAZENANDO LIMITES DE CONTAGEM
+LDI %R2 $9 #Carrega acumulador com valor 9
+STA %R2 @30  #Armazena o limie de contagem em MEM[30] (segundos)
+STA %R2 @32 #Armazena o limie de contagem em MEM[32] (minutos)
+LDI %R2 $5 
+STA %R2 @31 #Armazena o limie de contagem em MEM[31] (segundos dezenas)
+STA %R2 @33 #Armazena o limie de contagem em MEM[33] (minutos dezenas)
+LDI %R2 $4
+STA %R2 @34 #Armazena o limie de contagem em MEM[34] (horas)
+LDI %R2 $2
+STA %R2 @35 #Armazena o limie de contagem em MEM[35] (horas dezenas)
+
+LOOP:
+#CHECA CLOCK
+LDA %R3 .HABCLOCK #Carrega acumulador com o valor de KEY0
+ANDI %R3 $1 #Faz a operação AND com o valor 1
+CEQ %R3 @1 #OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
+JEQ %R3 .INCREMENTA #Se for igual pula para fpga_reset
+
+BACK:
+#CHECA FPGA_RESET
+LDA %R2 .RST_FPGA #Carrega acumulador com o valor de FPGA_RESET
+ANDI %R2 $1 #Faz a operação AND com o valor 1
+CEQ %R2 @1 #Compara se o valor do acumulador é igual a 0 
+JEQ %R2 .SETUP #Se  n foi pressionado pulta para atualiza display
+JMP %R2 .LOOP #Se n foi pressionado volta para o loop principal
+
+#loop INCREMENTO
+INCREMENTA:
+STA %R3 .CLEARCLOCK #Limpa KEY 0
+LDI %R2 $1 #Carrega acumulador com valor 1
+STA %R2 .LED8 #Armazena o valor 1 no LEDR8
+JMP %R0 .SUBROTINA_CLOCK
+
+SUBROTINA_CLOCK: 
+ADDI %R0 $1 #Soma 1 ao valor do acumulador
+CEQ %R0 @30 #Compara o valor em MEM[30]
+JEQ %R0 .INCREMENTO_DEZENA #Se for igual a 10 pula para incremento dezena
+STA %R0 .HEX0
+JMP %R0 .LOOP #Volta para o loop principal
+
+INCREMENTO_DEZENA:
+LDI %R0 $0 #Zera segundos
+STA %R0 .HEX0 
+LDI %R1 $0 #Zera 
+ADDI %R1 $1 #Soma 1 ao valor do REG[1]
+CEQ %R1 @31 #Compara o valor em MEM[31]
+JEQ %R1 .INCREMENTO_MINUTO #Se for igual a 10 pula para incremento minuto
+STA %R1 .HEX1
+JMP %R1 .LOOP #Volta para o loop principal
+
+INCREMENTO_MINUTO:
+JMP %R1 .LOOP
+
+JMP %R0 .BACK
+
+#SUBROTINA RESET FPGA
+STA %R0 @509 #Limpa FPGA_RESET
+LDA %R0 @10
+STA %R0 @0 #Salva mem[0] com o valor do acumulador
+STA %R0 @1 #Salva mem[1] com o valor do acumulador
+STA %R0 @2 #Salva mem[2] com o valor do acumulador
+STA %R0 @3 #Salva mem[3] com o valor do acumulador
+STA %R0 @4 #Salva mem[4] com o valor do acumulador
+STA %R0 @5 #Salva mem[5] com o valor do acumulador
+
+STA %R0 @6 #Salva mem[6] com o valor do acumulador
+STA %R0 @257 #Apaga o LED[8] de overflow
+STA %R0 @258 #Apaga o LED[9] de limite de contagem
+RET %R0
+
+
+
+
+
