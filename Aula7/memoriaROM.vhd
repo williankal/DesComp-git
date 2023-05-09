@@ -43,6 +43,7 @@ architecture assincrona of memoriaROM is
   begin
 
 
+
 -- Segundos = REG[0] REG[1]
 
 -- Uso geral = REG[2] 
@@ -129,57 +130,57 @@ tmp(28) := LDI & R2 & '0' & x"09";	-- LDI %R2 $9 	#Carrega acumulador com valor 
 tmp(29) := STA & R2 & '0' & x"02";	-- STA %R2 @2 	#Armazena o valor do acumulador em MEM[2]
 tmp(30) := LDI & R2 & '0' & x"0A";	-- LDI %R2 $10 	#Carrega acumulador com valor 10
 tmp(31) := STA & R2 & '0' & x"03";	-- STA %R2 @3 	#Armazena o valor do acumulador em MEM[3]
+tmp(32) := LDI & R2 & '0' & x"04";	-- LDI %R2 $4 	#Carrega acumulador com valor 10
+tmp(33) := STA & R2 & '0' & x"04";	-- STA %R2 @4 	#Armazena o valor do acumulador em MEM[3]
 
 --ARMAZENANDO LIMITES DE CONTAGEM
-tmp(32) := LDI & R2 & '0' & x"0A";	-- LDI %R2 $10 	#Carrega acumulador com valor 9
-tmp(33) := STA & R2 & '0' & x"1E";	-- STA %R2 @30  	#Armazena o limie de contagem em MEM[30] (segundos)
-tmp(34) := STA & R2 & '0' & x"20";	-- STA %R2 @32 	#Armazena o limie de contagem em MEM[32] (minutos)
-tmp(35) := LDI & R2 & '0' & x"06";	-- LDI %R2 $6 
-tmp(36) := STA & R2 & '0' & x"1F";	-- STA %R2 @31 	#Armazena o limie de contagem em MEM[31] (segundos dezenas)
-tmp(37) := STA & R2 & '0' & x"21";	-- STA %R2 @33 	#Armazena o limie de contagem em MEM[33] (minutos dezenas)
-tmp(38) := LDI & R2 & '0' & x"05";	-- LDI %R2 $5
-tmp(39) := STA & R2 & '0' & x"22";	-- STA %R2 @34 	#Armazena o limie de contagem em MEM[34] (horas)
-tmp(40) := LDI & R2 & '0' & x"03";	-- LDI %R2 $3
-tmp(41) := STA & R2 & '0' & x"23";	-- STA %R2 @35 	#Armazena o limie de contagem em MEM[35] (horas dezenas)
+tmp(34) := LDI & R2 & '0' & x"0A";	-- LDI %R2 $10 	#Carrega acumulador com valor 9
+tmp(35) := STA & R2 & '0' & x"1E";	-- STA %R2 @30  	#Armazena o limie de contagem em MEM[30] (segundos)
+tmp(36) := STA & R2 & '0' & x"20";	-- STA %R2 @32 	#Armazena o limie de contagem em MEM[32] (minutos)
+tmp(37) := LDI & R2 & '0' & x"06";	-- LDI %R2 $6 
+tmp(38) := STA & R2 & '0' & x"1F";	-- STA %R2 @31 	#Armazena o limie de contagem em MEM[31] (segundos dezenas)
+tmp(39) := STA & R2 & '0' & x"21";	-- STA %R2 @33 	#Armazena o limie de contagem em MEM[33] (minutos dezenas)
+tmp(40) := LDI & R2 & '0' & x"0A";	-- LDI %R2 $10
+tmp(41) := STA & R2 & '0' & x"22";	-- STA %R2 @34 	#Armazena o limie de contagem em MEM[34] (horas)
+tmp(42) := LDI & R2 & '0' & x"02";	-- LDI %R2 $2
+tmp(43) := STA & R2 & '0' & x"23";	-- STA %R2 @35 	#Armazena o limie de contagem em MEM[35] (horas dezenas)
 --L:
 
 --CHECA CLOCK
-tmp(42) := LDA & R3 & '1' & x"65";	-- LDA %R3 .HABCLOCK 	#Carrega acumulador com o valor de KEY0
-tmp(43) := ANDI & R3 & '0' & x"01";	-- ANDI %R3 $1 	#Faz a operação AND com o valor 1
-tmp(44) := CEQ & R3 & '0' & x"01";	-- CEQ %R3 @1 	#OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
-tmp(45) := JEQ & R3 & '0' & x"35";	-- JEQ %R3 .INCREMENTA 	#Se for igual pula para fpga_reset
+tmp(44) := LDA & R3 & '1' & x"65";	-- LDA %R3 .HABCLOCK 	#Carrega acumulador com o valor de KEY0
+tmp(45) := ANDI & R3 & '0' & x"01";	-- ANDI %R3 $1 	#Faz a operação AND com o valor 1
+tmp(46) := CEQ & R3 & '0' & x"01";	-- CEQ %R3 @1 	#OLha para se o valor do acumulador é igual a 1 (Se key0 foi pressionado)
+tmp(47) := JEQ & R3 & '0' & x"37";	-- JEQ %R3 .INCREMENTA 	#Se for igual pula para fpga_reset
 --B:
 
 --CHECA FPGA_RESET
-tmp(46) := LDA & R2 & '1' & x"64";	-- LDA %R2 .RST_FPGA 	#Carrega acumulador com o valor de FPGA_RESET
-tmp(47) := ANDI & R2 & '0' & x"01";	-- ANDI %R2 $1 	#Faz a operação AND com o valor 1
-tmp(48) := CEQ & R2 & '0' & x"01";	-- CEQ %R2 @1 	#Compara se o valor do acumulador é igual a 0 
-tmp(49) := JEQ & R2 & '0' & x"00";	-- JEQ %R2 .SETUP 	#Se  n foi pressionado pulta para atualiza display
+tmp(48) := LDA & R2 & '1' & x"64";	-- LDA %R2 .RST_FPGA 	#Carrega acumulador com o valor de FPGA_RESET
+tmp(49) := ANDI & R2 & '0' & x"01";	-- ANDI %R2 $1 	#Faz a operação AND com o valor 1
+tmp(50) := CEQ & R2 & '0' & x"01";	-- CEQ %R2 @1 	#Compara se o valor do acumulador é igual a 0 
+tmp(51) := JEQ & R2 & '0' & x"00";	-- JEQ %R2 .SETUP 	#Se  n foi pressionado pulta para atualiza display
 
 --ATUALIZA DISPLAY
-tmp(50) := LDI & R2 & '0' & x"00";	-- LDI %R2 $0 	#Carrega acumulador com valor 1
-tmp(51) := JSR & R2 & '0' & x"63";	-- JSR %R2 .ATUALIZA_DISPLAY 	#Chama a subrotina atualiza display
-tmp(52) := JMP & R2 & '0' & x"2A";	-- JMP %R2 .LOOP 	#Volta para o loop principal
+tmp(52) := LDI & R2 & '0' & x"00";	-- LDI %R2 $0 	#Carrega acumulador com valor 1
+tmp(53) := JSR & R2 & '0' & x"71";	-- JSR %R2 .ATUALIZA_DISPLAY 	#Chama a subrotina atualiza display
+tmp(54) := JMP & R2 & '0' & x"2C";	-- JMP %R2 .LOOP 	#Volta para o loop principal
 
 --loop INCREMENTO
 --IEMENTA:
-tmp(53) := STA & R3 & '1' & x"F8";	-- STA %R3 .CLEARCLOCK 	#Limpa KEY 0
+tmp(55) := STA & R3 & '1' & x"F8";	-- STA %R3 .CLEARCLOCK 	#Limpa KEY 0
 
 --INCREMENTA SEGUNDOS
-tmp(54) := ADDI & R0 & '0' & x"01";	-- ADDI %R0 $1 	#Incrementa o valor de REG[0] em 1
-tmp(55) := STA & R0 & '0' & x"0A";	-- STA %R0 @10 	#Carrega o valor do acumulador em MEM[10] (segundos)
-tmp(56) := CEQ & R0 & '0' & x"1E";	-- CEQ %R0 @30
-tmp(57) := JEQ & R0 & '0' & x"3B";	-- JEQ %R0 .INCREMENTA_DEZENAS 	#Se REG[0] for igual a REG[30] pula para incrementa dezenas segundos
-tmp(58) := JMP & R0 & '0' & x"63";	-- JMP %R0 .ATUALIZA_DISPLAY 	#Volta para o loop principal
+tmp(56) := ADDI & R0 & '0' & x"01";	-- ADDI %R0 $1 	#Incrementa o valor de REG[0] em 1
+tmp(57) := CEQ & R0 & '0' & x"1E";	-- CEQ %R0 @30
+tmp(58) := JEQ & R0 & '0' & x"3C";	-- JEQ %R0 .INCREMENTA_DEZENAS 	#Se REG[0] for igual a REG[30] pula para incrementa dezenas segundos
+tmp(59) := JMP & R0 & '0' & x"71";	-- JMP %R0 .ATUALIZA_DISPLAY 	#Volta para o loop principal
 --IEMENTA_DEZENAS:
-tmp(59) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega acumulador com valor 0
-tmp(60) := STA & R0 & '0' & x"0A";	-- STA %R0 @10 	#Armazena o valor do acumulador em MEM[10] (segundos)
+tmp(60) := LDI & R0 & '0' & x"00";	-- LDI %R0 $0 	#Carrega acumulador com valor 0
 tmp(61) := LDA & R1 & '0' & x"0B";	-- LDA %R1 @11 	#Carrega o valor do acumulador em MEM[30] (segundos)
 tmp(62) := ADDI & R1 & '0' & x"01";	-- ADDI %R1 $1 	#Soma o valor de REG[1] com o valor de REG[0]
 tmp(63) := STA & R1 & '0' & x"0B";	-- STA %R1 @11 	#Armazena o valor do acumulador em MEM[30] (segundos)
 tmp(64) := CEQ & R1 & '0' & x"1F";	-- CEQ %R1 @31
 tmp(65) := JEQ & R1 & '0' & x"43";	-- JEQ %R1 .INCREMENTA_MINUTOS 	#Se REG[1] for igual a REG[31] pula para incrementa minutos
-tmp(66) := JMP & R1 & '0' & x"63";	-- JMP %R1 .ATUALIZA_DISPLAY
+tmp(66) := JMP & R1 & '0' & x"71";	-- JMP %R1 .ATUALIZA_DISPLAY
 --IEMENTA_MINUTOS:
 tmp(67) := LDI & R1 & '0' & x"00";	-- LDI %R1 $0 	#Carrega acumulador com valor 0
 tmp(68) := STA & R1 & '0' & x"0B";	-- STA %R1 @11 	#Armazena o valor do acumulador em MEM[30] (segundos)
@@ -188,7 +189,7 @@ tmp(70) := ADDI & R1 & '0' & x"01";	-- ADDI %R1 $1 	#Soma o valor de REG[1] com 
 tmp(71) := STA & R1 & '0' & x"0C";	-- STA %R1 @12 	#Armazena o valor do acumulador em MEM[30] (segundos)
 tmp(72) := CEQ & R1 & '0' & x"20";	-- CEQ %R1 @32
 tmp(73) := JEQ & R1 & '0' & x"4B";	-- JEQ %R1 .INCREMENTA_DEZENAS_MINUTOS 	#Se REG[1] for igual a REG[32] pula para incrementa dezenas minutos
-tmp(74) := JMP & R1 & '0' & x"63";	-- JMP %R1 .ATUALIZA_DISPLAY
+tmp(74) := JMP & R1 & '0' & x"71";	-- JMP %R1 .ATUALIZA_DISPLAY
 --IEMENTA_DEZENAS_MINUTOS:
 tmp(75) := LDI & R1 & '0' & x"00";	-- LDI %R1 $0 	#Carrega acumulador com valor 0
 tmp(76) := STA & R1 & '0' & x"0C";	-- STA %R1 @12 	#Armazena o valor do acumulador em MEM[30] (segundos)
@@ -197,40 +198,55 @@ tmp(78) := ADDI & R1 & '0' & x"01";	-- ADDI %R1 $1 	#Soma o valor de REG[1] com 
 tmp(79) := STA & R1 & '0' & x"0D";	-- STA %R1 @13 	#Armazena o valor do acumulador em MEM[30] (segundos)
 tmp(80) := CEQ & R1 & '0' & x"21";	-- CEQ %R1 @33
 tmp(81) := JEQ & R1 & '0' & x"53";	-- JEQ %R1 .INCREMENTA_HORA 	#Se REG[1] for igual a REG[33] pula para incrementa horas
-tmp(82) := JMP & R1 & '0' & x"63";	-- JMP %R1 .ATUALIZA_DISPLAY
+tmp(82) := JMP & R1 & '0' & x"71";	-- JMP %R1 .ATUALIZA_DISPLAY
 --IEMENTA_HORA:
 tmp(83) := LDI & R1 & '0' & x"00";	-- LDI %R1 $0 	#Carrega acumulador com valor 0
 tmp(84) := STA & R1 & '0' & x"0D";	-- STA %R1 @13 	#Armazena o valor do acumulador em MEM[30] (segundos)
 tmp(85) := LDA & R1 & '0' & x"0E";	-- LDA %R1 @14
 tmp(86) := ADDI & R1 & '0' & x"01";	-- ADDI %R1 $1 	#Soma o valor de REG[1] com o valor de REG[0]
 tmp(87) := STA & R1 & '0' & x"0E";	-- STA %R1 @14 	#Armazena o valor do acumulador em MEM[30] (segundos)
-tmp(88) := CEQ & R1 & '0' & x"22";	-- CEQ %R1 @34
-tmp(89) := JEQ & R1 & '0' & x"5B";	-- JEQ %R1 .INCREMENTA_DEZENAS_HORAS 	#Se REG[1] for igual a REG[34] pula para incrementa dezenas horas
-tmp(90) := JMP & R1 & '0' & x"63";	-- JMP %R1 .ATUALIZA_DISPLAY
+tmp(88) := CEQ & R1 & '0' & x"04";	-- CEQ %R1 @4
+tmp(89) := JEQ & R1 & '0' & x"64";	-- JEQ %R1 .CHECK_2 	#Se REG[1] for igual a REG[4] pula para incrementa horas
+--SCHECK:
+tmp(90) := LDA & R1 & '0' & x"0E";	-- LDA %R1 @14 	#Armazena o valor do acumulador em MEM[30] (segundos)
+tmp(91) := CEQ & R1 & '0' & x"22";	-- CEQ %R1 @34
+tmp(92) := JEQ & R1 & '0' & x"5E";	-- JEQ %R1 .INCREMENTA_DEZENAS_HORAS 	#Se REG[1] for igual a REG[34] pula para incrementa dezenas horas
+tmp(93) := JMP & R1 & '0' & x"71";	-- JMP %R1 .ATUALIZA_DISPLAY
 --IEMENTA_DEZENAS_HORAS:
-tmp(91) := LDI & R1 & '0' & x"00";	-- LDI %R1 $0 	#Carrega acumulador com valor 0
-tmp(92) := STA & R1 & '0' & x"0E";	-- STA %R1 @14 	#Armazena o valor do acumulador em MEM[30] (segundos)
-tmp(93) := LDA & R1 & '0' & x"0F";	-- LDA %R1 @15
-tmp(94) := ADDI & R1 & '0' & x"01";	-- ADDI %R1 $1 	#Soma o valor de REG[1] com o valor de REG[0]
-tmp(95) := STA & R1 & '0' & x"0F";	-- STA %R1 @15 	#Armazena o valor do acumulador em MEM[30] (segundos)
-tmp(96) := CEQ & R1 & '0' & x"23";	-- CEQ %R1 @35
-tmp(97) := JEQ & R1 & '0' & x"2A";	-- JEQ %R1 .LOOP 	#Se REG[1] for igual a REG[35] pula para incrementa horas
-tmp(98) := JMP & R1 & '0' & x"2A";	-- JMP %R1 .LOOP
+tmp(94) := LDI & R1 & '0' & x"00";	-- LDI %R1 $0 	#Carrega acumulador com valor 0
+tmp(95) := STA & R1 & '0' & x"0E";	-- STA %R1 @14 	#Armazena o valor do acumulador em MEM[30] (segundos)
+tmp(96) := LDA & R1 & '0' & x"0F";	-- LDA %R1 @15
+tmp(97) := ADDI & R1 & '0' & x"01";	-- ADDI %R1 $1 	#Soma o valor de REG[1] com o valor de REG[0]
+tmp(98) := STA & R1 & '0' & x"0F";	-- STA %R1 @15 	#Armazena o valor do acumulador em MEM[30] (segundos)
+tmp(99) := JMP & R1 & '0' & x"2C";	-- JMP %R1 .LOOP
+--CK_2:
+tmp(100) := LDA & R1 & '0' & x"0F";	-- LDA %R1 @15
+tmp(101) := CEQ & R1 & '0' & x"23";	-- CEQ %R1 @35
+tmp(102) := JEQ & R1 & '0' & x"68";	-- JEQ %R1 .ZERADISPLAY 	#Se REG[1] for igual a REG[35] pula para incrementa horas
+tmp(103) := JMP & R1 & '0' & x"5A";	-- JMP %R1 .SEM_CHECK
+--ZDISPLAY:
+tmp(104) := LDI & R2 & '0' & x"00";	-- LDI %R2 $0 	#Carrega acumulador com valor 0
+tmp(105) := LDI & R1 & '0' & x"00";	-- LDI %R1 $0 	#Carrega acumulador com valor 0
+tmp(106) := STA & R2 & '0' & x"0A";	-- STA %R2 @10 	#Armazena o valor do acumulador em MEM[10] (segundos)
+tmp(107) := STA & R2 & '0' & x"0C";	-- STA %R2 @12 	#Armazena o valor do acumulador em MEM[11] (dezenas segundos)
+tmp(108) := STA & R2 & '0' & x"0D";	-- STA %R2 @13 	#Armazena o valor do acumulador em MEM[12] (minutos)
+tmp(109) := STA & R2 & '0' & x"0E";	-- STA %R2 @14 	#Armazena o valor do acumulador em MEM[13] (dezenas minutos)
+tmp(110) := STA & R2 & '0' & x"0B";	-- STA %R2 @11 	#Armazena o valor do acumulador em MEM[14] (horas)
+tmp(111) := STA & R2 & '0' & x"0F";	-- STA %R2 @15 	#Armazena o valor do acumulador em MEM[15] (dezenas horas)
+tmp(112) := JMP & R2 & '0' & x"71";	-- JMP %R2 .ATUALIZA_DISPLAY
 --ALIZA_DISPLAY:
-tmp(99) := LDA & R2 & '0' & x"0A";	-- LDA %R2 @10
-tmp(100) := STA & R2 & '1' & x"20";	-- STA %R2 .HEX0 	#Armazena o valor do REGISTRADOR em HEX0
-tmp(101) := LDA & R2 & '0' & x"0B";	-- LDA %R2 @11
-tmp(102) := STA & R2 & '1' & x"21";	-- STA %R2 .HEX1 	#Armazena o valor do REGISTRADOR em HEX1
-tmp(103) := LDA & R2 & '0' & x"0C";	-- LDA %R2 @12
-tmp(104) := STA & R2 & '1' & x"22";	-- STA %R2 .HEX2 	#Armazena o valor do REGISTRADOR em HEX2
-tmp(105) := LDA & R2 & '0' & x"0D";	-- LDA %R2 @13
-tmp(106) := STA & R2 & '1' & x"23";	-- STA %R2 .HEX3 	#Armazena o valor do REGISTRADOR em HEX3
-tmp(107) := LDA & R2 & '0' & x"0E";	-- LDA %R2 @14
-tmp(108) := STA & R2 & '1' & x"24";	-- STA %R2 .HEX4 	#Armazena o valor do REGISTRADOR em HEX4
-tmp(109) := LDA & R2 & '0' & x"0F";	-- LDA %R2 @15
-tmp(110) := STA & R2 & '1' & x"25";	-- STA %R2 .HEX5 	#Armazena o valor do REGISTRADOR em HEX5
-tmp(111) := JMP & R2 & '0' & x"2A";	-- JMP %R2 .LOOP
-
+tmp(113) := STA & R0 & '1' & x"20";	-- STA %R0 .HEX0 	#Armazena o valor do REGISTRADOR em HEX0
+tmp(114) := LDA & R2 & '0' & x"0B";	-- LDA %R2 @11
+tmp(115) := STA & R2 & '1' & x"21";	-- STA %R2 .HEX1 	#Armazena o valor do REGISTRADOR em HEX1
+tmp(116) := LDA & R2 & '0' & x"0C";	-- LDA %R2 @12
+tmp(117) := STA & R2 & '1' & x"22";	-- STA %R2 .HEX2 	#Armazena o valor do REGISTRADOR em HEX2
+tmp(118) := LDA & R2 & '0' & x"0D";	-- LDA %R2 @13
+tmp(119) := STA & R2 & '1' & x"23";	-- STA %R2 .HEX3 	#Armazena o valor do REGISTRADOR em HEX3
+tmp(120) := LDA & R2 & '0' & x"0E";	-- LDA %R2 @14
+tmp(121) := STA & R2 & '1' & x"24";	-- STA %R2 .HEX4 	#Armazena o valor do REGISTRADOR em HEX4
+tmp(122) := LDA & R2 & '0' & x"0F";	-- LDA %R2 @15
+tmp(123) := STA & R2 & '1' & x"25";	-- STA %R2 .HEX5 	#Armazena o valor do REGISTRADOR em HEX5
+tmp(124) := JMP & R2 & '0' & x"2C";	-- JMP %R2 .LOOP
 
         return tmp;
     end initMemory;
